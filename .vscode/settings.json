@@ -108,6 +108,7 @@
 	],
 	"conventionalCommits.scopes": [
 		"project",
-		"config"
+		"config",
+		"layout"
 	]
 }
