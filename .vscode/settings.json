@@ -107,6 +107,7 @@
 		"zIndex"
 	],
 	"conventionalCommits.scopes": [
-		"project"
+		"project",
+		"config"
 	]
 }
