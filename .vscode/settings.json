@@ -109,6 +109,8 @@
 	"conventionalCommits.scopes": [
 		"project",
 		"config",
-		"layout"
+		"layout",
+		"code",
+		"ui"
 	]
 }

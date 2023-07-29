@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Navigation from './Navigation.svelte';
+	import Navigation from '$lib/components/Navigation.svelte';
 
 	// The ordering of these imports is critical to your app working properly
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
@@ -15,7 +15,5 @@
 	<svelte:fragment slot="header">
 		<Navigation />
 	</svelte:fragment>
-	<div class="container p-6">
-		<slot />
-	</div>
+	<slot />
 </AppShell>
