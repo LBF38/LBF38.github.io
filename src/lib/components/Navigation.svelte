@@ -1,46 +1,45 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
+	import Logo from './Logo.svelte';
+	let routes = [
+		{
+			route: '/',
+			name: 'Home'
+		},
+		{
+			route: '/projects',
+			name: 'Projects'
+		},
+		{
+			route: '/about',
+			name: 'About'
+		},
+		{
+			route: '/contact',
+			name: 'Contact'
+		}
+	];
 </script>
 
-<nav class="flex flex-row p-4 content-center justify-center">
-	<img src="favicon.png" alt="logo" class="btn-icon-xl" />
-	<ul class="container flex flex-row justify-evenly">
-		<li>
-			<a
-				href="/"
-				class="btn variant-soft hover:variant-filled-primary"
-				data-sveltekit-preload-data="hover"
-			>
-				Home
-			</a>
-		</li>
-		<li>
-			<a
-				href="/some-page"
-				class="btn variant-soft hover:variant-filled-primary"
-				data-sveltekit-preload-data="hover"
-			>
-				Projects
-			</a>
-		</li>
-		<li>
-			<a
-				href="/"
-				class="btn variant-soft hover:variant-filled-primary"
-				data-sveltekit-preload-data="hover"
-			>
-				@me
-			</a>
-		</li>
-		<li>
-			<a
-				href="/"
-				class="btn variant-soft hover:variant-filled-primary"
-				data-sveltekit-preload-data="hover"
-			>
-				Contact
-			</a>
-		</li>
+<nav class="flex flex-row content-center items-center justify-center space-x-10 p-4">
+	<Logo svgClass="variant-ghost-surface fill-surface-400 w-1/4" />
+	<ul class=" flex w-1/2 grow flex-row justify-evenly p-2">
+		{#each routes as route}
+			<li>
+				<a
+					href={route.route}
+					class="btn {$page.url.pathname == route.route
+						? 'variant-filled-primary'
+						: 'variant-soft hover:variant-ghost-primary'}"
+					data-sveltekit-preload-data="hover"
+				>
+					{route.name}
+				</a>
+			</li>
+		{/each}
 	</ul>
-	<LightSwitch />
+	<div class="w-1/4">
+		<LightSwitch />
+	</div>
 </nav>
