@@ -16,7 +16,7 @@
 	<svelte:fragment slot="header">
 		<Navigation />
 	</svelte:fragment>
-	<div class="container mx-auto h-full">
+	<div class="container mx-auto h-full p-6">
 		<slot />
 	</div>
 </AppShell>

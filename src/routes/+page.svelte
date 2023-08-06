@@ -12,7 +12,7 @@
 	}
 </script>
 
-<div class="container mx-auto flex h-full flex-col items-center justify-center space-y-32">
+<div class="flex h-full flex-col items-center justify-evenly">
 	<h1 class="h1 text-9xl">
 		<span
 			class="bg-gradient-to-br from-secondary-200 to-tertiary-700 box-decoration-clone bg-clip-text text-transparent"
