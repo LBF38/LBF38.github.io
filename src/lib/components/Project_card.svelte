@@ -1,16 +1,20 @@
 <script lang="ts">
 	import { Octokit } from '@octokit/rest';
 	import Icon from '@iconify/svelte';
+	import GH_language_colors from '../assets/gh_language_colors.json';
 	export let GH_URL: string = 'https://github.com/LBF38/obsidian-syncthing-integration';
 
 	// Create a new Octokit instance
 	const octokit = new Octokit();
 
+	function getGHcolor(language: string): string {
+		return GH_language_colors[language as keyof typeof GH_language_colors]?.color || '#00000';
+	}
+
 	async function getRepoInformation(repository: string) {
 		const match = repository.match(/^https:\/\/github\.com\/([\w-]+)\/([\w-]+)$/);
 		if (!match) throw new Error('Invalid repo URL');
 		const [, owner, repo] = match;
-		console.log(owner, repo);
 
 		const { data } = await octokit.rest.repos.get({ owner, repo });
 		const { data: issues } = await octokit.rest.issues.listForRepo({
@@ -34,7 +38,7 @@
 			forks: data.forks,
 			pulls: pullRequests.length,
 			language: data.language,
-			language_color: '#2b7489' // TODO: change it to the real color
+			language_color: getGHcolor(data.language ?? '')
 		};
 		// return {
 		// 	repo,
