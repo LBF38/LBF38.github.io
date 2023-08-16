@@ -1,14 +1,19 @@
 <script>
-	import { fade } from 'svelte/transition';
+	import { blur, fade, fly } from 'svelte/transition';
 </script>
 
-<h1 class="h1">Feel free to contact me !</h1>
-<p>
+<h1 class="h1" in:fade={{ delay: 200 }} out:blur>Feel free to contact me !</h1>
+<p in:fade={{ delay: 200 }} out:blur>
 	You can fill the below to send me any information you may need. <br /> I'll be happy to answer your
 	request !
 </p>
 <!-- Make sure you don't change the form action-->
-<form action="https://api.staticforms.xyz/submit" method="post" class="mx-auto w-full max-w-xl p-5">
+<form
+	action="https://api.staticforms.xyz/submit"
+	method="post"
+	class="mx-auto w-full max-w-xl p-5"
+	transition:blur
+>
 	<fieldset>
 		<legend class="legend">Contact Form</legend>
 		<!-- Replace with accesKey sent to your email -->
@@ -44,11 +49,7 @@
 		<!-- Optional -->
 		<label for="message" class="label">
 			<span>Message</span>
-			<textarea
-				class="textarea h-52"
-				name="message"
-				transition:fade
-			/>
+			<textarea class="textarea h-52" name="message" />
 		</label>
 		<!-- Optional -->
 		<!-- If you want replyTo to be set to specific email -->
