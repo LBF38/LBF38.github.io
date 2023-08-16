@@ -38,7 +38,8 @@
 			forks: data.forks,
 			pulls: pullRequests.length,
 			language: data.language,
-			language_color: getGHcolor(data.language ?? '')
+			language_color: getGHcolor(data.language ?? ''),
+			archived: data.archived
 		};
 		// return {
 		// 	repo,
@@ -50,7 +51,8 @@
 		// 	forks: 1,
 		// 	pulls: 3,
 		// 	language: 'TypeScript',
-		// 	language_color: '#2b7489'
+		// 	language_color: '#2b7489',
+		// 	archived: true
 		// };
 	}
 </script>
@@ -59,9 +61,14 @@
 	<div class="placeholder" />
 {:then data}
 	<a href={GH_URL} target="_blank" class="card h-fit w-fit">
-		<header class="card-header flex flex-row items-center justify-start">
-			<Icon icon="devicon:github" class="mx-2" height="24" />
-			{data.name}
+		<header class="card-header flex flex-row items-center justify-between">
+			<div class="flex flex-row">
+				<Icon icon="devicon:github" class="mx-2" height="24" />
+				{data.name}
+			</div>
+			{#if data.archived}
+				<span class="badge variant-ghost-surface">archived</span>
+			{/if}
 		</header>
 		<section class="mx-2 p-4">{data.description}</section>
 		<footer class="card-footer flex flex-row items-center justify-evenly">

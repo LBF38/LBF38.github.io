@@ -20,7 +20,7 @@
 		>My Projects' library</span
 	>
 </h1>
-<div class="m-4 flex flex-wrap justify-evenly gap-8">
+<div class="m-4 grid grid-cols-1 gap-5  sm:grid-cols-2 md:grid-cols-3 w-full">
 	{#each GH_projects as project_url}
 		<ProjectCard GH_URL={project_url} />
 	{/each}
