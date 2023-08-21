@@ -104,10 +104,9 @@
 		"text",
 		"track",
 		"width",
-		"zIndex"
+		"zIndex",
+		".*Class"
 	],
-	"conventionalCommits.scopes": [
-		"project",
-		"config"
-	]
+	"conventionalCommits.scopes": ["project", "config", "layout", "code", "ui"],
+	"svg.preview.background": "editor"
 }
