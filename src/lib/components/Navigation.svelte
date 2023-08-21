@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
 	import Logo from './Logo.svelte';
+	import { goto } from '$app/navigation';
 	let routes = [
 		{
 			route: '/',
@@ -23,7 +24,14 @@
 </script>
 
 <nav class="flex flex-row content-center items-center justify-center space-x-10 p-4">
-	<Logo svgClass="variant-ghost-surface fill-surface-400 w-1/4" />
+	<button
+		on:click={async () => {
+			await goto('/');
+		}}
+		class="w-1/4"
+	>
+		<Logo svgClass="variant-ghost-surface fill-surface-400" />
+	</button>
 	<ul class=" flex w-1/2 grow flex-row justify-evenly p-2">
 		{#each routes as route}
 			<li>

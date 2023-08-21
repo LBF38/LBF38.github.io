@@ -1,9 +1,9 @@
 <script>
-	import { blur, fade, fly } from 'svelte/transition';
+	import { blur } from 'svelte/transition';
 </script>
 
-<h1 class="h1" in:fade={{ delay: 200 }} out:blur>Feel free to contact me !</h1>
-<p in:fade={{ delay: 200 }} out:blur>
+<h1 class="h1">Feel free to contact me !</h1>
+<p>
 	You can fill the below to send me any information you may need. <br /> I'll be happy to answer your
 	request !
 </p>
