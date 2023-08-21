@@ -2,7 +2,13 @@
 	import { blur } from 'svelte/transition';
 </script>
 
-<h1 class="h1">Feel free to contact me !</h1>
+<h1 class="h1">
+	<span
+		class="bg-gradient-to-tr from-secondary-500 via-secondary-300 to-primary-500 box-decoration-clone bg-clip-text text-transparent"
+	>
+		Feel free to contact me !
+	</span>
+</h1>
 <p>
 	You can fill the below to send me any information you may need. <br /> I'll be happy to answer your
 	request !

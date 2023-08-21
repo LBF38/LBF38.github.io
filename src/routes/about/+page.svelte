@@ -1,7 +1,12 @@
 <script lang="ts">
 </script>
 
-<h1 class="h1">Want to know more about me ?</h1>
+<h1 class="h1">
+	<span
+		class="bg-gradient-to-tr from-primary-300 to-primary-400 box-decoration-clone bg-clip-text text-transparent"
+		>Want to know more about me ?</span
+	>
+</h1>
 <p>You're in the right place !</p>
 
 <p>I'm Mathis URIEN, a software engineer based in France</p>

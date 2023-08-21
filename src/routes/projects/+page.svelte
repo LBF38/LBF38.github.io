@@ -16,7 +16,7 @@
 
 <h1 class="h1 my-2">
 	<span
-		class="bg-gradient-to-tr from-secondary-600 via-primary-500 to-tertiary-400 box-decoration-clone bg-clip-text text-transparent"
+		class="bg-gradient-to-tr from-secondary-500 via-tertiary-400 to-primary-500 box-decoration-clone bg-clip-text text-transparent"
 	>
 		My Projects' library
 	</span>
