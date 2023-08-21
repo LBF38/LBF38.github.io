@@ -11,8 +11,8 @@
 
 <p>I'm Mathis URIEN, a software engineer based in France</p>
 <p>
-	You can explore my <a href="/projects">IT's projects</a>, which are my main field of interest. I
-	also enjoy practicing sports, taking pictures, and even doing some magic tricks !
+	You can explore my <a href="/projects" class="anchor">IT's projects</a>, which are my main field
+	of interest. I also enjoy practicing sports, taking pictures, and even doing some magic tricks !
 </p>
 
 <em>This site is still under construction ...</em>

@@ -17,20 +17,20 @@
 
 <Toast position="tr" />
 
-<AppShell slotPageContent="overflow-x-hidden">
+<AppShell>
 	<svelte:fragment slot="header">
 		<Navigation />
 	</svelte:fragment>
 	{#key data.url}
 		<div
-			class="container mx-auto h-full max-h-full min-h-fit p-6"
-			in:fade={{ delay: 250 }}
-			out:blur={{ duration: 200 }}
+			class="container mx-auto h-full p-6"
+			in:fade={{ delay: 400 }}
+			out:blur={{ duration: 300 }}
 		>
 			{#if visible && data.url !== '/'}
 				<aside class="alert variant-ghost">
 					<!-- Icon -->
-					<div><Icon icon="emojione-v1:construction" /></div>
+					<div><Icon icon="emojione-v1:construction" style="font-size: xx-large;" /></div>
 					<!-- Message -->
 					<div class="alert-message">
 						<h3 class="h3">Under construction</h3>
@@ -41,15 +41,38 @@
 					</div>
 					<!-- Actions -->
 					<div class="alert-actions">
-						<button type="button" class="btn" on:click={() => (visible = !visible)}
-							>Dismiss</button
+						<button
+							type="button"
+							class="btn variant-ghost-warning"
+							on:click={() => (visible = !visible)}
 						>
+							Dismiss
+						</button>
 					</div>
 				</aside>
 			{/if}
 			<slot />
 		</div>
 	{/key}
+	<svelte:fragment slot="pageFooter">
+		{#key data.url}
+			{#if data.url !== '/'}
+				<!-- <a title="Web Analytics" href="https://clicky.com/101423247">
+					<img
+						alt="Clicky"
+						src="//static.getclicky.com/media/links/badge.gif"
+						style="border: 0;"
+					/>
+				</a> -->
+				<span class="m-2 flex items-center justify-center gap-1">
+					Built with <Icon icon="octicon:heart-16" style="color: deeppink" /> by
+					<a href="https://github.com/LBF38" target="_blank" class="anchor">LBF38</a>
+					using
+					<a href="https://skeleton.dev" target="_blank" class="anchor">Skeleton</a>
+				</span>
+			{/if}
+		{/key}
+	</svelte:fragment>
 </AppShell>
 
 <!-- <style>

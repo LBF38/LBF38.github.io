@@ -6,7 +6,7 @@
 	}
 </script>
 
-<div class="container mx-auto flex h-full flex-col items-center justify-evenly p-6">
+<div class="mx-auto flex h-full flex-col items-center justify-between overflow-x-hidden p-6">
 	<h1 class="h1 text-9xl">
 		<span
 			class="bg-gradient-to-br from-primary-800 via-tertiary-500 to-secondary-900 box-decoration-clone bg-clip-text text-transparent"
