@@ -3,21 +3,20 @@
 	import { blur, fade } from 'svelte/transition';
 	// Most of your app wide CSS should be put in this file
 	import { page } from '$app/stores';
-	import Icon from '@iconify/svelte';
-	import '../app.pcss';
-	import { ModeWatcher } from 'mode-watcher';
 	import * as Alert from '$lib/components/ui/alert';
 	import { Button } from '$lib/components/ui/button';
-	import { Cross } from 'lucide-svelte';
+	import Icon from '@iconify/svelte';
+	import { ModeWatcher } from 'mode-watcher';
+	import '../app.pcss';
 
 	let visible = true;
 </script>
 
 <ModeWatcher />
-<header>
-	<Navigation />
-</header>
 {#key $page.url.pathname}
+	<header>
+		<Navigation />
+	</header>
 	<main
 		class="container mx-auto h-full p-6"
 		in:fade={{ delay: 400 }}
@@ -44,21 +43,22 @@
 				</Button>
 			</Alert.Root>
 		{/if}
-		<slot />
+		<body>
+			<slot />
+		</body>
 	</main>
-{/key}
-
-<slot />
-
-<footer>
-	{#key $page.url.pathname}
+	<footer class="mt-auto">
 		{#if $page.url.pathname !== '/'}
 			<span class="m-2 flex items-center justify-center gap-1">
 				Built with <Icon icon="octicon:heart-16" style="color: deeppink" /> by
-				<a href="https://github.com/LBF38" target="_blank" class="anchor">LBF38</a>
+				<Button href="https://github.com/LBF38" target="_blank" variant="link" class="p-0">
+					LBF38
+				</Button>
 				using
-				<a href="https://skeleton.dev" target="_blank" class="anchor">Skeleton</a>
+				<Button href="https://shadcn-svelte.com" target="_blank" variant="link" class="p-0">
+					shadcn/svelte
+				</Button>
 			</span>
 		{/if}
-	{/key}
-</footer>
+	</footer>
+{/key}
