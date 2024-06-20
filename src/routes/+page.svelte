@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { typographyVariants } from '$lib/components/typography';
+	import Typography from '$lib/components/typography/Typography.svelte';
 	import { Button } from '$lib/components/ui/button';
+	import { cn } from '$lib/utils';
 
 	async function handleMore() {
 		await goto('/projects');
@@ -8,19 +11,19 @@
 </script>
 
 <div class="mx-auto flex h-full flex-col items-center justify-between overflow-x-hidden p-6">
-	<h1 class="h1 text-9xl">
+	<Typography variant="h1">
 		<span
-			class="bg-gradient-to-br from-blue-800 via-emerald-700 to-violet-500 box-decoration-clone bg-clip-text text-transparent"
+			class="bg-gradient-to-br from-blue-800 via-emerald-700 to-violet-500 box-decoration-clone bg-clip-text text-9xl text-transparent"
 		>
 			Welcome !
 		</span>
-	</h1>
-	<h1 class="h1 m-4 text-8xl">
+	</Typography>
+	<Typography variant="h1" class="m-4 !text-8xl">
 		<span
-			class="bg-gradient-to-bl from-red-400 via-blue-500 to-red-600 box-decoration-clone bg-clip-text text-transparent"
+			class="bg-gradient-to-bl from-red-400 via-blue-500 to-red-600 box-decoration-clone bg-clip-text text-center text-transparent"
 		>
-			I'm Mathis, a passionnate Software Engineer !
+			I'm Mathis,<br /> a passionate Software Engineer !
 		</span>
-	</h1>
+	</Typography>
 	<Button variant="outline" on:click={handleMore}>More</Button>
 </div>
