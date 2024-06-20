@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
+	import LightSwitch from './LightSwitch.svelte';
 	import Logo from './Logo.svelte';
+	import { Button } from './ui/button';
 	let routes = [
 		{
 			route: '/',
@@ -29,22 +31,22 @@
 		}}
 		class="w-1/4"
 	>
-		<Logo svgClass="variant-ghost-surface fill-surface-400" />
+		<Logo svgClass="bg-secondary" />
 	</button>
 	<ul class=" flex w-1/2 grow flex-row justify-evenly p-2">
 		{#each routes as route}
 			<li>
-				<a
+				<Button
 					href={route.route}
-					class="btn {$page.url.pathname == route.route
-						? 'variant-filled-primary'
-						: 'variant-soft hover:variant-ghost-primary'}"
+					variant={$page.url.pathname == route.route ? 'secondary' : 'link'}
 					data-sveltekit-preload-data="hover"
 				>
 					{route.name}
-				</a>
+				</Button>
 			</li>
 		{/each}
 	</ul>
-	<div class="w-1/4">Toggle dark mode</div>
+	<div class="w-1/4">
+		<LightSwitch />
+	</div>
 </nav>

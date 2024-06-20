@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let svgClass = 'variant-ghost';
+	export let svgClass = 'bg-secondary';
 </script>
 
 <svg width="429" height="72.293" viewBox="0 0 370 62.35" class="rounded p-2 {svgClass}">
