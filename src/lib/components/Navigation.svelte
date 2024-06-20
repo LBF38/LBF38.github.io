@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { LightSwitch } from '@skeletonlabs/skeleton';
-	import Logo from './Logo.svelte';
 	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
+	import Logo from './Logo.svelte';
 	let routes = [
 		{
 			route: '/',
@@ -47,7 +46,5 @@
 			</li>
 		{/each}
 	</ul>
-	<div class="w-1/4">
-		<LightSwitch />
-	</div>
+	<div class="w-1/4">Toggle dark mode</div>
 </nav>
