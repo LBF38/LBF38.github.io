@@ -8,6 +8,10 @@
 	export { className as class };
 </script>
 
-<svelte:element this={variant} class={cn(typographyVariants({ variant, affects, className }))}>
+<svelte:element
+	this={variant}
+	class={cn(typographyVariants({ variant, affects, className }))}
+	{...$$restProps}
+>
 	<slot />
 </svelte:element>

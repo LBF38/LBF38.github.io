@@ -43,9 +43,7 @@
 				</Button>
 			</Alert.Root>
 		{/if}
-		<body>
-			<slot />
-		</body>
+		<slot />
 	</main>
 	<footer class="mt-auto">
 		{#if $page.url.pathname !== '/'}
@@ -62,3 +60,6 @@
 		{/if}
 	</footer>
 {/key}
+<!-- <a title="Google Analytics Alternative" href="https://clicky.com/101423247">
+	<img alt="Clicky" src="//static.getclicky.com/media/links/badge.gif" border="0" />
+</a> -->
