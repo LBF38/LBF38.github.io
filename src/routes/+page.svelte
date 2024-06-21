@@ -1,22 +1,20 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
+	import { route } from '$lib/ROUTES';
 	import { H1, H2 } from '$lib/components/typography/individual';
 	import { Button } from '$lib/components/ui/button';
-
-	async function handleMore() {
-		await goto('/projects');
-	}
 </script>
 
-<div class="mx-auto my-6 flex h-full flex-col items-center justify-between overflow-x-hidden p-6">
+<div
+	class="mx-auto my-auto flex min-h-[70vh] flex-col items-center justify-center overflow-x-hidden p-6"
+>
 	<H1>
 		<span
-			class="block bg-gradient-to-br from-blue-800 via-emerald-700 to-violet-500 box-decoration-clone bg-clip-text text-9xl text-transparent"
+			class="block bg-gradient-to-br from-blue-800 via-emerald-700 to-violet-500 box-decoration-clone bg-clip-text text-5xl text-transparent sm:text-9xl"
 		>
 			Welcome !
 		</span>
 	</H1>
-	<H2 class="m-4 w-full border-none !text-8xl">
+	<H2 class="m-4 w-full border-none text-4xl sm:!text-8xl">
 		<span
 			class="block w-full bg-gradient-to-bl from-red-400 via-blue-500 to-red-600 box-decoration-clone bg-clip-text text-center leading-snug text-transparent"
 		>
@@ -25,7 +23,7 @@
 	</H2>
 	<Button
 		variant="outline"
-		on:click={handleMore}
+		href={route('/projects')}
 		class="fixed inset-x-0 bottom-0 m-6 mx-auto w-fit"
 	>
 		More

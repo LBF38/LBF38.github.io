@@ -3,14 +3,13 @@
 	import { blur, fade } from 'svelte/transition';
 	// Most of your app wide CSS should be put in this file
 	import { page } from '$app/stores';
+	import { route } from '$lib/ROUTES';
 	import * as Alert from '$lib/components/ui/alert';
 	import { Button } from '$lib/components/ui/button';
 	import Icon from '@iconify/svelte';
 	import { ModeWatcher } from 'mode-watcher';
-	import '../app.pcss';
 	import { Toaster } from 'svelte-sonner';
-	import { route } from '$lib/ROUTES';
-	import AccordionContent from '$lib/components/ui/accordion/accordion-content.svelte';
+	import '../app.pcss';
 
 	let visible = true;
 </script>
@@ -20,7 +19,7 @@
 {#key $page.url.pathname}
 	<Navigation />
 	<main
-		class="container mx-auto h-full p-6"
+		class="container mx-auto my-auto p-6"
 		in:fade={{ delay: 400 }}
 		out:blur={{ duration: 300 }}
 	>
