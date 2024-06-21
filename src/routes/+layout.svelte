@@ -8,22 +8,22 @@
 	import Icon from '@iconify/svelte';
 	import { ModeWatcher } from 'mode-watcher';
 	import '../app.pcss';
+	import { Toaster } from 'svelte-sonner';
 
 	let visible = true;
 </script>
 
+<Toaster richColors />
 <ModeWatcher />
 {#key $page.url.pathname}
-	<header>
-		<Navigation />
-	</header>
+	<Navigation />
 	<main
 		class="container mx-auto h-full p-6"
 		in:fade={{ delay: 400 }}
 		out:blur={{ duration: 300 }}
 	>
 		{#if visible && $page.url.pathname !== '/'}
-			<Alert.Root class="relative mx-auto w-fit my-6">
+			<Alert.Root class="relative mx-auto my-6 w-fit">
 				<Icon icon="emojione-v1:construction" class="text-xl" />
 				<Alert.Title level="h1">Under construction</Alert.Title>
 				<Alert.Description>

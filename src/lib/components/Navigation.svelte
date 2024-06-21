@@ -24,7 +24,9 @@
 	];
 </script>
 
-<nav class="flex flex-row content-center items-center justify-center space-x-10 p-4">
+<nav
+	class="sticky top-0 z-50 flex flex-row content-center items-center justify-center space-x-10 bg-opacity-70 p-4 backdrop-blur-md"
+>
 	<button
 		on:click={async () => {
 			await goto('/');
