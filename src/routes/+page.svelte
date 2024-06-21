@@ -11,14 +11,14 @@
 <div class="mx-auto my-6 flex h-full flex-col items-center justify-between overflow-x-hidden p-6">
 	<H1>
 		<span
-			class="bg-gradient-to-br from-blue-800 via-emerald-700 to-violet-500 box-decoration-clone bg-clip-text text-9xl text-transparent"
+			class="block bg-gradient-to-br from-blue-800 via-emerald-700 to-violet-500 box-decoration-clone bg-clip-text text-9xl text-transparent"
 		>
 			Welcome !
 		</span>
 	</H1>
-	<H2 class="m-4 border-none !text-8xl">
+	<H2 class="m-4 w-full border-none !text-8xl">
 		<span
-			class="bg-gradient-to-bl from-red-400 via-blue-500 to-red-600 box-decoration-clone bg-clip-text text-center text-transparent"
+			class="block w-full bg-gradient-to-bl from-red-400 via-blue-500 to-red-600 box-decoration-clone bg-clip-text text-center leading-snug text-transparent"
 		>
 			I'm Mathis, a passionate Software Engineer !
 		</span>
