@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ProjectCard from '$lib/components/Project_card.svelte';
+	import { H1, P } from '$lib/components/typography/individual';
 	const GH_projects = [
 		'https://github.com/LBF38/obsidian-syncthing-integration',
 		'https://github.com/LBF38/Duel-invaders',
@@ -14,13 +15,16 @@
 	];
 </script>
 
-<h1 class="h1 my-2">
+<H1 class="my-2">
 	<span
-		class="from-secondary-500 via-tertiary-400 to-primary-500 bg-gradient-to-tr box-decoration-clone bg-clip-text text-transparent"
+		class="bg-gradient-to-tr from-blue-500 via-purple-400 to-violet-500 box-decoration-clone bg-clip-text text-transparent"
 	>
 		My Projects' library
 	</span>
-</h1>
+</H1>
+
+<P>Here are some of the projects I've worked on.</P>
+
 <div class="m-4 grid w-full grid-cols-1 items-center gap-5 sm:grid-cols-2 lg:grid-cols-3">
 	{#each GH_projects as project_url}
 		<ProjectCard gh_url={project_url} />
