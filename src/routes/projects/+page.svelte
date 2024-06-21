@@ -16,12 +16,12 @@
 
 <h1 class="h1 my-2">
 	<span
-		class="bg-gradient-to-tr from-secondary-500 via-tertiary-400 to-primary-500 box-decoration-clone bg-clip-text text-transparent"
+		class="from-secondary-500 via-tertiary-400 to-primary-500 bg-gradient-to-tr box-decoration-clone bg-clip-text text-transparent"
 	>
 		My Projects' library
 	</span>
 </h1>
-<div class="m-4 grid w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
+<div class="m-4 grid w-full grid-cols-1 items-center gap-5 sm:grid-cols-2 md:grid-cols-3">
 	{#each GH_projects as project_url}
 		<ProjectCard gh_url={project_url} />
 	{/each}
