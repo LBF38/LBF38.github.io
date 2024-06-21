@@ -23,6 +23,6 @@
 </h1>
 <div class="m-4 grid w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
 	{#each GH_projects as project_url}
-		<ProjectCard GH_URL={project_url} />
+		<ProjectCard gh_url={project_url} />
 	{/each}
 </div>

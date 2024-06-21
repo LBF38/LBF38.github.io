@@ -9,6 +9,8 @@
 	import { ModeWatcher } from 'mode-watcher';
 	import '../app.pcss';
 	import { Toaster } from 'svelte-sonner';
+	import { route } from '$lib/ROUTES';
+	import AccordionContent from '$lib/components/ui/accordion/accordion-content.svelte';
 
 	let visible = true;
 </script>
@@ -49,11 +51,16 @@
 		{#if $page.url.pathname !== '/'}
 			<span class="m-2 flex items-center justify-center gap-1">
 				Built with <Icon icon="octicon:heart-16" style="color: deeppink" /> by
-				<Button href="https://github.com/LBF38" target="_blank" variant="link" class="p-0">
+				<Button
+					href={route('gh_profile', { username: 'LBF38' })}
+					target="_blank"
+					variant="link"
+					class="p-0"
+				>
 					LBF38
 				</Button>
 				using
-				<Button href="https://shadcn-svelte.com" target="_blank" variant="link" class="p-0">
+				<Button href={route('shadcn_svelte')} target="_blank" variant="link" class="p-0">
 					shadcn/svelte
 				</Button>
 			</span>

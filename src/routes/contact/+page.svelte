@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { route } from '$lib/ROUTES';
 	import { typographyVariants } from '$lib/components/typography';
 	import { H1, P } from '$lib/components/typography/individual';
 	import { Button } from '$lib/components/ui/button';
@@ -72,14 +73,18 @@
 		<!-- Optional -->
 		<!-- If you want form to redirect to a specific url after submission -->
 		<!-- TODO: change it to use the typesafe router for sveltekit -->
-		<Input type="hidden" name="redirectTo" value={$page.url.origin + '/contact/success'} />
+		<Input
+			type="hidden"
+			name="redirectTo"
+			value={$page.url.origin + route('/contact/success')}
+		/>
 		<!-- Optional -->
 		<Button class="float-right my-4 max-w-xs" variant="outline" type="submit" value="Submit">
 			Submit
 		</Button>
 		<P>
 			<em>
-				Powered by <Button href="https://staticforms.xyz" variant="link" class="p-0">
+				Powered by <Button href={route('staticforms')} variant="link" class="p-0">
 					StaticForms
 				</Button>
 			</em>

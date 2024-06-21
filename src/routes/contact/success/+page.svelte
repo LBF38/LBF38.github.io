@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { route } from '$lib/ROUTES';
 	import { H1, P } from '$lib/components/typography/individual';
 	import { Button } from '$lib/components/ui/button';
 </script>
@@ -12,4 +13,4 @@
 </H1>
 
 <P>I'll get back to you as soon as possible, have a great day !</P>
-<Button variant="secondary" class="my-4" href="/projects">Back to projects</Button>
+<Button variant="secondary" class="my-4" href={route('/projects')}>Back to projects</Button>

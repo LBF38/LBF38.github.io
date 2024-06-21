@@ -2,7 +2,7 @@
 	import { Octokit } from '@octokit/rest';
 	import Icon from '@iconify/svelte';
 	import GH_language_colors from '../assets/gh_language_colors.json';
-	export let GH_URL: string = 'https://github.com/LBF38/obsidian-syncthing-integration';
+	export let gh_url: string = 'https://github.com/LBF38/obsidian-syncthing-integration';
 
 	// Create a new Octokit instance
 	const octokit = new Octokit();
@@ -57,10 +57,10 @@
 	}
 </script>
 
-{#await getRepoInformation(GH_URL)}
+{#await getRepoInformation(gh_url)}
 	<div class="placeholder" />
 {:then data}
-	<a href={GH_URL} target="_blank" class="card h-fit w-fit">
+	<a href={gh_url} target="_blank" class="card h-fit w-fit">
 		<header class="card-header flex flex-row items-center justify-between">
 			<div class="flex flex-row">
 				<Icon icon="devicon:github" class="mx-2" height="24" />
@@ -92,6 +92,6 @@
 		<section class="p-4">
 			<p>{error.message}</p>
 		</section>
-		<footer class="card-footer">URL called : {GH_URL}</footer>
+		<footer class="card-footer">URL called : {gh_url}</footer>
 	</div>
 {/await}

@@ -1,24 +1,25 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
+	import { route } from '$lib/ROUTES';
 	import LightSwitch from './LightSwitch.svelte';
 	import Logo from './Logo.svelte';
 	import { Button } from './ui/button';
 	let routes = [
 		{
-			route: '/',
+			route: route('/'),
 			name: 'Home'
 		},
 		{
-			route: '/projects',
+			route: route('/projects'),
 			name: 'Projects'
 		},
 		{
-			route: '/about',
+			route: route('/about'),
 			name: 'About'
 		},
 		{
-			route: '/contact',
+			route: route('/contact'),
 			name: 'Contact'
 		}
 	];
