@@ -58,10 +58,17 @@ const config: Config = {
 			},
 			fontFamily: {
 				sans: [...fontFamily.sans]
+			},
+			animation: {
+				shine: 'shine 1s ease-in'
+			},
+			keyframes: {
+				shine: {
+					'100%': { left: '125%' }
+				}
 			}
 		}
 	}
 };
 
 export default config;
-

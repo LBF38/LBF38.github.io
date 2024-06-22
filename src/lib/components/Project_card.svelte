@@ -84,13 +84,17 @@
 	</Card.Root>
 {:then data}
 	<a href={gh_url} target="_blank">
-		<Card.Root>
+		<Card.Root
+			class="group relative transform overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-accent"
+		>
 			<Card.Header>
 				<Card.Title class="flex flex-row">
 					<Icon icon="devicon:github" class="mr-4 rounded bg-white" height="24" />
 					{data.name}
 					{#if data.archived}
-						<Badge class="ml-auto w-fit" variant="outline">archived</Badge>
+						<Badge class="ml-auto w-fit bg-[#d29922] bg-opacity-35" variant="outline"
+							>archived</Badge
+						>
 					{/if}
 				</Card.Title>
 				<Card.Description class="break-words">{data.description}</Card.Description>
@@ -112,6 +116,9 @@
 					{data.language}
 				</div>
 			</Card.Footer>
+			<div
+				class="z-5 group-hover:animate-shine absolute -inset-full top-0 hidden h-full w-1/4 -skew-x-12 transform bg-gradient-to-r from-transparent to-white opacity-15 backdrop-blur-lg group-hover:block"
+			/>
 		</Card.Root>
 	</a>
 {:catch error}
