@@ -21,4 +21,6 @@
 	and even doing some magic tricks !
 </P>
 
-<em>This site is still under construction ...</em>
+<P>
+	<em>This site is still under construction ...</em>
+</P>

@@ -11,7 +11,7 @@
 	export let gh_url: string = 'https://github.com/LBF38/obsidian-syncthing-integration';
 	// Create a new Octokit instance
 	const octokit = new Octokit({
-		auth: dev ? env.PUBLIC_GH_TOKEN : undefined
+		auth: env.PUBLIC_GH_TOKEN
 	});
 
 	function getGHcolor(language: string): string {
@@ -92,9 +92,7 @@
 					<Icon icon="devicon:github" class="mr-4 rounded bg-white" height="24" />
 					{data.name}
 					{#if data.archived}
-						<Badge class="ml-auto w-fit bg-[#d29922] bg-opacity-35" variant="outline"
-							>archived</Badge
-						>
+						<Badge class="ml-auto w-fit" variant="outline">archived</Badge>
 					{/if}
 				</Card.Title>
 				<Card.Description class="break-words">{data.description}</Card.Description>
@@ -117,7 +115,7 @@
 				</div>
 			</Card.Footer>
 			<div
-				class="z-5 group-hover:animate-shine absolute -inset-full top-0 hidden h-full w-1/4 -skew-x-12 transform bg-gradient-to-r from-transparent to-white opacity-15 backdrop-blur-lg group-hover:block"
+				class="z-5 absolute -inset-full top-0 hidden h-full w-1/4 -skew-x-12 transform bg-gradient-to-r from-transparent to-white opacity-15 backdrop-blur-lg group-hover:block group-hover:animate-shine"
 			/>
 		</Card.Root>
 	</a>

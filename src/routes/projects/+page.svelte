@@ -25,7 +25,7 @@
 
 <P>Here are some of the projects I've worked on.</P>
 
-<div class="m-4 grid w-full grid-cols-1 items-center gap-5 sm:grid-cols-2 lg:grid-cols-3">
+<div class="my-4 grid w-full grid-cols-1 items-center gap-5 sm:grid-cols-2 lg:grid-cols-3">
 	{#each GH_projects as project_url}
 		<ProjectCard gh_url={project_url} />
 	{/each}

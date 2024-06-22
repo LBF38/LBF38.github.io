@@ -20,11 +20,11 @@
 	<Navigation />
 	<main
 		class="container mx-auto my-auto p-6"
-		in:fade={{ delay: 400 }}
-		out:blur={{ duration: 300 }}
+		in:fade={{ delay: 500, duration: 500 }}
+		out:blur={{ duration: 500 }}
 	>
-		{#if visible && $page.url.pathname !== '/'}
-			<Alert.Root class="relative mx-auto my-6 w-fit">
+		{#if visible && $page.url.pathname !== route('/')}
+			<Alert.Root class="relative mx-auto mb-2 w-fit">
 				<Icon icon="emojione-v1:construction" class="text-xl" />
 				<Alert.Title level="h1">Under construction</Alert.Title>
 				<Alert.Description>
@@ -47,7 +47,7 @@
 		<slot />
 	</main>
 	<footer class="mt-auto">
-		{#if $page.url.pathname !== '/'}
+		{#if $page.url.pathname !== route('/')}
 			<span class="m-2 flex items-center justify-center gap-1">
 				Built with <Icon icon="octicon:heart-16" style="color: deeppink" /> by
 				<Button

@@ -5,8 +5,17 @@
 </script>
 
 <div
-	class="mx-auto my-auto flex min-h-[70vh] flex-col items-center justify-center overflow-x-hidden p-6"
+	class="fixed inset-0 z-10 mx-auto my-auto flex min-h-[75vh] w-full flex-col items-center justify-center overflow-hidden"
 >
+	<!-- Big, blurry circles positioned behind the title -->
+	<!-- <div class="radial-bg absolute left-0 top-0 z-0 h-96 w-96 rounded-full opacity-25 blur-3xl" /> -->
+	<div
+		class="radial-bg absolute -bottom-40 -right-20 -z-20 h-5/6 w-5/6 rounded-full opacity-25 blur-3xl sm:-bottom-64 md:-right-80"
+	/>
+	<!-- <div
+		class="absolute right-1/4 top-1/3 z-0 h-80 w-80 rounded-full bg-purple-500 opacity-50 blur-3xl"
+	/>  -->
+
 	<H1>
 		<span
 			class="block bg-gradient-to-br from-blue-800 via-emerald-700 to-violet-500 box-decoration-clone bg-clip-text text-5xl text-transparent sm:text-9xl"
@@ -29,3 +38,9 @@
 		More
 	</Button>
 </div>
+
+<style>
+	.radial-bg {
+		background-image: radial-gradient(circle, blue, purple);
+	}
+</style>

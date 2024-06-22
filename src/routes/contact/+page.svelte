@@ -42,27 +42,31 @@
 		<!-- Required -->
 		<Label for="name">
 			<span>Name</span>
-			<Input type="text" name="name" required />
+			<Input type="text" name="name" placeholder="Your name" required />
 		</Label>
 		<!-- Optional -->
 		<Label for="subject">
 			<span>Subject</span>
-			<Input type="text" name="subject" />
+			<Input type="text" name="subject" placeholder="A topic..." />
 		</Label>
 		<!-- Optional -->
 		<Label for="email">
 			<span>Email</span>
-			<Input type="email" name="email" required />
+			<Input type="email" name="email" placeholder="Your email" required />
 		</Label>
 		<!-- Optional -->
 		<Label for="phone">
 			<span>Phone</span>
-			<Input type="tel" name="phone" />
+			<Input type="tel" name="phone" placeholder="Your phone" />
 		</Label>
 		<!-- Optional -->
 		<Label for="message">
 			<span>Message</span>
-			<Textarea class="textarea h-52" name="message" />
+			<Textarea
+				class="textarea h-52"
+				name="message"
+				placeholder="A message you'd like to send me..."
+			/>
 		</Label>
 		<!-- Optional -->
 		<!-- If you want replyTo to be set to specific email -->
