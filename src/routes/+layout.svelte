@@ -1,89 +1,71 @@
 <script lang="ts">
 	import Navigation from '$lib/components/Navigation.svelte';
-	// The ordering of these imports is critical to your app working properly
-	// import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
-	import '../theme.postcss';
-	// If you have source.organizeImports set to true in VSCode, then it will auto change this ordering
-	import '@skeletonlabs/skeleton/styles/skeleton.css';
-	// Most of your app wide CSS should be put in this file
-	import '../app.postcss';
-
-	import { AppShell, Toast } from '@skeletonlabs/skeleton';
 	import { blur, fade } from 'svelte/transition';
+	// Most of your app wide CSS should be put in this file
+	import { page } from '$app/stores';
+	import { route } from '$lib/ROUTES';
+	import * as Alert from '$lib/components/ui/alert';
+	import { Button } from '$lib/components/ui/button';
 	import Icon from '@iconify/svelte';
-	export let data;
+	import { ModeWatcher } from 'mode-watcher';
+	import { Toaster } from 'svelte-sonner';
+	import '../app.pcss';
+
 	let visible = true;
 </script>
 
-<Toast position="tr" />
-
-<AppShell>
-	<svelte:fragment slot="header">
-		<Navigation />
-	</svelte:fragment>
-	{#key data.url}
-		<div
-			class="container mx-auto h-full p-6"
-			in:fade={{ delay: 400 }}
-			out:blur={{ duration: 300 }}
-		>
-			{#if visible && data.url !== '/'}
-				<aside class="alert variant-ghost">
-					<!-- Icon -->
-					<div><Icon icon="emojione-v1:construction" style="font-size: xx-large;" /></div>
-					<!-- Message -->
-					<div class="alert-message">
-						<h3 class="h3">Under construction</h3>
-						<p>
-							This site is still under construction. Expect some pages to not work
-							correctly.
-						</p>
-					</div>
-					<!-- Actions -->
-					<div class="alert-actions">
-						<button
-							type="button"
-							class="btn variant-ghost-warning"
-							on:click={() => (visible = !visible)}
-						>
-							Dismiss
-						</button>
-					</div>
-				</aside>
-			{/if}
-			<slot />
-		</div>
-	{/key}
-	<svelte:fragment slot="pageFooter">
-		{#key data.url}
-			{#if data.url !== '/'}
-				<!-- <a title="Web Analytics" href="https://clicky.com/101423247">
-					<img
-						alt="Clicky"
-						src="//static.getclicky.com/media/links/badge.gif"
-						style="border: 0;"
-					/>
-				</a> -->
-				<span class="m-2 flex items-center justify-center gap-1">
-					Built with <Icon icon="octicon:heart-16" style="color: deeppink" /> by
-					<a href="https://github.com/LBF38" target="_blank" class="anchor">LBF38</a>
-					using
-					<a href="https://skeleton.dev" target="_blank" class="anchor">Skeleton</a>
-				</span>
-			{/if}
-		{/key}
-	</svelte:fragment>
-</AppShell>
-
-<!-- <style>
-	::-webkit-scrollbar-thumb {
-		opacity: 0;
-		transition: opacity 0.5s ease-in-out;
-		z-index: 10;
-	}
-
-	::-webkit-scrollbar-thumb:hover,
-	::-webkit-scrollbar-thumb:active {
-		opacity: 1;
-	}
-</style> -->
+<Toaster richColors />
+<ModeWatcher />
+{#key $page.url.pathname}
+	<Navigation />
+	<main
+		class="container mx-auto my-auto p-6"
+		in:fade={{ delay: 400 }}
+		out:blur={{ duration: 300 }}
+	>
+		{#if visible && $page.url.pathname !== '/'}
+			<Alert.Root class="relative mx-auto my-6 w-fit">
+				<Icon icon="emojione-v1:construction" class="text-xl" />
+				<Alert.Title level="h1">Under construction</Alert.Title>
+				<Alert.Description>
+					<p>
+						This site is still under construction.
+						<br />
+						Expect some pages to not work correctly.
+					</p>
+				</Alert.Description>
+				<Button
+					variant="ghost"
+					size="sm"
+					class="absolute right-0 top-0 m-2"
+					on:click={() => (visible = !visible)}
+				>
+					<Icon icon="charm:cross" class="text-2xl" />
+				</Button>
+			</Alert.Root>
+		{/if}
+		<slot />
+	</main>
+	<footer class="mt-auto">
+		{#if $page.url.pathname !== '/'}
+			<span class="m-2 flex items-center justify-center gap-1">
+				Built with <Icon icon="octicon:heart-16" style="color: deeppink" /> by
+				<Button
+					href={route('gh_profile', { username: 'LBF38' })}
+					target="_blank"
+					variant="link"
+					class="p-0"
+				>
+					LBF38
+				</Button>
+				using
+				<Button href={route('shadcn_svelte')} target="_blank" variant="link" class="p-0">
+					shadcn/svelte
+				</Button>
+			</span>
+		{/if}
+	</footer>
+{/key}
+<!-- <a title="Google Analytics Alternative" href="https://clicky.com/101423247">
+	<img alt="Clicky" src="//static.getclicky.com/media/links/badge.gif" border="0" />
+</a> -->

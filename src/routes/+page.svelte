@@ -1,25 +1,31 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
-
-	async function handleMore() {
-		await goto('/projects');
-	}
+	import { route } from '$lib/ROUTES';
+	import { H1, H2 } from '$lib/components/typography/individual';
+	import { Button } from '$lib/components/ui/button';
 </script>
 
-<div class="mx-auto flex h-full flex-col items-center justify-between overflow-x-hidden p-6">
-	<h1 class="h1 text-9xl">
+<div
+	class="mx-auto my-auto flex min-h-[70vh] flex-col items-center justify-center overflow-x-hidden p-6"
+>
+	<H1>
 		<span
-			class="bg-gradient-to-br from-primary-800 via-tertiary-500 to-secondary-900 box-decoration-clone bg-clip-text text-transparent"
+			class="block bg-gradient-to-br from-blue-800 via-emerald-700 to-violet-500 box-decoration-clone bg-clip-text text-5xl text-transparent sm:text-9xl"
 		>
 			Welcome !
 		</span>
-	</h1>
-	<h1 class="h1 text-8xl">
+	</H1>
+	<H2 class="m-4 w-full border-none text-4xl sm:!text-8xl">
 		<span
-			class="bg-gradient-to-bl from-secondary-400 via-primary-400 to-tertiary-600 box-decoration-clone bg-clip-text text-transparent"
+			class="block w-full bg-gradient-to-bl from-red-400 via-blue-500 to-red-600 box-decoration-clone bg-clip-text text-center leading-snug text-transparent"
 		>
-			I'm Mathis, a passionnate Software Engineer !
+			I'm Mathis, a passionate Software Engineer !
 		</span>
-	</h1>
-	<button class="btn variant-outline-surface" on:click={handleMore}>More</button>
+	</H2>
+	<Button
+		variant="outline"
+		href={route('/projects')}
+		class="fixed inset-x-0 bottom-0 m-6 mx-auto w-fit"
+	>
+		More
+	</Button>
 </div>

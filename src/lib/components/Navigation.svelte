@@ -1,53 +1,66 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { LightSwitch } from '@skeletonlabs/skeleton';
-	import Logo from './Logo.svelte';
 	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
+	import { route } from '$lib/ROUTES';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+	import { Menu } from 'lucide-svelte';
+	import LightSwitch from './LightSwitch.svelte';
+	import Logo from './Logo.svelte';
+	import { Button } from './ui/button';
+
 	let routes = [
 		{
-			route: '/',
+			route: route('/'),
 			name: 'Home'
 		},
 		{
-			route: '/projects',
+			route: route('/projects'),
 			name: 'Projects'
 		},
 		{
-			route: '/about',
+			route: route('/about'),
 			name: 'About'
 		},
 		{
-			route: '/contact',
+			route: route('/contact'),
 			name: 'Contact'
 		}
 	];
 </script>
 
-<nav class="flex flex-row content-center items-center justify-center space-x-10 p-4">
-	<button
-		on:click={async () => {
-			await goto('/');
-		}}
-		class="w-1/4"
-	>
-		<Logo svgClass="variant-ghost-surface fill-surface-400" />
-	</button>
-	<ul class=" flex w-1/2 grow flex-row justify-evenly p-2">
+<nav
+	class="sticky top-0 z-50 flex flex-row content-center items-center justify-center space-x-10 bg-opacity-70 p-4 backdrop-blur-md"
+>
+	<a href={route('/')} class="mr-auto">
+		<Logo />
+	</a>
+
+	<ul class="mx-auto hidden grow flex-row justify-evenly p-2 md:visible md:flex">
 		{#each routes as route}
 			<li>
-				<a
+				<Button
 					href={route.route}
-					class="btn {$page.url.pathname == route.route
-						? 'variant-filled-primary'
-						: 'variant-soft hover:variant-ghost-primary'}"
+					variant={$page.url.pathname == route.route ? 'secondary' : 'link'}
 					data-sveltekit-preload-data="hover"
 				>
 					{route.name}
-				</a>
+				</Button>
 			</li>
 		{/each}
 	</ul>
-	<div class="w-1/4">
+
+	<div class="ml-auto flex w-fit gap-4">
+		<DropdownMenu.Root>
+			<DropdownMenu.Trigger class="md:hidden"><Menu /></DropdownMenu.Trigger>
+			<DropdownMenu.Content>
+				<DropdownMenu.Group>
+					{#each routes as route}
+						<DropdownMenu.Item href={route.route}>{route.name}</DropdownMenu.Item>
+					{/each}
+				</DropdownMenu.Group>
+			</DropdownMenu.Content>
+		</DropdownMenu.Root>
+
 		<LightSwitch />
 	</div>
 </nav>

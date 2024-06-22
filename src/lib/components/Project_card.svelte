@@ -1,11 +1,18 @@
 <script lang="ts">
-	import { Octokit } from '@octokit/rest';
+	import { env } from '$env/dynamic/public';
+	import { Badge } from '$lib/components/ui/badge';
+	import * as Card from '$lib/components/ui/card';
 	import Icon from '@iconify/svelte';
+	import { Octokit } from '@octokit/rest';
 	import GH_language_colors from '../assets/gh_language_colors.json';
-	export let GH_URL: string = 'https://github.com/LBF38/obsidian-syncthing-integration';
+	import { Skeleton } from './ui/skeleton';
+	import { dev } from '$app/environment';
 
+	export let gh_url: string = 'https://github.com/LBF38/obsidian-syncthing-integration';
 	// Create a new Octokit instance
-	const octokit = new Octokit();
+	const octokit = new Octokit({
+		auth: dev ? env.PUBLIC_GH_TOKEN : undefined
+	});
 
 	function getGHcolor(language: string): string {
 		return GH_language_colors[language as keyof typeof GH_language_colors]?.color || '#00000';
@@ -57,41 +64,74 @@
 	}
 </script>
 
-{#await getRepoInformation(GH_URL)}
-	<div class="placeholder" />
+{#await getRepoInformation(gh_url)}
+	<Card.Root>
+		<Card.Header>
+			<Card.Title class="mb-4">
+				<Skeleton class="h-[20px] w-full rounded-full" />
+			</Card.Title>
+			<Card.Description class="flex flex-col gap-4">
+				<Skeleton class="h-[20px] w-3/5" />
+				<Skeleton class="h-[20px] w-4/5" />
+				<Skeleton class="h-[20px] w-2/5" />
+			</Card.Description>
+		</Card.Header>
+		<Card.Footer class="my-auto flex flex-row items-center justify-evenly">
+			{#each Array.from({ length: 5 }) as _}
+				<Skeleton class="h-[20px] w-[20px]" />
+			{/each}
+		</Card.Footer>
+	</Card.Root>
 {:then data}
-	<a href={GH_URL} target="_blank" class="card h-fit w-fit">
-		<header class="card-header flex flex-row items-center justify-between">
-			<div class="flex flex-row">
-				<Icon icon="devicon:github" class="mx-2" height="24" />
-				{data.name}
-			</div>
-			{#if data.archived}
-				<span class="badge variant-ghost-surface">archived</span>
-			{/if}
-		</header>
-		<section class="mx-2 p-4">{data.description}</section>
-		<footer class="card-footer flex flex-row items-center justify-evenly">
-			<Icon icon="octicon:star-24" class="mx-2" />
-			{data.stars}
-			<Icon icon="octicon:repo-forked-24" class="mx-2" />
-			{data.forks}
-			<Icon icon="octicon:issue-opened-24" class="mx-2 ml-6" />
-			{data.issues}
-			<Icon icon="octicon:git-pull-request-24" class="mx-2" />
-			{data.pulls}
-			<div class="ml-8 flex flex-row items-center justify-center">
-				<Icon icon="octicon:dot-fill-24" class="mx-2" color={data.language_color} />
-				{data.language}
-			</div>
-		</footer>
+	<a href={gh_url} target="_blank">
+		<Card.Root
+			class="group relative transform overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-accent"
+		>
+			<Card.Header>
+				<Card.Title class="flex flex-row">
+					<Icon icon="devicon:github" class="mr-4 rounded bg-white" height="24" />
+					{data.name}
+					{#if data.archived}
+						<Badge class="ml-auto w-fit bg-[#d29922] bg-opacity-35" variant="outline"
+							>archived</Badge
+						>
+					{/if}
+				</Card.Title>
+				<Card.Description class="break-words">{data.description}</Card.Description>
+			</Card.Header>
+			<!-- <Card.Content>
+				wip
+			</Card.Content> -->
+			<Card.Footer class="my-auto flex flex-row items-center justify-evenly">
+				<Icon icon="octicon:star-24" class="mx-2" />
+				{data.stars}
+				<Icon icon="octicon:repo-forked-24" class="mx-2" />
+				{data.forks}
+				<Icon icon="octicon:issue-opened-24" class="mx-2 ml-6" />
+				{data.issues}
+				<Icon icon="octicon:git-pull-request-24" class="mx-2" />
+				{data.pulls}
+				<div class="ml-8 flex flex-row items-center justify-center">
+					<Icon icon="octicon:dot-fill-24" class="mx-2" color={data.language_color} />
+					{data.language}
+				</div>
+			</Card.Footer>
+			<div
+				class="z-5 group-hover:animate-shine absolute -inset-full top-0 hidden h-full w-1/4 -skew-x-12 transform bg-gradient-to-r from-transparent to-white opacity-15 backdrop-blur-lg group-hover:block"
+			/>
+		</Card.Root>
 	</a>
 {:catch error}
-	<div class="card variant-outline-error">
-		<header class="card-header">Error</header>
-		<section class="p-4">
-			<p>{error.message}</p>
-		</section>
-		<footer class="card-footer">URL called : {GH_URL}</footer>
-	</div>
+	<Card.Root>
+		<Card.Header>
+			<Card.Title>Error</Card.Title>
+			<Card.Description>{error.message}</Card.Description>
+		</Card.Header>
+		<!-- <Card.Content>
+			<p>Card Content</p>
+		</Card.Content> -->
+		<Card.Footer>
+			<p>URL called: {gh_url}</p>
+		</Card.Footer>
+	</Card.Root>
 {/await}

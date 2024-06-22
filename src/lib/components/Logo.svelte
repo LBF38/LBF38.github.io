@@ -1,8 +1,13 @@
 <script lang="ts">
-	export let svgClass = 'variant-ghost';
+	export let svgClass = '';
 </script>
 
-<svg width="429" height="72.293" viewBox="0 0 370 62.35" class="rounded p-2 {svgClass}">
+<svg
+	width="429"
+	height="72.293"
+	viewBox="0 0 370 62.35"
+	class="rounded p-2 {svgClass} w-28 dark:fill-white"
+>
 	<g transform="translate(-18.182 -36.634) scale(1.37741)">
 		<path
 			xmlns="http://www.w3.org/2000/svg"
