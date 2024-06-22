@@ -1,5 +1,7 @@
 {
-	"prettier.documentSelectors": ["**/*.svelte"],
+	"prettier.documentSelectors": [
+		"**/*.svelte"
+	],
 	"tailwindCSS.classAttributes": [
 		"class",
 		"accent",
@@ -107,6 +109,15 @@
 		"zIndex",
 		".*Class"
 	],
-	"conventionalCommits.scopes": ["project", "config", "layout", "code", "ui"],
-	"svg.preview.background": "editor"
+	"conventionalCommits.scopes": [
+		"project",
+		"config",
+		"layout",
+		"code",
+		"ui"
+	],
+	"svg.preview.background": "editor",
+	"yaml.schemas": {
+		"https://json.schemastore.org/github-workflow.json": "file:///home/lbf38/projects/LBF38.github.io/.github/workflows/deploy.yml"
+	}
 }
