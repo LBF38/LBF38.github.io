@@ -1,17 +1,16 @@
 <script lang="ts">
-	import { env } from '$env/dynamic/public';
+	import { PUBLIC_GH_TOKEN } from '$env/static/public';
 	import { Badge } from '$lib/components/ui/badge';
 	import * as Card from '$lib/components/ui/card';
 	import Icon from '@iconify/svelte';
 	import { Octokit } from '@octokit/rest';
 	import GH_language_colors from '../assets/gh_language_colors.json';
 	import { Skeleton } from './ui/skeleton';
-	import { dev } from '$app/environment';
 
 	export let gh_url: string = 'https://github.com/LBF38/obsidian-syncthing-integration';
 	// Create a new Octokit instance
 	const octokit = new Octokit({
-		auth: env.PUBLIC_GH_TOKEN
+		auth: PUBLIC_GH_TOKEN
 	});
 
 	function getGHcolor(language: string): string {
