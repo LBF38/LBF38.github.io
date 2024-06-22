@@ -10,10 +10,6 @@
 
 	let routes = [
 		{
-			route: route('/'),
-			name: 'Home'
-		},
-		{
 			route: route('/projects'),
 			name: 'Projects'
 		},
