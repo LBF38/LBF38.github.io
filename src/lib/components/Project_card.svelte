@@ -2,6 +2,7 @@
 	import { PUBLIC_GH_TOKEN } from '$env/static/public';
 	import { Badge } from '$lib/components/ui/badge';
 	import * as Card from '$lib/components/ui/card';
+	import * as Collapsible from '$lib/components/ui/collapsible';
 	import Icon from '@iconify/svelte';
 	import { Octokit } from '@octokit/rest';
 	import GH_language_colors from '../assets/gh_language_colors.json';
@@ -82,10 +83,10 @@
 		</Card.Footer>
 	</Card.Root>
 {:then data}
-	<a href={gh_url} target="_blank">
-		<Card.Root
-			class="group relative transform overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-accent"
-		>
+	<Card.Root
+		class="group relative transform overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-accent"
+	>
+		<a href={gh_url} target="_blank">
 			<Card.Header>
 				<Card.Title class="flex flex-row">
 					<Icon icon="devicon:github" class="mr-4 rounded bg-white" height="24" />
@@ -96,28 +97,27 @@
 				</Card.Title>
 				<Card.Description class="break-words">{data.description}</Card.Description>
 			</Card.Header>
-			<!-- <Card.Content>
-				wip
-			</Card.Content> -->
-			<Card.Footer class="my-auto flex flex-row items-center justify-evenly">
-				<Icon icon="octicon:star-24" class="mx-2" />
-				{data.stars}
-				<Icon icon="octicon:repo-forked-24" class="mx-2" />
-				{data.forks}
-				<Icon icon="octicon:issue-opened-24" class="mx-2 ml-6" />
-				{data.issues}
-				<Icon icon="octicon:git-pull-request-24" class="mx-2" />
-				{data.pulls}
-				<div class="ml-8 flex flex-row items-center justify-center">
-					<Icon icon="octicon:dot-fill-24" class="mx-2" color={data.language_color} />
-					{data.language}
-				</div>
-			</Card.Footer>
-			<div
-				class="z-5 absolute -inset-full top-0 hidden h-full w-1/4 -skew-x-12 transform bg-gradient-to-r from-transparent to-white opacity-15 backdrop-blur-lg group-hover:block group-hover:animate-shine"
-			/>
-		</Card.Root>
-	</a>
+		</a>
+		<!-- TODO: make a link to an article related to the project and display a short description in the card content. -->
+		<!-- <Card.Content></Card.Content> -->
+		<Card.Footer class="my-auto flex flex-row items-center justify-evenly">
+			<Icon icon="octicon:star-24" class="mx-2 w-fit" />
+			{data.stars}
+			<Icon icon="octicon:repo-forked-24" class="mx-2 w-fit" />
+			{data.forks}
+			<Icon icon="octicon:issue-opened-24" class="mx-2 ml-6 w-fit" />
+			{data.issues}
+			<Icon icon="octicon:git-pull-request-24" class="mx-2 w-fit" />
+			{data.pulls}
+			<div class="ml-auto flex flex-row items-center justify-center">
+				<Icon icon="octicon:dot-fill-24" class="mr-2" color={data.language_color} />
+				{data.language}
+			</div>
+		</Card.Footer>
+		<div
+			class="z-5 absolute -inset-full top-0 hidden h-full w-1/4 -skew-x-12 transform bg-gradient-to-r from-transparent to-white opacity-15 backdrop-blur-lg group-hover:block group-hover:animate-shine"
+		/>
+	</Card.Root>
 {:catch error}
 	<Card.Root>
 		<Card.Header>
