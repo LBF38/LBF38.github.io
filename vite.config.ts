@@ -1,7 +1,7 @@
 import type { KIT_ROUTES } from '$lib/ROUTES';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { kitRoutes } from 'vite-plugin-kit-routes';
-import { defineConfig } from 'vitest/config';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [
@@ -19,8 +19,8 @@ export default defineConfig({
 				}
 			}
 		})
-	],
-	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}']
-	}
+	]
+	// test: {
+	// 	include: ['src/**/*.{test,spec}.{js,ts}']
+	// }
 });

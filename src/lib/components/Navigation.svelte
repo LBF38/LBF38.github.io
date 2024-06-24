@@ -45,7 +45,6 @@
 					description={route.description}
 					keywords={route.keywords}
 					canonical={$page.url.origin}
-					base={$page.url.origin}
 					openGraph={{
 						title: '{route.name} | {$page.url.hostname}',
 						description: route.description,
@@ -59,7 +58,6 @@
 					title="LBF38's Portfolio"
 					description="LBF38's personal portfolio showcasing his projects, blog, and more."
 					canonical={$page.url.origin}
-					base={$page.url.origin}
 					keywords="LBF38, portfolio, projects, about me, contact, blog, side projects, computer science"
 					openGraph={{
 						title: "LBF38's Portfolio",
