@@ -11,9 +11,26 @@
 	import { Toaster } from 'svelte-sonner';
 	import '../app.pcss';
 	import type { LayoutData } from './$types';
+	import { onMount } from 'svelte';
 
 	let visible = true;
 	export let data: LayoutData;
+
+	function handleScroll() {
+		const body = document.body;
+		body.classList.add('scroll-active');
+
+		// @ts-ignore
+		clearTimeout(body.scrollTimeout);
+		// @ts-ignore
+		body.scrollTimeout = setTimeout(() => {
+			body.classList.remove('scroll-active');
+		}, 300);
+	}
+
+	onMount(() => {
+		window.addEventListener('scroll', handleScroll);
+	});
 </script>
 
 <Toaster richColors />
@@ -54,7 +71,7 @@
 	<slot />
 {/if}
 {#if $page.url.pathname !== route('/')}
-	<footer class="mt-auto">
+	<footer class="mx-auto">
 		<span class="m-2 flex items-center justify-center gap-1">
 			Built with <Icon icon="octicon:heart-16" style="color: deeppink" /> by
 			<Button

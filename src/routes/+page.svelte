@@ -2,7 +2,6 @@
 	import { route } from '$lib/ROUTES';
 	import { H1, H2 } from '$lib/components/typography/individual';
 	import { Button } from '$lib/components/ui/button';
-	import { blur, fade } from 'svelte/transition';
 </script>
 
 <div
