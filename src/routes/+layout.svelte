@@ -8,10 +8,10 @@
 	import { Button } from '$lib/components/ui/button';
 	import Icon from '@iconify/svelte';
 	import { ModeWatcher } from 'mode-watcher';
+	import { onMount } from 'svelte';
 	import { Toaster } from 'svelte-sonner';
 	import '../app.pcss';
 	import type { LayoutData } from './$types';
-	import { onMount } from 'svelte';
 
 	let visible = true;
 	export let data: LayoutData;

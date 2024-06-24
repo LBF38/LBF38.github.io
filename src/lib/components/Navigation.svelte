@@ -1,25 +1,31 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { route } from '$lib/ROUTES';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { Menu } from 'lucide-svelte';
+	import SvelteSeo from 'svelte-seo';
 	import LightSwitch from './LightSwitch.svelte';
 	import Logo from './Logo.svelte';
 	import { Button } from './ui/button';
 
-	let routes = [
+	let routes: { pathname: string; name: string; description: string; keywords: string }[] = [
 		{
-			route: route('/projects'),
-			name: 'Projects'
+			pathname: route('/projects'),
+			name: 'Projects',
+			description: 'View my projects',
+			keywords: 'projects, portfolio, side projects, computer science'
 		},
 		{
-			route: route('/about'),
-			name: 'About'
+			pathname: route('/about'),
+			name: 'About',
+			description: 'Learn more about me',
+			keywords: 'about me, LBF38, computer science, software engineering'
 		},
 		{
-			route: route('/contact'),
-			name: 'Contact'
+			pathname: route('/contact'),
+			name: 'Contact',
+			description: 'Get in touch with me',
+			keywords: 'contact, email, social media, LBF38'
 		}
 	];
 </script>
@@ -33,10 +39,42 @@
 
 	<ul class="mx-auto hidden grow flex-row justify-evenly p-2 md:visible md:flex">
 		{#each routes as route}
+			{#if route.pathname === $page.url.pathname}
+				<SvelteSeo
+					title="{route.name} | {$page.url.hostname}"
+					description={route.description}
+					keywords={route.keywords}
+					canonical={$page.url.origin}
+					base={$page.url.origin}
+					openGraph={{
+						title: '{route.name} | {$page.url.hostname}',
+						description: route.description,
+						site_name: $page.url.hostname,
+						url: $page.url.origin,
+						type: 'website'
+					}}
+				/>
+			{:else}
+				<SvelteSeo
+					title="LBF38's Portfolio"
+					description="LBF38's personal portfolio showcasing his projects, blog, and more."
+					canonical={$page.url.origin}
+					base={$page.url.origin}
+					keywords="LBF38, portfolio, projects, about me, contact, blog, side projects, computer science"
+					openGraph={{
+						title: "LBF38's Portfolio",
+						description:
+							"LBF38's personal portfolio showcasing his projects, blog, and more.",
+						site_name: "LBF38's Portfolio",
+						url: $page.url.origin,
+						type: 'website'
+					}}
+				/>
+			{/if}
 			<li>
 				<Button
-					href={route.route}
-					variant={$page.url.pathname == route.route ? 'secondary' : 'link'}
+					href={route.pathname}
+					variant={$page.url.pathname == route.pathname ? 'secondary' : 'link'}
 					data-sveltekit-preload-data="hover"
 				>
 					{route.name}
@@ -51,7 +89,9 @@
 			<DropdownMenu.Content>
 				<DropdownMenu.Group>
 					{#each routes as route}
-						<DropdownMenu.Item href={route.route}>{route.name}</DropdownMenu.Item>
+						<DropdownMenu.Item href={route.pathname}>
+							{route.name}
+						</DropdownMenu.Item>
 					{/each}
 				</DropdownMenu.Group>
 			</DropdownMenu.Content>

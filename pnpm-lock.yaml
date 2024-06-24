@@ -102,6 +102,9 @@ importers:
       svelte-check:
         specifier: ^3.8.1
         version: 3.8.1(postcss-load-config@4.0.2(postcss@8.4.38))(postcss@8.4.38)(svelte@4.2.18)
+      svelte-seo:
+        specifier: ^1.6.1
+        version: 1.6.1(typescript@5.4.5)
       tailwindcss:
         specifier: ^3.4.4
         version: 3.4.4
@@ -1852,6 +1855,11 @@ packages:
   sander@0.5.1:
     resolution: {integrity: sha512-3lVqBir7WuKDHGrKRDn/1Ye3kwpXaDOMsiRP1wd6wpZW56gJhsbp5RqQpA6JG/P+pkXizygnr1dKR8vzWaVsfA==}
 
+  schema-dts@1.1.2:
+    resolution: {integrity: sha512-MpNwH0dZJHinVxk9bT8XUdjKTxMYrA5bLtrrGmFA6PTLwlOKnhi67XoRd6/ty+Djt6ZC0slR57qFhZDNMI6DhQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
@@ -2008,6 +2016,9 @@ packages:
         optional: true
       typescript:
         optional: true
+
+  svelte-seo@1.6.1:
+    resolution: {integrity: sha512-vTKvOA0rl3HVhgbyoMhwz0P1s+18ldOT+lHlTlrQn7Mn0SBx7Ia7MB+llF4O/mYoiV5idmNu8i3xWsam8COsbw==}
 
   svelte-sonner@0.3.24:
     resolution: {integrity: sha512-txuL0JBUs0v6qGrr0PGCsbXmKHuthdrAkfISYi8umuveF7+gINb6EXl6VmKY9aHhyxCqvVgqd6yophQNrnor4w==}
@@ -3842,6 +3853,10 @@ snapshots:
       mkdirp: 0.5.6
       rimraf: 2.7.1
 
+  schema-dts@1.1.2(typescript@5.4.5):
+    dependencies:
+      typescript: 5.4.5
+
   semver@6.3.1: {}
 
   semver@7.6.2: {}
@@ -3988,6 +4003,12 @@ snapshots:
       postcss: 8.4.38
       postcss-load-config: 4.0.2(postcss@8.4.38)
       typescript: 5.4.5
+
+  svelte-seo@1.6.1(typescript@5.4.5):
+    dependencies:
+      schema-dts: 1.1.2(typescript@5.4.5)
+    transitivePeerDependencies:
+      - typescript
 
   svelte-sonner@0.3.24(svelte@4.2.18):
     dependencies:
