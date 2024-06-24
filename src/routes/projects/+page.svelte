@@ -15,9 +15,9 @@
 	];
 </script>
 
-<H1 class="my-2">
+<H1 class="my-2 w-full h-fit">
 	<span
-		class="bg-gradient-to-tr from-blue-500 via-purple-400 to-violet-500 box-decoration-clone bg-clip-text text-transparent"
+		class="w-full bg-gradient-to-tr from-blue-300 via-purple-300 to-violet-400 box-decoration-clone bg-clip-text text-transparent dark:from-blue-500 dark:via-purple-400 dark:to-violet-500"
 	>
 		My Projects' library
 	</span>

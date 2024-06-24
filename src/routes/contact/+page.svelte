@@ -13,7 +13,7 @@
 
 <H1>
 	<span
-		class="bg-gradient-to-tr from-blue-900 via-purple-600 to-emerald-300 box-decoration-clone bg-clip-text text-transparent"
+		class="bg-gradient-to-tr from-blue-400 via-purple-300 to-emerald-300 box-decoration-clone bg-clip-text text-transparent dark:from-blue-900 dark:via-purple-600 dark:to-emerald-300"
 	>
 		Feel free to contact me !
 	</span>
