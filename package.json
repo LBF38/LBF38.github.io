@@ -44,10 +44,15 @@
 		"eslint-config-prettier": "^8.10.0",
 		"eslint-plugin-svelte": "^2.40.0",
 		"gh-pages": "^5.0.0",
+		"mdsvex": "^0.11.2",
 		"postcss": "^8.4.38",
 		"prettier": "^3.3.2",
 		"prettier-plugin-svelte": "^3.2.4",
 		"prettier-plugin-tailwindcss": "^0.6.5",
+		"rehype-autolink-headings": "^7.1.0",
+		"rehype-slug": "^6.0.0",
+		"remark-abbr": "^1.4.2",
+		"remark-github": "^12.0.0",
 		"sort-package-json": "^2.10.0",
 		"svelte": "^4.2.18",
 		"svelte-check": "^3.8.1",
@@ -57,7 +62,6 @@
 		"typescript": "^5.4.5",
 		"vite": "^5.3.1",
 		"vite-plugin-kit-routes": "^0.6.2",
-		"vitest": "^0.25.8",
-		"mdsvex": "^0.11.2"
+		"vitest": "^0.25.8"
 	}
 }
