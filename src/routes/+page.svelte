@@ -3,6 +3,7 @@
 	import { H1, H2 } from '$lib/components/typography/individual';
 	import { Button } from '$lib/components/ui/button';
 	import { mode } from 'mode-watcher';
+	import * as m from '$paraglide/messages';
 </script>
 
 <div
@@ -23,14 +24,14 @@
 		<span
 			class="block w-full bg-gradient-to-br from-blue-300 via-emerald-300 to-violet-200 box-decoration-clone bg-clip-text text-5xl text-transparent dark:from-blue-800 dark:via-emerald-700 dark:to-violet-500 sm:text-9xl"
 		>
-			Welcome !
+			{m.zippy_gaudy_tapir_achieve()}
 		</span>
 	</H1>
 	<H2 class="m-4 w-full border-none text-4xl sm:!text-8xl">
 		<span
 			class="block w-full bg-gradient-to-bl from-blue-300 via-blue-400 to-red-300 box-decoration-clone bg-clip-text text-center leading-snug text-transparent dark:from-red-400 dark:via-blue-500 dark:to-red-600"
 		>
-			I'm Mathis, a passionate Software Engineer !
+			{m.raw_ok_octopus_pause()}
 		</span>
 	</H2>
 	<Button
@@ -38,7 +39,7 @@
 		href={route('/projects')}
 		class="fixed inset-x-0 bottom-0 m-6 mx-auto w-fit"
 	>
-		More
+		{m.livid_new_osprey_zap()}
 	</Button>
 </div>
 

@@ -9,20 +9,19 @@
 	import { Textarea } from '$lib/components/ui/textarea';
 	import { cn } from '$lib/utils';
 	import { blur } from 'svelte/transition';
+	import * as m from '$paraglide/messages';
 </script>
 
 <H1>
 	<span
 		class="bg-gradient-to-tr from-blue-400 via-purple-300 to-emerald-300 box-decoration-clone bg-clip-text text-transparent dark:from-blue-900 dark:via-purple-600 dark:to-emerald-300"
 	>
-		Feel free to contact me !
+		{m.gaudy_weird_sawfish_file()}
 	</span>
 </H1>
 
 <P>
-	You can fill the contact form below to send me any information you may want.
-	<br />
-	I'll be happy to answer your request !
+	{@html m.trite_trick_firefox_renew()}
 </P>
 
 <!-- Make sure you don't change the form action-->
@@ -41,31 +40,31 @@
 		<!-- Optional -->
 		<!-- Required -->
 		<Label for="name">
-			<span>Name</span>
-			<Input type="text" name="name" placeholder="Your name" required />
+			<span>{m.clear_noisy_alpaca_drip()}</span>
+			<Input type="text" name="name" placeholder={m.this_bold_bee_devour()} required />
 		</Label>
 		<!-- Optional -->
 		<Label for="subject">
-			<span>Subject</span>
-			<Input type="text" name="subject" placeholder="A topic..." />
+			<span>{m.east_watery_maggot_find()}</span>
+			<Input type="text" name="subject" placeholder={m.east_pretty_mink_earn()} />
 		</Label>
 		<!-- Optional -->
 		<Label for="email">
-			<span>Email</span>
-			<Input type="email" name="email" placeholder="Your email" required />
+			<span>{m.happy_elegant_sheep_clip()}</span>
+			<Input type="email" name="email" placeholder={m.orange_raw_racoon_twirl()} required />
 		</Label>
 		<!-- Optional -->
 		<Label for="phone">
-			<span>Phone</span>
-			<Input type="tel" name="phone" placeholder="Your phone" />
+			<span>{m.witty_maroon_kitten_rush()}</span>
+			<Input type="tel" name="phone" placeholder={m.proud_cool_swallow_dazzle()} />
 		</Label>
 		<!-- Optional -->
 		<Label for="message">
-			<span>Message</span>
+			<span>{m.weary_drab_ape_flow()}</span>
 			<Textarea
 				class="textarea h-52"
 				name="message"
-				placeholder="A message you'd like to send me..."
+				placeholder={m.just_clear_hound_borrow()}
 			/>
 		</Label>
 		<!-- Optional -->
@@ -84,13 +83,12 @@
 		/>
 		<!-- Optional -->
 		<Button class="float-right my-4 max-w-xs" variant="outline" type="submit" value="Submit">
-			Submit
+			{m.gray_spare_kudu_stop()}
 		</Button>
 		<P>
 			<em>
-				Powered by <Button href={route('staticforms')} variant="link" class="p-0">
-					StaticForms
-				</Button>
+				{m.sharp_noisy_zebra_edit()}
+				<Button href={route('staticforms')} variant="link" class="p-0">StaticForms</Button>
 			</em>
 		</P>
 	</fieldset>

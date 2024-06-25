@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
-	import { i18n } from '$lib/i18n';
-
 	import Navigation from '$lib/components/Navigation.svelte';
+	import { i18n } from '$lib/i18n';
+	import * as m from '$paraglide/messages';
+	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
 	import { blur, fade } from 'svelte/transition';
 	// Most of your app wide CSS should be put in this file
 	import { page } from '$app/stores';
@@ -40,7 +40,7 @@
 	<Toaster richColors />
 	<ModeWatcher />
 	<Navigation />
-	{#if $page.url.pathname !== route('/')}
+	{#if $page.route.id !== route('/')}
 		{#key data.pathname}
 			<main
 				class="container mx-auto my-auto p-6"
@@ -50,13 +50,9 @@
 				{#if visible}
 					<Alert.Root class="relative mx-auto mb-2 w-fit">
 						<Icon icon="emojione-v1:construction" class="text-xl" />
-						<Alert.Title level="h1">Under construction</Alert.Title>
+						<Alert.Title level="h1">{m.big_clear_opossum_pray()}</Alert.Title>
 						<Alert.Description>
-							<p>
-								This site is still under construction.
-								<br />
-								Expect some pages to not work correctly.
-							</p>
+							<p>{@html m.ornate_zippy_shrike_treat()}</p>
 						</Alert.Description>
 						<Button
 							variant="ghost"
@@ -74,10 +70,11 @@
 	{:else}
 		<slot />
 	{/if}
-	{#if $page.url.pathname !== route('/')}
+	{#if $page.route.id !== route('/')}
 		<footer class="mx-auto">
 			<span class="m-2 flex items-center justify-center gap-1">
-				Built with <Icon icon="octicon:heart-16" style="color: deeppink" /> by
+				{m.tangy_key_swallow_lock()}<Icon icon="octicon:heart-16" style="color: deeppink" />
+				{m.fancy_fun_hedgehog_grow()}
 				<Button
 					href={route('gh_profile', { username: 'LBF38' })}
 					target="_blank"
@@ -86,7 +83,7 @@
 				>
 					LBF38
 				</Button>
-				using
+				{m.large_green_orangutan_pinch()}
 				<Button href={route('shadcn_svelte')} target="_blank" variant="link" class="p-0">
 					shadcn/svelte
 				</Button>
