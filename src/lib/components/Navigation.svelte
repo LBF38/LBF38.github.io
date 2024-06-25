@@ -6,6 +6,7 @@
 	import SvelteSeo from 'svelte-seo';
 	import LightSwitch from './LightSwitch.svelte';
 	import Logo from './Logo.svelte';
+	import LanguageSelector from './language_selector';
 	import { Button } from './ui/button';
 
 	let routes: { pathname: string; name: string; description: string; keywords: string }[] = [
@@ -95,6 +96,7 @@
 			</DropdownMenu.Content>
 		</DropdownMenu.Root>
 
+		<LanguageSelector pageURL={$page.url} />
 		<LightSwitch />
 	</div>
 </nav>
