@@ -52,6 +52,7 @@ jobs:
           version: pnpm bump
           publish: pnpm release
         env:
+          PUBLIC_GH_TOKEN: ${{ secrets.GH_API_TOKEN }} # For the web app to make API requests
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
