@@ -5,6 +5,8 @@
 	"type": "module",
 	"scripts": {
 		"build": "pnpm i18n && vite build",
+		"bump": "pnpm version-packages",
+		"changeset": "npx changeset",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"dev": "vite dev",
@@ -14,7 +16,9 @@
 		"i18n:translate": "pnpx @inlang/cli machine translate --project ./project.inlang",
 		"i18n:watch": "pnpm i18n --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"version-packages": "changeset version",
 		"preview": "vite preview",
+		"release": "pnpm build && changeset publish",
 		"sort": "sort-package-json",
 		"test": "npm run test:integration && npm run test:unit",
 		"test:integration": "playwright test",
@@ -33,6 +37,7 @@
 		"tailwind-variants": "^0.2.1"
 	},
 	"devDependencies": {
+		"@changesets/changelog-github": "^0.5.0",
 		"@iconify/svelte": "^4.0.2",
 		"@inlang/paraglide-js": "1.10.1",
 		"@octokit/rest": "^20.1.1",
