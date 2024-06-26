@@ -2,6 +2,7 @@
 	import { PUBLIC_GH_TOKEN } from '$env/static/public';
 	import { Badge } from '$lib/components/ui/badge';
 	import * as Card from '$lib/components/ui/card';
+	import * as m from '$paraglide/messages';
 	import Icon from '@iconify/svelte';
 	import { Octokit } from '@octokit/rest';
 	import GH_language_colors from '../assets/gh_language_colors.json';
@@ -91,7 +92,9 @@
 					<Icon icon="devicon:github" class="mr-4 rounded bg-white" height="24" />
 					{data.name}
 					{#if data.archived}
-						<Badge class="ml-auto w-fit" variant="outline">archived</Badge>
+						<Badge class="ml-auto w-fit" variant="outline"
+							>{m.tangy_game_jannes_catch()}</Badge
+						>
 					{/if}
 				</Card.Title>
 				<Card.Description class="break-words">{data.description}</Card.Description>
@@ -120,14 +123,14 @@
 {:catch error}
 	<Card.Root>
 		<Card.Header>
-			<Card.Title>Error</Card.Title>
+			<Card.Title>{m.great_lucky_swallow_cry()}</Card.Title>
 			<Card.Description>{error.message}</Card.Description>
 		</Card.Header>
 		<!-- <Card.Content>
 			<p>Card Content</p>
 		</Card.Content> -->
 		<Card.Footer>
-			<p>URL called: {gh_url}</p>
+			<p>{m.plain_smart_halibut_enjoy({ gh_url })}</p>
 		</Card.Footer>
 	</Card.Root>
 {/await}

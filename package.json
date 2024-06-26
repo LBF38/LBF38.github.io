@@ -4,12 +4,15 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "vite build",
+		"build": "pnpm i18n && vite build",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"dev": "vite dev",
 		"format": "prettier --plugin-search-dir . --write .",
 		"gh-pages": "pnpm build && pnpx gh-pages -d build",
+		"i18n": "paraglide-js compile --project ./project.inlang",
+		"i18n:translate": "pnpx @inlang/cli machine translate --project ./project.inlang",
+		"i18n:watch": "pnpm i18n --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"preview": "vite preview",
 		"sort": "sort-package-json",
@@ -25,7 +28,8 @@
 		"mode-watcher": "^0.3.1",
 		"svelte-sonner": "^0.3.24",
 		"tailwind-merge": "^2.3.0",
-		"tailwind-variants": "^0.2.1"
+		"tailwind-variants": "^0.2.1",
+		"@inlang/paraglide-sveltekit": "0.10.6"
 	},
 	"devDependencies": {
 		"@iconify/svelte": "^4.0.2",
@@ -57,6 +61,7 @@
 		"typescript": "^5.4.5",
 		"vite": "^5.3.1",
 		"vite-plugin-kit-routes": "^0.6.2",
-		"vitest": "^0.25.8"
+		"vitest": "^0.25.8",
+		"@inlang/paraglide-js": "1.10.1"
 	}
 }
