@@ -79,27 +79,46 @@
 		@apply bg-background text-foreground;
 		scrollbar-gutter: stable both-edges;
 	}
-}
 
-@layer utilities {
+	/* === Scrollbars === */
+
 	::-webkit-scrollbar {
-		width: 10px;
+		@apply w-2;
+		@apply h-2;
 	}
 
 	::-webkit-scrollbar-track {
-		background: hsl(var(--background));
+		@apply !bg-muted;
 	}
-
 	::-webkit-scrollbar-thumb {
-		background: transparent;
-		border-radius: var(--radius);
+		@apply rounded-sm !bg-muted-foreground/30;
 	}
 
-	.scroll-active::-webkit-scrollbar-thumb {
-		background: hsl(var(--muted-foreground)); /* Visible color when scrolling */
+	/* Firefox */
+	/* https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color#browser_compatibility */
+	html {
+		/* scrollbar-color: hsl(215.4 16.3% 46.9% / 0.3); */
+		scrollbar-color: hsl(var(--muted) / 0.3);
 	}
 
-	::-webkit-scrollbar-thumb:hover {
-		background: hsl(var(--muted-foreground));
+	html.dark {
+		/* scrollbar-color: hsl(215.4 16.3% 56.9% / 0.3); */
+		scrollbar-color: hsl(var(--muted) / 0.3);
+	}
+
+	.hide-scrollbar::-webkit-scrollbar {
+		@apply hidden;
+		@apply !w-0;
+		@apply !h-0;
+	}
+
+	.hide-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: 0;
+	}
+
+	.antialised {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 }

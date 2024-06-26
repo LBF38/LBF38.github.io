@@ -18,22 +18,6 @@
 
 	let visible = true;
 	export let data: LayoutData;
-
-	function handleScroll() {
-		const body = document.body;
-		body.classList.add('scroll-active');
-
-		// @ts-ignore
-		clearTimeout(body.scrollTimeout);
-		// @ts-ignore
-		body.scrollTimeout = setTimeout(() => {
-			body.classList.remove('scroll-active');
-		}, 300);
-	}
-
-	onMount(() => {
-		window.addEventListener('scroll', handleScroll);
-	});
 </script>
 
 <ParaglideJS {i18n}>

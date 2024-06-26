@@ -73,7 +73,7 @@
 			<li>
 				<Button
 					href={route.pathname}
-					variant={$page.url.pathname == route.pathname ? 'secondary' : 'link'}
+					variant={$page.route.id === route.pathname ? 'secondary' : 'link'}
 					data-sveltekit-preload-data="hover"
 				>
 					{route.name}

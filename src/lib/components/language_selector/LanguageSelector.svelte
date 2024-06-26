@@ -16,7 +16,7 @@
 	export let pageURL: URL;
 </script>
 
-<Select.Root>
+<Select.Root preventScroll={false}>
 	<Select.Trigger class="w-fit">
 		<Globe class="mr-2 h-[1.2rem] w-[1.2rem]" />
 		<span class="mr-2">{languageNames[languageTag()]}</span>

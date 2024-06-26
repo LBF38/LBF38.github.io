@@ -2,8 +2,16 @@
 	import { route } from '$lib/ROUTES';
 	import { H1, H2 } from '$lib/components/typography/individual';
 	import { Button } from '$lib/components/ui/button';
-	import { mode } from 'mode-watcher';
 	import * as m from '$paraglide/messages';
+	import { mode } from 'mode-watcher';
+	import { onDestroy, onMount } from 'svelte';
+
+	onMount(() => {
+		document.body.classList.add('hide-scrollbar');
+	});
+	onDestroy(() => {
+		document.body.classList.remove('hide-scrollbar');
+	});
 </script>
 
 <div
