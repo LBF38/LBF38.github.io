@@ -5,6 +5,8 @@
 	"type": "module",
 	"scripts": {
 		"build": "pnpm i18n && vite build",
+		"bump": "pnpm version-packages",
+		"changeset": "npx changeset",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"dev": "vite dev",
@@ -14,13 +16,17 @@
 		"i18n:translate": "pnpx @inlang/cli machine translate --project ./project.inlang",
 		"i18n:watch": "pnpm i18n --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"version-packages": "changeset version",
 		"preview": "vite preview",
+		"release": "pnpm build && changeset publish",
 		"sort": "sort-package-json",
 		"test": "npm run test:integration && npm run test:unit",
 		"test:integration": "playwright test",
 		"test:unit": "vitest"
 	},
 	"dependencies": {
+		"@changesets/cli": "^2.27.6",
+		"@inlang/paraglide-sveltekit": "0.10.6",
 		"bits-ui": "^0.21.10",
 		"clsx": "^2.1.1",
 		"embla-carousel-svelte": "^8.1.5",
@@ -28,11 +34,12 @@
 		"mode-watcher": "^0.3.1",
 		"svelte-sonner": "^0.3.24",
 		"tailwind-merge": "^2.3.0",
-		"tailwind-variants": "^0.2.1",
-		"@inlang/paraglide-sveltekit": "0.10.6"
+		"tailwind-variants": "^0.2.1"
 	},
 	"devDependencies": {
+		"@changesets/changelog-github": "^0.5.0",
 		"@iconify/svelte": "^4.0.2",
+		"@inlang/paraglide-js": "1.10.1",
 		"@octokit/rest": "^20.1.1",
 		"@playwright/test": "^1.44.1",
 		"@sveltejs/adapter-auto": "^3.2.2",
@@ -61,7 +68,6 @@
 		"typescript": "^5.4.5",
 		"vite": "^5.3.1",
 		"vite-plugin-kit-routes": "^0.6.2",
-		"vitest": "^0.25.8",
-		"@inlang/paraglide-js": "1.10.1"
+		"vitest": "^0.25.8"
 	}
 }
