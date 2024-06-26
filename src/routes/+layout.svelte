@@ -5,19 +5,44 @@
 	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
 	import { blur, fade } from 'svelte/transition';
 	// Most of your app wide CSS should be put in this file
+	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import { route } from '$lib/ROUTES';
 	import * as Alert from '$lib/components/ui/alert';
 	import { Button } from '$lib/components/ui/button';
 	import Icon from '@iconify/svelte';
 	import { ModeWatcher } from 'mode-watcher';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import { Toaster } from 'svelte-sonner';
 	import '../app.pcss';
 	import type { LayoutData } from './$types';
 
 	let visible = true;
 	export let data: LayoutData;
+
+	function adjustScrollbarVisibility() {
+		const needsScrolling = document.body.scrollHeight > window.innerHeight;
+		document.body.classList.toggle('hide-scrollbar', !needsScrolling);
+	}
+
+	onMount(() => {
+		if (!browser) return;
+		adjustScrollbarVisibility();
+		window.addEventListener('resize', adjustScrollbarVisibility);
+
+		const unsubscribe = page.subscribe(() => {
+			adjustScrollbarVisibility();
+		});
+
+		onDestroy(() => {
+			unsubscribe();
+		});
+	});
+
+	onDestroy(() => {
+		if (!browser) return;
+		window.removeEventListener('resize', adjustScrollbarVisibility);
+	});
 </script>
 
 <ParaglideJS {i18n}>

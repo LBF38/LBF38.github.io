@@ -4,14 +4,6 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as m from '$paraglide/messages';
 	import { mode } from 'mode-watcher';
-	import { onDestroy, onMount } from 'svelte';
-
-	onMount(() => {
-		document.body.classList.add('hide-scrollbar');
-	});
-	onDestroy(() => {
-		document.body.classList.remove('hide-scrollbar');
-	});
 </script>
 
 <div
