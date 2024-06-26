@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { route } from '$lib/ROUTES';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+	import * as Sheet from '$lib/components/ui/sheet';
 	import * as m from '$paraglide/messages';
 	import { Menu } from 'lucide-svelte';
 	import SvelteSeo from 'svelte-seo';
@@ -83,18 +83,30 @@
 	</ul>
 
 	<div class="ml-auto flex w-fit gap-4">
-		<DropdownMenu.Root>
-			<DropdownMenu.Trigger class="md:hidden"><Menu /></DropdownMenu.Trigger>
-			<DropdownMenu.Content>
-				<DropdownMenu.Group>
-					{#each routes as route}
-						<DropdownMenu.Item href={route.pathname}>
-							{route.name}
-						</DropdownMenu.Item>
-					{/each}
-				</DropdownMenu.Group>
-			</DropdownMenu.Content>
-		</DropdownMenu.Root>
+		<Sheet.Root>
+			<Sheet.Trigger class="md:hidden">
+				<Menu />
+			</Sheet.Trigger>
+			<Sheet.Content class="flex flex-col gap-4">
+				<Sheet.Header>
+					<Sheet.Title>
+						<a href={route('/')}>
+							<Logo />
+						</a>
+					</Sheet.Title>
+				</Sheet.Header>
+				{#each routes as route}
+					<Button
+						href={route.pathname}
+						variant={$page.route.id === route.pathname ? 'secondary' : 'link'}
+						data-sveltekit-preload-data="hover"
+						class="justify-start"
+					>
+						{route.name}
+					</Button>
+				{/each}
+			</Sheet.Content>
+		</Sheet.Root>
 
 		<LanguageSelector pageURL={$page.url} />
 		<LightSwitch />
