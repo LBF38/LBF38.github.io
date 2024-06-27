@@ -11,7 +11,19 @@ export default defineConfig({
 		kitRoutes<KIT_ROUTES>({
 			LINKS: {
 				gh_profile: {
-					href: 'https://github.com/[username]'
+					href: 'https://github.com/[username]',
+					params: {
+						username: {
+							default: "'LBF38'",
+							type: 'string'
+						}
+					}
+				},
+				linkedin: {
+					href: 'https://www.linkedin.com/in/mathis-urien'
+				},
+				instagram: {
+					href: 'https://www.instagram.com/mathis.u38/'
 				},
 				shadcn_svelte: {
 					href: 'https://shadcn-svelte.com'
