@@ -33,7 +33,7 @@
 </script>
 
 <nav
-	class="sticky top-0 z-50 flex flex-row content-center items-center justify-center space-x-10 bg-opacity-70 p-4 backdrop-blur-md"
+	class="sticky top-0 z-50 flex flex-row content-center items-center justify-center space-x-10 bg-opacity-70 p-4 backdrop-blur-md flex-shrink-0"
 >
 	<a href={route('/')} class="mr-auto">
 		<Logo />
