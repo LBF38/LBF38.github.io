@@ -7,3 +7,9 @@ declare namespace App {
 	// interface Error {}
 	// interface Platform {}
 }
+
+declare module '*.md' {
+	import { SvelteComponent } from 'svelte';
+	const component: SvelteComponent;
+	export default component;
+}

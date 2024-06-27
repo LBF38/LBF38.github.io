@@ -22,7 +22,7 @@ const config = {
 		})
 	},
 
-	extensions: ['.svelte', ...MDSveXConfig.extensions]
+	extensions: ['.svelte', ...MDSveXConfig.extensions, ".md"]
 };
 
 export default config;
