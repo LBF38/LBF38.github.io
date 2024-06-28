@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { route } from '$lib/ROUTES';
+	import Booking from '$lib/components/booking.svelte';
 	import { typographyVariants } from '$lib/components/typography';
 	import { H1, P } from '$lib/components/typography/individual';
 	import { Button } from '$lib/components/ui/button';
@@ -8,10 +9,11 @@
 	import { Label } from '$lib/components/ui/label';
 	import { Textarea } from '$lib/components/ui/textarea';
 	import { cn } from '$lib/utils';
-	import { blur } from 'svelte/transition';
 	import * as m from '$paraglide/messages';
+	import { blur } from 'svelte/transition';
 </script>
 
+<Booking />
 <H1>
 	<span
 		class="bg-gradient-to-tr from-blue-400 via-purple-300 to-emerald-300 box-decoration-clone bg-clip-text text-transparent dark:from-blue-900 dark:via-purple-600 dark:to-emerald-300"
@@ -32,7 +34,9 @@
 	transition:blur
 >
 	<fieldset>
-		<legend class={cn(typographyVariants({ variant: 'p' }), 'mx-auto')}>Contact Form</legend>
+		<legend class={cn(typographyVariants({ variant: 'p' }), 'mx-auto')}>
+			{m.dirty_fair_lionfish_gleam()}
+		</legend>
 		<!-- Replace with accesKey sent to your email -->
 		<Input type="hidden" name="accessKey" value="eaa67da9-05d5-4686-bd7b-e4c205e90687" />
 		<!-- If we receive data in this field submission will be ignored -->
