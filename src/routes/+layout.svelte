@@ -10,8 +10,9 @@
 	import * as m from '$paraglide/messages';
 	import Icon from '@iconify/svelte';
 	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
+	import { debounce } from 'lodash-es';
 	import { ModeWatcher } from 'mode-watcher';
-	import { onDestroy, onMount } from 'svelte';
+	import { afterUpdate } from 'svelte';
 	import { Toaster } from 'svelte-sonner';
 	import { blur, fade } from 'svelte/transition';
 	import '../app.pcss';
@@ -21,28 +22,28 @@
 	export let data: LayoutData;
 
 	function adjustScrollbarVisibility() {
-		const needsScrolling = document.body.scrollHeight > window.innerHeight;
+		if (!browser) return;
+		const needsScrolling = document.body.clientHeight > window.innerHeight;
+		// console.log(
+		// 	'adjustScrollbarVisibility: scrolling ?',
+		// 	needsScrolling,
+		// 	'body.scrollHeight',
+		// 	document.body.scrollHeight,
+		// 	'body.clientHeight',
+		// 	document.body.clientHeight,
+		// 	'window.innerHeight',
+		// 	window.innerHeight,
+		// 	'current page: ',
+		// 	$page.route.id
+		// );
 		document.body.classList.toggle('hide-scrollbar', !needsScrolling);
 	}
+	const debouncedAdjustScrollbarVisibility = debounce(adjustScrollbarVisibility, 100);
 
-	onMount(() => {
-		if (!browser) return;
-		adjustScrollbarVisibility();
-		window.addEventListener('resize', adjustScrollbarVisibility);
-
-		const unsubscribe = page.subscribe(() => {
-			adjustScrollbarVisibility();
+	$: $page,
+		afterUpdate(() => {
+			debouncedAdjustScrollbarVisibility();
 		});
-
-		onDestroy(() => {
-			unsubscribe();
-		});
-	});
-
-	onDestroy(() => {
-		if (!browser) return;
-		window.removeEventListener('resize', adjustScrollbarVisibility);
-	});
 </script>
 
 <ParaglideJS {i18n}>
