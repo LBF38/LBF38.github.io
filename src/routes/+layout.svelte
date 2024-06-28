@@ -11,8 +11,9 @@
 	import Icon from '@iconify/svelte';
 	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
 	import { ModeWatcher } from 'mode-watcher';
-	import { onDestroy, onMount } from 'svelte';
+	import { onDestroy, onMount, tick } from 'svelte';
 	import { Toaster } from 'svelte-sonner';
+	import type { Unsubscriber } from 'svelte/store';
 	import { blur, fade } from 'svelte/transition';
 	import '../app.pcss';
 	import type { LayoutData } from './$types';
@@ -21,28 +22,49 @@
 	export let data: LayoutData;
 
 	function adjustScrollbarVisibility() {
+		if (!browser) return;
 		const needsScrolling = document.body.scrollHeight > window.innerHeight;
+		console.log(
+			'adjustScrollbarVisibility: scrolling ?',
+			needsScrolling,
+			'body.scrollHeight',
+			document.body.scrollHeight,
+			'window.innerHeight',
+			window.innerHeight
+		);
 		document.body.classList.toggle('hide-scrollbar', !needsScrolling);
+	}
+	let unsubscribe: Unsubscriber;
+
+	function setup() {
+		adjustScrollbarVisibility();
+		window.addEventListener('resize', adjustScrollbarVisibility);
+
+		unsubscribe = page.subscribe(async () => {
+			console.log('page changed - subscribe');
+			await tick();
+			if (document.readyState === 'complete') {
+				// If the document is already loaded, set up immediately.
+				adjustScrollbarVisibility();
+			} else {
+				// Otherwise, wait for the load event before setting up.
+				window.addEventListener('load', adjustScrollbarVisibility, { once: true });
+			}
+		});
 	}
 
 	onMount(() => {
 		if (!browser) return;
-		adjustScrollbarVisibility();
-		window.addEventListener('resize', adjustScrollbarVisibility);
-
-		const unsubscribe = page.subscribe(() => {
-			adjustScrollbarVisibility();
-		});
-
-		onDestroy(() => {
-			unsubscribe();
-		});
+		setup();
 	});
 
 	onDestroy(() => {
 		if (!browser) return;
 		window.removeEventListener('resize', adjustScrollbarVisibility);
+		if (unsubscribe) unsubscribe();
 	});
+
+	// $: $page, adjustScrollbarVisibility(), console.log('page changed - reactive');
 </script>
 
 <ParaglideJS {i18n}>
