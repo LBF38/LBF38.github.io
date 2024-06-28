@@ -24,18 +24,18 @@
 	function adjustScrollbarVisibility() {
 		if (!browser) return;
 		const needsScrolling = document.body.clientHeight > window.innerHeight;
-		console.log(
-			'adjustScrollbarVisibility: scrolling ?',
-			needsScrolling,
-			'body.scrollHeight',
-			document.body.scrollHeight,
-			'body.clientHeight',
-			document.body.clientHeight,
-			'window.innerHeight',
-			window.innerHeight,
-			'current page: ',
-			$page.route.id
-		);
+		// console.log(
+		// 	'adjustScrollbarVisibility: scrolling ?',
+		// 	needsScrolling,
+		// 	'body.scrollHeight',
+		// 	document.body.scrollHeight,
+		// 	'body.clientHeight',
+		// 	document.body.clientHeight,
+		// 	'window.innerHeight',
+		// 	window.innerHeight,
+		// 	'current page: ',
+		// 	$page.route.id
+		// );
 		document.body.classList.toggle('hide-scrollbar', !needsScrolling);
 	}
 	const debouncedAdjustScrollbarVisibility = debounce(adjustScrollbarVisibility, 100);
