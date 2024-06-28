@@ -2,8 +2,9 @@
 <script type="text/javascript" lang="ts">
 	// @ts-nocheck
 	import { browser } from '$app/environment';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import * as m from '$paraglide/messages';
+	import { mode } from 'mode-watcher';
 
 	onMount(() => {
 		if (!browser) return;
@@ -52,6 +53,13 @@
 			hideEventTypeDetails: false,
 			layout: 'month_view'
 		});
+	});
+
+	onDestroy(() => {
+		if (!browser) return;
+		const floatingButton = document.querySelector('cal-floating-button');
+		console.log('floatingButton', floatingButton);
+		if (floatingButton) floatingButton.remove();
 	});
 </script>
 
