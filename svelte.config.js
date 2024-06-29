@@ -1,4 +1,4 @@
-import { mdsvex } from '@huntabyte/mdsvex';
+import { mdsvex } from 'mdsvex';
 // TODO: ^ maybe change to @huntabyte/mdsvex ?
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';

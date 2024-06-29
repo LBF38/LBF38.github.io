@@ -6,16 +6,16 @@
  */
 
 //@ts-check
-import { resolve } from 'path';
-import { fileURLToPath } from 'url';
-import { visit } from 'unist-util-visit';
-import remarkGfm from 'remark-gfm';
-import rehypePrettyCode from 'rehype-pretty-code';
-import { codeImport } from 'remark-code-import';
-import { toHtml } from 'hast-util-to-html';
 import { escapeSvelte } from '@huntabyte/mdsvex';
+import { toHtml } from 'hast-util-to-html';
+import { resolve } from 'path';
+import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeRewrite from 'rehype-rewrite';
-import { getHighlighter } from 'shiki';
+import { codeImport } from 'remark-code-import';
+import remarkGfm from 'remark-gfm';
+import { getSingletonHighlighter } from 'shiki';
+import { visit } from 'unist-util-visit';
+import { fileURLToPath } from 'url';
 
 /**
  * @typedef {import('mdast').Root} MdastRoot
@@ -43,7 +43,7 @@ const prettyCodeOptions = {
 		node.properties.className = ['chars--highlighted'];
 	},
 	getHighlighter: (options) =>
-		getHighlighter({
+		getSingletonHighlighter({
 			...options,
 			langs: [
 				'plaintext',
