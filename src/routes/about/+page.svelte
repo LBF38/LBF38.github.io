@@ -3,6 +3,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { route } from '$lib/ROUTES';
 	import * as m from '$paraglide/messages';
+	// @ts-ignore
 	import About from './about.md';
 	// @ts-ignore
 	import { metadata } from './about.md';
@@ -10,7 +11,7 @@
 
 <H1 class="my-2 w-full">
 	<span
-		class="block leading-snug w-full bg-gradient-to-tr from-teal-300 to-purple-400 box-decoration-clone bg-clip-text text-transparent dark:from-teal-600 dark:to-purple-900"
+		class="block w-full bg-gradient-to-tr from-teal-300 to-purple-400 box-decoration-clone bg-clip-text leading-snug text-transparent dark:from-teal-600 dark:to-purple-900"
 	>
 		{m.soft_safe_penguin_mend()}
 	</span>
