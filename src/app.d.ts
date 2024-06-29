@@ -12,6 +12,13 @@ declare namespace App {
 	// interface Platform {}
 }
 
+export interface MdsvexFile {
+	default: import('svelte/internal').SvelteComponentTyped<unknown, unknown, unknown>;
+	metadata: Record<string, string>;
+}
+
+export type MdsvexResolver = () => Promise<MdsvexFile>;
+
 declare module '*.md' {
 	import { SvelteComponent } from 'svelte';
 	const component: SvelteComponent;

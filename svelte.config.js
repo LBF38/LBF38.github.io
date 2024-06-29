@@ -1,13 +1,14 @@
-import { mdsvex } from 'mdsvex';
+import { mdsvex } from '@huntabyte/mdsvex';
+// TODO: ^ maybe change to @huntabyte/mdsvex ?
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import MDSveXConfig from "./mdsvex.config.js";
+import { mdsvexOptions } from "./mdsvex.config.js";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
-	preprocess: [vitePreprocess(), mdsvex(MDSveXConfig)],
+	preprocess: [mdsvex(mdsvexOptions), vitePreprocess()],
 
 	vitePlugin: {
 		inspector: true
@@ -24,7 +25,7 @@ const config = {
 			"$paraglide/*": "./src/lib/paraglide/*"
 		}
 	},
-	extensions: ['.svelte', ...MDSveXConfig.extensions, ".md"]
+	extensions: ['.svelte', ...mdsvexOptions.extensions, ".md"]
 };
 
 export default config;
