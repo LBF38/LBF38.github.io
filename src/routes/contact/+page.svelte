@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { route } from '$lib/ROUTES';
+	import Booking from '$lib/components/booking.svelte';
 	import { typographyVariants } from '$lib/components/typography';
 	import { H1, P } from '$lib/components/typography/individual';
 	import { Button } from '$lib/components/ui/button';
@@ -8,21 +9,21 @@
 	import { Label } from '$lib/components/ui/label';
 	import { Textarea } from '$lib/components/ui/textarea';
 	import { cn } from '$lib/utils';
+	import * as m from '$paraglide/messages';
 	import { blur } from 'svelte/transition';
 </script>
 
+<Booking />
 <H1>
 	<span
 		class="bg-gradient-to-tr from-blue-400 via-purple-300 to-emerald-300 box-decoration-clone bg-clip-text text-transparent dark:from-blue-900 dark:via-purple-600 dark:to-emerald-300"
 	>
-		Feel free to contact me !
+		{m.gaudy_weird_sawfish_file()}
 	</span>
 </H1>
 
 <P>
-	You can fill the contact form below to send me any information you may want.
-	<br />
-	I'll be happy to answer your request !
+	{@html m.trite_trick_firefox_renew()}
 </P>
 
 <!-- Make sure you don't change the form action-->
@@ -33,7 +34,9 @@
 	transition:blur
 >
 	<fieldset>
-		<legend class={cn(typographyVariants({ variant: 'p' }), 'mx-auto')}>Contact Form</legend>
+		<legend class={cn(typographyVariants({ variant: 'p' }), 'mx-auto')}>
+			{m.dirty_fair_lionfish_gleam()}
+		</legend>
 		<!-- Replace with accesKey sent to your email -->
 		<Input type="hidden" name="accessKey" value="eaa67da9-05d5-4686-bd7b-e4c205e90687" />
 		<!-- If we receive data in this field submission will be ignored -->
@@ -41,31 +44,31 @@
 		<!-- Optional -->
 		<!-- Required -->
 		<Label for="name">
-			<span>Name</span>
-			<Input type="text" name="name" placeholder="Your name" required />
+			<span>{m.clear_noisy_alpaca_drip()}</span>
+			<Input type="text" name="name" placeholder={m.this_bold_bee_devour()} required />
 		</Label>
 		<!-- Optional -->
 		<Label for="subject">
-			<span>Subject</span>
-			<Input type="text" name="subject" placeholder="A topic..." />
+			<span>{m.east_watery_maggot_find()}</span>
+			<Input type="text" name="subject" placeholder={m.east_pretty_mink_earn()} />
 		</Label>
 		<!-- Optional -->
 		<Label for="email">
-			<span>Email</span>
-			<Input type="email" name="email" placeholder="Your email" required />
+			<span>{m.happy_elegant_sheep_clip()}</span>
+			<Input type="email" name="email" placeholder={m.orange_raw_racoon_twirl()} required />
 		</Label>
 		<!-- Optional -->
 		<Label for="phone">
-			<span>Phone</span>
-			<Input type="tel" name="phone" placeholder="Your phone" />
+			<span>{m.witty_maroon_kitten_rush()}</span>
+			<Input type="tel" name="phone" placeholder={m.proud_cool_swallow_dazzle()} />
 		</Label>
 		<!-- Optional -->
 		<Label for="message">
-			<span>Message</span>
+			<span>{m.weary_drab_ape_flow()}</span>
 			<Textarea
 				class="textarea h-52"
 				name="message"
-				placeholder="A message you'd like to send me..."
+				placeholder={m.just_clear_hound_borrow()}
 			/>
 		</Label>
 		<!-- Optional -->
@@ -84,13 +87,12 @@
 		/>
 		<!-- Optional -->
 		<Button class="float-right my-4 max-w-xs" variant="outline" type="submit" value="Submit">
-			Submit
+			{m.gray_spare_kudu_stop()}
 		</Button>
 		<P>
 			<em>
-				Powered by <Button href={route('staticforms')} variant="link" class="p-0">
-					StaticForms
-				</Button>
+				{m.sharp_noisy_zebra_edit()}
+				<Button href={route('staticforms')} variant="link" class="p-0">StaticForms</Button>
 			</em>
 		</P>
 	</fieldset>
