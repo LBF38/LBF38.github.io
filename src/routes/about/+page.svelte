@@ -1,16 +1,9 @@
 <script lang="ts">
-	import { H1, P } from '$lib/components/typography/individual';
-	import { Button } from '$lib/components/ui/button';
-	import { route } from '$lib/ROUTES';
+	import { H1 } from '$lib/components/typography/individual';
 	import * as m from '$paraglide/messages';
-	import { languageTag } from '$paraglide/runtime';
 	import type { PageData } from './$types';
-	// @ts-ignore
-	import About from './about.md';
-	// @ts-ignore
-	import { metadata } from './about.md';
+
 	export let data: PageData;
-	console.log('data', data, 'languagetag', languageTag());
 </script>
 
 <H1 class="my-2 w-full">
@@ -20,23 +13,7 @@
 		{m.soft_safe_penguin_mend()}
 	</span>
 </H1>
-<P>{@html m.safe_arable_guppy_express()}</P>
-<P>You're in the right place !</P>
 
-<P>I'm Mathis URIEN, a software engineer based in France</P>
-<P>
-	You can explore my <Button href={route('/projects')} variant="link" class="inline p-0">
-		IT's projects
-	</Button>, which are my main field of interest. I also enjoy practicing sports, taking pictures,
-	and even doing some magic tricks !
-</P>
-
-<P>
-	<em>This site is still under construction ...</em>
-</P>
-
-testing metadata from mdsvex: {JSON.stringify(metadata, null, 2)}
-<About />
-
-<h1>This is a test of the contentlayer approach</h1>
-<svelte:component this={data.content} />
+{#each data.work.content as content}
+	<svelte:component this={content} />
+{/each}
