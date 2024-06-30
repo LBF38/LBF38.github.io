@@ -8,6 +8,8 @@ import { mdsvexOptions } from "./mdsvex.config.js";
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// @ts-ignore
 	preprocess: [mdsvex(mdsvexOptions), vitePreprocess()],
 
 	vitePlugin: {
@@ -22,7 +24,9 @@ const config = {
 			fallback: '404.html'
 		}),
 		alias: {
-			"$paraglide/*": "./src/lib/paraglide/*"
+			"$paraglide/*": "./src/lib/paraglide/*",
+			"$contentlayer/generated": ".contentlayer/generated",
+			"$content": "./src/content",
 		}
 	},
 	extensions: ['.svelte', ...mdsvexOptions.extensions, ".md"]

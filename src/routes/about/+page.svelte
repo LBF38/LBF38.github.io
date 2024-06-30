@@ -3,10 +3,14 @@
 	import { Button } from '$lib/components/ui/button';
 	import { route } from '$lib/ROUTES';
 	import * as m from '$paraglide/messages';
+	import { languageTag } from '$paraglide/runtime';
+	import type { PageData } from './$types';
 	// @ts-ignore
 	import About from './about.md';
 	// @ts-ignore
 	import { metadata } from './about.md';
+	export let data: PageData;
+	console.log('data', data, 'languagetag', languageTag());
 </script>
 
 <H1 class="my-2 w-full">
@@ -33,3 +37,6 @@
 
 testing metadata from mdsvex: {JSON.stringify(metadata, null, 2)}
 <About />
+
+<h1>This is a test of the contentlayer approach</h1>
+<svelte:component this={data.content} />
