@@ -45,6 +45,7 @@
 		"@huntabyte/mdsvex": "^0.16.8",
 		"@iconify/svelte": "^4.0.2",
 		"@inlang/paraglide-js": "1.10.1",
+		"@internationalized/date": "^3.5.4",
 		"@octokit/rest": "^20.1.1",
 		"@playwright/test": "^1.44.1",
 		"@sveltejs/adapter-auto": "^3.2.2",

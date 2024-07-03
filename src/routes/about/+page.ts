@@ -1,31 +1,34 @@
 import { allCVs } from '$contentlayer/generated';
+import type { ContentCV } from '$lib';
 import { events } from '$lib/config';
 import { i18n } from '$lib/i18n';
 import { error } from '@sveltejs/kit';
-import type { PageLoad } from './$types';
 import type { Component } from 'svelte';
+import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ url }) => {
 	try {
 		const lang = i18n.getLanguageFromUrl(url);
-		const workExperiences = allCVs.filter(
-			(doc) => doc.language === lang && doc.event === events[1]
+		const CVs = await Promise.all(
+			allCVs
+				.filter((doc) => doc.language === lang)
+				.map(async (doc) => {
+					// Loading file & parsing MDX (by mdsvex)
+					const content = await import(`$content/cv/${doc.event}/${doc.fileName}.md`);
+					return {
+						content: content.default as unknown as Component,
+						metadata: doc
+					} satisfies ContentCV;
+				})
 		);
-		if (!workExperiences) {
+		if (!CVs) {
 			throw 'Work experiences not found';
 		}
 
-		// Loading file & parsing MDX (by mdsvex)
-		const workExperienceContentPromises = workExperiences.map(async (doc) => {
-			const content = await import(`$content/cv/work_experiences/${doc.fileName}.md`);
-			return content.default as unknown as Component;
-		});
-		// https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#imports-must-end-with-a-file-extension
-		// const content = await import(`./click-me.md`); // https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#imports-must-end-with-a-file-extension
-		const workExperienceContent = await Promise.all(workExperienceContentPromises);
-
 		return {
-			work: { metadata: workExperiences, content: workExperienceContent }
+			education: CVs.filter((cv) => cv.metadata.event === events[0]),
+			work: CVs.filter((cv) => cv.metadata.event === events[1]),
+			projects: CVs.filter((cv) => cv.metadata.event === events[2])
 		};
 	} catch (e) {
 		console.error(e);
