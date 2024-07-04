@@ -3,6 +3,7 @@ import type { KIT_ROUTES } from '$lib/ROUTES';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { kitRoutes } from 'vite-plugin-kit-routes';
 import { defineConfig } from 'vite';
+import { URL, fileURLToPath } from 'node:url';
 
 export default defineConfig({
 	plugins: [
@@ -33,7 +34,21 @@ export default defineConfig({
 				}
 			}
 		})
-	]
+	],
+	assetsInclude: ['**/*.md'],
+	server: {
+		fs: {
+			strict: false
+		}
+	},
+	resolve: {
+		alias: [
+			{
+				find: '$contentlayer/generated',
+				replacement: fileURLToPath(new URL('./.contentlayer/generated', import.meta.url))
+			}
+		]
+	}
 	// test: {
 	// 	include: ['src/**/*.{test,spec}.{js,ts}']
 	// }
