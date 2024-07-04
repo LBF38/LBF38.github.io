@@ -35,25 +35,25 @@
 {#if !data.intro}
 	<WarningAlert />
 {:else}
-	<div class="grid grid-cols-4">
-		<div class="col-span-3">
+	<div class="mb-20 grid lg:grid-cols-4">
+		<div class="lg:col-span-3">
 			<svelte:component this={data.intro.content} />
 			<ul>
 				<li>
-					<strong>Location:</strong>
+					<strong>{m.quiet_funny_ant_laugh()}</strong>
 					{data.intro.metadata.location}
 				</li>
 				<li>
-					<strong>Languages:</strong>
+					<strong>{m.pink_muddy_robin_exhale()}</strong>
 					{data.intro.metadata.talked_languages}
 				</li>
 				<li>
-					<strong>Hobbies:</strong>
+					<strong>{m.big_sunny_flamingo_aim()}</strong>
 					{data.intro.metadata.hobbies}
 				</li>
 			</ul>
 		</div>
-		<Avatar.Root class="mx-auto size-44">
+		<Avatar.Root class="-order-1 mx-auto my-6 size-44 lg:order-2">
 			<Avatar.Image src={route('gh_profile') + '.png'} alt="@LBF38" />
 			<Avatar.Fallback>LBF38</Avatar.Fallback>
 		</Avatar.Root>
