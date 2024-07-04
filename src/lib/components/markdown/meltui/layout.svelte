@@ -8,12 +8,14 @@
 <script>
 	// this gets rid of warnings in the console that the layout was created with unknown props
 	// feels weird but we can't use TS in this mdsvex layout component (from my understanding)
-	export let snippets = '';
-	export let schemas = '';
-	export let previews = '';
-	export let keyboard = '';
+	export let talked_languages = '';
+	export let location = '';
+	export let hobbies = '';
+	export let from = '';
+	export let to = '';
+	export let where = '';
+	export let what = '';
 	export let title = '';
-	export let description = '';
 </script>
 
-<slot {snippets} {schemas} {previews} {keyboard} {title} {description} />
+<slot {talked_languages} {location} {hobbies} {from} {to} {where} {what} {title} />
