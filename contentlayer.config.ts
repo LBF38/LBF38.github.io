@@ -25,6 +25,26 @@ const computedFields: ComputedFields = {
 	}
 };
 
+export const Intro = defineDocumentType(() => ({
+	name: 'Intro',
+	description: 'A single file, for introducing myself.',
+	filePathPattern: 'intro/introduction.*.md',
+	contentType: 'markdown',
+	fields: {
+		talked_languages: {
+			type: 'string',
+			description: 'A list of talked languages'
+		},
+		location: {
+			type: 'string'
+		},
+		hobbies: {
+			type: 'string'
+		}
+	},
+	computedFields
+}));
+
 export const CV = defineDocumentType(() => ({
 	name: 'CV',
 	filePathPattern: 'cv/**/*.md',
@@ -72,6 +92,6 @@ export const CV = defineDocumentType(() => ({
 
 export default makeSource({
 	contentDirPath: './src/content',
-	documentTypes: [CV],
+	documentTypes: [CV, Intro],
 	disableImportAliasWarning: true
 });
