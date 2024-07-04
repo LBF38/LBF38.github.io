@@ -1,6 +1,9 @@
 <script lang="ts">
 	import CvItem from '$lib/components/cv-item.svelte';
 	import { H1 } from '$lib/components/typography/individual';
+	import * as Avatar from '$lib/components/ui/avatar';
+	import WarningAlert from '$lib/components/WarningAlert.svelte';
+	import { route } from '$lib/ROUTES';
 	import * as m from '$paraglide/messages';
 	import type { PageData } from './$types';
 
@@ -28,6 +31,34 @@
 		{m.soft_safe_penguin_mend()}
 	</span>
 </H1>
+
+{#if !data.intro}
+	<WarningAlert />
+{:else}
+	<div class="grid grid-cols-4">
+		<div class="col-span-3">
+			<svelte:component this={data.intro.content} />
+			<ul>
+				<li>
+					<strong>Location:</strong>
+					{data.intro.metadata.location}
+				</li>
+				<li>
+					<strong>Languages:</strong>
+					{data.intro.metadata.talked_languages}
+				</li>
+				<li>
+					<strong>Hobbies:</strong>
+					{data.intro.metadata.hobbies}
+				</li>
+			</ul>
+		</div>
+		<Avatar.Root class="mx-auto size-44">
+			<Avatar.Image src={route('gh_profile') + '.png'} alt="@LBF38" />
+			<Avatar.Fallback>LBF38</Avatar.Fallback>
+		</Avatar.Root>
+	</div>
+{/if}
 
 {#each cv as item}
 	<CvItem cv_content={item.content} title={item.title} />

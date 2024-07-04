@@ -1,11 +1,12 @@
 <script lang="ts">
-	import type { ContentCV } from '$lib';
-	import { H2 } from './typography/individual';
-	import { DateFormatter } from '@internationalized/date';
+	import type { CV } from '$contentlayer/generated';
+	import type { Content } from '$lib';
 	import { languageTag } from '$paraglide/runtime';
+	import { DateFormatter } from '@internationalized/date';
 	import { onMount } from 'svelte';
+	import { H2 } from './typography/individual';
 
-	export let cv_content: ContentCV[];
+	export let cv_content: Content<CV>[];
 	export let title: string;
 	let dateFormatter: DateFormatter | null = null;
 	const formatterOptions: Intl.DateTimeFormatOptions = {
@@ -27,7 +28,7 @@
 </script>
 
 <section class="my-4 grid gap-6 md:grid-cols-3 lg:grid-cols-4">
-	<H2 class="md:col-span-2 md:col-start-2">{title}</H2>
+	<H2 class="md:col-span-2 md:col-start-2 lg:col-span-3 lg:col-start-2">{title}</H2>
 	{#each cv_content as item}
 		<article class="col-span-full inline-grid gap-8 md:grid-cols-3 lg:grid-cols-4">
 			<p class="col-span-1 inline-flex flex-col md:text-end">
