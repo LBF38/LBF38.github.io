@@ -4,6 +4,8 @@ location: France
 hobbies: sports, musique, voyages, ...
 ---
 
-Fugiat reprehenderit qui exercitation magna dolore. Tempor eu cupidatat do aute consectetur exercitation ullamco labore non elit irure exercitation eiusmod consequat. Commodo non ut non ipsum veniam minim nisi incididunt. Aute dolor nisi aute incididunt fugiat exercitation id veniam. Magna non deserunt aliquip nulla laboris duis aliqua labore anim veniam.
+*Salut ! Je suis Mathis, un ingénieur logiciel passionné originaire de France ! J'aime créer des logiciels robustes et bien conçus en utilisant des technologies modernes.*
 
-Laboris ea ex pariatur exercitation sit reprehenderit fugiat consectetur qui elit esse pariatur adipisicing. Sit adipisicing ea voluptate aliquip velit. Mollit tempor reprehenderit sunt consectetur cupidatat elit nisi eiusmod aliqua. Quis cupidatat ex in aliquip aliqua dolore dolore esse.
+*Je travaille actuellement dans le Dev/Ops et les architectures cloud tout en créant des applications full-stack utilisant des outils technologiques modernes. Du développement mobile au développement web en passant par d'autres sujets connexes, je suis curieux et j'aime mettre en pratique mes compétences à travers des projets parallèles*.
+
+*Je suis expérimenté avec Svelte/SvelteKit pour le développement web, Flutter pour le développement mobile et les pratiques Dev/Ops sur les architectures cloud.*

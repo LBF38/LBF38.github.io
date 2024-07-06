@@ -115,7 +115,8 @@
 		"layout",
 		"code",
 		"ui",
-		"i18n"
+		"i18n",
+		"content"
 	],
 	"svg.preview.background": "editor",
 	"yaml.schemas": {
