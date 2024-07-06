@@ -50,7 +50,7 @@
 	{#if $page.route.id !== route('/')}
 		{#key data.pathname}
 			<main
-				class="container mx-auto my-auto flex-grow p-6"
+				class="container mx-auto my-auto flex-grow"
 				in:fade={{ delay: 500, duration: 500 }}
 				out:blur={{ duration: 500 }}
 			>
