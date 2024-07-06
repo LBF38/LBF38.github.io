@@ -30,10 +30,11 @@
 			keywords: m.factual_upper_dragonfly_renew()
 		}
 	];
+	let open = false;
 </script>
 
 <nav
-	class="sticky top-0 z-50 flex flex-row content-center items-center justify-center space-x-10 bg-opacity-70 p-4 backdrop-blur-md flex-shrink-0"
+	class="sticky top-0 z-50 flex flex-shrink-0 flex-row content-center items-center justify-center space-x-10 bg-opacity-70 p-4 backdrop-blur-md"
 >
 	<a href={route('/')} class="mr-auto">
 		<Logo />
@@ -83,7 +84,7 @@
 	</ul>
 
 	<div class="ml-auto flex w-fit gap-4">
-		<Sheet.Root>
+		<Sheet.Root bind:open>
 			<Sheet.Trigger class="md:hidden">
 				<Menu />
 			</Sheet.Trigger>
@@ -101,6 +102,7 @@
 						variant={$page.route.id === route.pathname ? 'secondary' : 'link'}
 						data-sveltekit-preload-data="hover"
 						class="justify-start"
+						on:click={() => (open = false)}
 					>
 						{route.name}
 					</Button>
