@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { CV } from '$contentlayer/generated';
 	import type { Content } from '$lib';
+	import { AspectRatio } from '$lib/components/ui/aspect-ratio';
 	import { languageTag } from '$paraglide/runtime';
 	import { DateFormatter } from '@internationalized/date';
 	import { onMount } from 'svelte';
@@ -38,6 +39,15 @@
 				</span>
 				<span class="font-bold">{item.metadata.what}</span>
 				<span class="font-light italic">{item.metadata.where}</span>
+				<div class="ml-auto mt-4 h-fit w-24">
+					<AspectRatio ratio={1} class="bg-muted">
+						<img
+							src="/logo_orange.png"
+							alt="some text"
+							class="rounded-md object-cover"
+						/>
+					</AspectRatio>
+				</div>
 			</P>
 			<div class="md:col-span-2 lg:col-span-3">
 				<svelte:component this={item.content} />
