@@ -12,8 +12,8 @@ During my 3 years at [ENSTA Bretagne](https://ensta-bretagne.fr), I was able to 
 
 After a first year as a generalist, focusing mainly on mechanics, IT and applied maths, I chose to specialise in IT in order to find out more about this field.
 
-In 2 years of specialising, I was able to gain an insight into the IT field and carry out a number of projects, which enabled me to apply the knowledge I had acquired in the classroom.
+In 2 years of specialising, I gained an insight into the IT field and carry out a number of projects, which enabled me to apply the knowledge I had acquired in the classroom.
 
-What's more, I developed a passion for cloud development and Dev/Ops practices.
+Furthermore, I developed a passion for cloud development and Dev/Ops practices.
 
 These 2 years have also enabled me to discover all the facets of IT, from low-level development in C/C++, to Cloud development with Dev/Ops practices, including different types of development such as Mobile, Web and fullstack development.
