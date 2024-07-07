@@ -6,9 +6,10 @@ where: Orange Meylan, Grenoble, France
 what: End-of-study internship
 ---
 
-Stage sur l'observabilité dans le cloud.
-A expliquer plus en détail.
+**Instrumentation and observability studies using [OpenTelemetry](https://opentelemetry.io) and associated technologies.**
 
-Proident aliqua qui ad dolore id officia ea. Elit exercitation sint culpa dolor incididunt sunt dolore labore sunt aliquip do occaecat. Ex veniam sunt proident fugiat sit anim laboris. Sint aute officia occaecat minim consectetur et exercitation sunt enim ullamco nisi sit sit ad. Enim Lorem labore pariatur in esse eu non consectetur anim. Labore duis nostrud veniam dolor. Veniam eu proident eiusmod occaecat id in laborum laborum amet nulla cillum incididunt ullamco.
+The aim of the internship is to study the [OpenTelemetry](https://opentelemetry.io) standard in order to instrument applications and gain a better understanding of how they work.
 
-Est nisi aute exercitation cupidatat consectetur. Et minim incididunt ex cillum nisi minim pariatur id in sunt. Amet elit officia mollit minim deserunt reprehenderit aliquip.
+Combined with this, I'm developing my Dev/Ops skills on cloud environments such as [Kubernetes](https://kubernetes.io)/[OpenShift](https://openshift.com) deployments and others.
+
+To get a complete picture of the information systems and applications deployed, it's also important to study the technologies associated with the OpenTelemetry standard and the observability ecosystem, such as [Grafana](https://grafana.org), [Jaeger](https://jaegertracing.io) and [Prometheus](https://prometheus.io), among others.
