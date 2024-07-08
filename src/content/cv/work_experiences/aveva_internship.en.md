@@ -6,6 +6,6 @@ where: AVEVA Madrid, Madrid, Spain
 what: Second year internship
 ---
 
-**MES Delivery Service Integrator at [AVEVA](https://aveva.com)**
+**{title} at [AVEVA](https://aveva.com)**
 
 Web development on AVEVA MES products such as AVEVA Work Tasks. Experience on vanilla HTML/CSS/JS and SQL stored procedures.

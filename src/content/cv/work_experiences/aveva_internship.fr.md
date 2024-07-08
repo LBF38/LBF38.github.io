@@ -2,7 +2,7 @@
 title: Intégrateur logiciel des solutions MES
 from: 2023-05
 to: 2023-08
-where: AVEVA Madrid, Madrid, Spain
+where: AVEVA Madrid, Madrid, Espagne
 what: Stage de 2e année
 ---
 
