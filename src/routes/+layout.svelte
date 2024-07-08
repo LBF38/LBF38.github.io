@@ -15,7 +15,6 @@
 	import '../app.pcss';
 	import type { LayoutData } from './$types';
 
-	let visible = true;
 	export let data: LayoutData;
 
 	function adjustScrollbarVisibility() {
@@ -45,14 +44,14 @@
 
 <ParaglideJS {i18n}>
 	<Toaster richColors />
-	<ModeWatcher />
+	<ModeWatcher defaultMode="dark" />
 	<Navigation />
 	{#if $page.route.id !== route('/')}
 		{#key data.pathname}
 			<main
 				class="container mx-auto my-auto flex-grow p-6"
-				in:fade={{ delay: 500, duration: 500 }}
-				out:blur={{ duration: 500 }}
+				in:fade={{ delay: 300, duration: 300 }}
+				out:blur={{ duration: 300 }}
 			>
 				<WarningAlert />
 				<slot />
