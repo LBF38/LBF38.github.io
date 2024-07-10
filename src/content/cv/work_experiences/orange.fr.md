@@ -4,6 +4,7 @@ from: 2024-03
 to: 2024-09
 where: Orange Meylan, Grenoble, France
 what: Stage de fin d'études (PFE)
+img: /assets/logo_orange.png
 ---
 
 **Instrumentation et étude de l’observabilité à l’aide d’OpenTelemetry et les technologies associées.**

@@ -4,6 +4,7 @@ from: 2024-03
 to: 2024-09
 where: Orange Meylan, Grenoble, France
 what: End-of-study internship
+img: /assets/logo_orange.png
 ---
 
 **Instrumentation and observability studies using [OpenTelemetry](https://opentelemetry.io) and associated technologies.**

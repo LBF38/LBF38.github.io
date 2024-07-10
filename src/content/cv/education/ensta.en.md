@@ -4,6 +4,7 @@ from: 2021-08
 to: 2024-08
 where: Brest, France
 what:  ENSTA Bretagne
+img: /assets/logo_ensta_bretagne.png
 ---
 
 **Training as a student engineer, specialising in Digital Systems Design.**
