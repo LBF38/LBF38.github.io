@@ -78,6 +78,10 @@ export const CV = defineDocumentType(() => ({
 		url: {
 			type: 'string',
 			description: 'The link to the company if needed'
+		},
+		img: {
+			type: 'string',
+			description: 'The image of the company'
 		}
 	},
 	computedFields: {

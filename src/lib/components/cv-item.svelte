@@ -38,6 +38,13 @@
 				</span>
 				<span class="font-bold">{item.metadata.what}</span>
 				<span class="font-light italic">{item.metadata.where}</span>
+				{#if item.metadata.img}
+					<img
+						src={item.metadata.img}
+						alt="logo associated to the company or project"
+						class="ml-auto mt-2 h-fit w-20 rounded-md"
+					/>
+				{/if}
 			</P>
 			<div class="md:col-span-2 lg:col-span-3">
 				<svelte:component this={item.content} />
