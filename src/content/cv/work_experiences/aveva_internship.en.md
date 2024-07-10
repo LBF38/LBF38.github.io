@@ -4,6 +4,7 @@ from: 2023-05
 to: 2023-08
 where: AVEVA Madrid, Madrid, Spain
 what: Second year internship
+img: /assets/logo_aveva.png
 ---
 
 **{title} at [AVEVA](https://aveva.com)**

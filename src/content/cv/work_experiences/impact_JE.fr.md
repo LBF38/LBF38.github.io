@@ -4,6 +4,7 @@ from: 2021-12
 to: 2022-12
 where: IMPACT, Brest, France
 what: Chargé de développement commercial au sein d'IMPACT
+img: /assets/logo_impact_je_enstab.png
 ---
 
 **{title} chez [IMPACT, la JE de l'ENSTA Bretagne](https://www.linkedin.com/company/impactenstab/)**

@@ -4,6 +4,7 @@ from: 2022-02
 to: 2021-10
 where: Brest, France
 what: Entrepreneuriat
+img: /assets/logo_fabrik_ta_pepite.png
 ---
 
 **{title}**

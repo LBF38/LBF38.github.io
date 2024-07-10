@@ -4,6 +4,7 @@ from: 2022-01
 to: 2022-01
 where: ECRIN SYSTEMS, Crolles, France
 what: First year internship
+img: /assets/logo_ecrin.png
 ---
 
 **{title} at [ECRIN SYSTEMS](https://ecrin.com)**

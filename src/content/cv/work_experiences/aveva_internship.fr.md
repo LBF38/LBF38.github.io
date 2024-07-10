@@ -4,6 +4,7 @@ from: 2023-05
 to: 2023-08
 where: AVEVA Madrid, Madrid, Espagne
 what: Stage de 2e année
+img: /assets/logo_aveva.png
 ---
 
 **{title} chez [AVEVA](https://aveva.com)**

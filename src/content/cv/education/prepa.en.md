@@ -4,6 +4,7 @@ from: 2019-09
 to: 2021-08
 where: Lyon, France
 what:  La Martinière Monplaisir
+img: /assets/logo_la_martiniere_monplaisir_nobg.png
 ---
 
 **{title}**
