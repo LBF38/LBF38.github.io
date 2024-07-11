@@ -42,7 +42,7 @@
 					<img
 						src={item.metadata.img}
 						alt="logo associated to the company or project"
-						class="mt-2 h-fit w-20 rounded-md md:ml-auto"
+						class="mt-2 h-14 w-fit rounded-md object-cover md:ml-auto"
 					/>
 				{/if}
 			</P>
