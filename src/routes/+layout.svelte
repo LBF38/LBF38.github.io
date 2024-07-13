@@ -54,7 +54,7 @@
 				in:fade={{ delay: 500, duration: 500 }}
 				out:blur={{ duration: 500 }}
 			>
-				<WarningAlert />
+				<!-- <WarningAlert /> -->
 				<slot />
 			</main>
 			<Footer />
