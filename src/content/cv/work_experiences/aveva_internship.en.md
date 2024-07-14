@@ -9,4 +9,8 @@ img: /assets/logo_aveva.png
 
 **{title} at [AVEVA](https://aveva.com)**
 
-Web development on AVEVA MES products such as AVEVA Work Tasks. Experience on vanilla HTML/CSS/JS and SQL stored procedures.
+Web development on [AVEVA MES](https://www.aveva.com/fr-fr/products/manufacturing-execution-system/) products such as [AVEVA Work Tasks](https://www.aveva.com/fr-fr/products/work-tasks/).
+
+This was an opportunity for me to deepen my skills in pure HTML/CSS/JS and to learn SQL stored procedures. The aim of this integration work was to modify the interfaces of the AVEVA software to integrate customer requirements. In addition, it was important to retrieve the relevant data relating to their needs in order to improve the visualisation.
+
+This work placement in Spain was also an opportunity to speak English and Spanish on a daily basis.
