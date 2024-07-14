@@ -3,13 +3,16 @@ title: Business Developer
 from: 2021-12
 to: 2022-12
 where: IMPACT, Brest, France
-what: Business Development Manager at IMPACT
+what: Business Development Manager
 img: /assets/logo_impact_je_enstab.png
 ---
 
 **{title} at [IMPACT, the ENSTA Bretagne Junior Enterprise](https://www.linkedin.com/company/impactenstab/)**
 
 I spent a year working for IMPACT, the Junior Enterprise of ENSTA Bretagne.
+
+> A [Junior Entreprise](https://junior-entreprises.com/) is an 1901 association managed by students for students, with an organization similar to real companies.
+> It aims to provide real life projects for students in their field of expertise.
 
 As a sales representative, my aim was to diversify the J.E.'s customers by prospecting new companies in the specialist areas in which the school's students have skills. This corresponds to ENSTA Bretagne's 9 areas of specialisation.
 

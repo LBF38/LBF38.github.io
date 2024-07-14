@@ -9,4 +9,7 @@ img: /assets/logo_ecrin.png
 
 **{title} at [ECRIN SYSTEMS](https://ecrin.com)**
 
-Production of on-board systems and computers used in submarines, ships and helicopters.
+Production of on-board systems and computers used in submarines, boats and helicopters.
+
+- Assembly and wiring of electronic components
+- Installation of motherboards and integrated screens
