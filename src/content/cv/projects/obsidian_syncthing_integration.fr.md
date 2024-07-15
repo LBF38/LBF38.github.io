@@ -8,6 +8,8 @@ what:  Projet parallèle
 
 **{title}**
 
-Projet personnel pour intégrer une partie des fonctionnalités de Syncthing dans Obsidian, application de prise de notes. Lié au développement web. Plugin TypeScript utilisant l’API REST de Syncthing.
+A titre personnel, afin d'optimiser la prise de notes sur plusieurs supports, j'ai développé un plugin Obsidian pour intégrer une partie des fonctionnalités de Syncthing dans l'application.
+
+Ce projet fait appel à des compétences en développement web, notamment à l'aide de Typescript et de l'API REST de Syncthing.
 
 Rendez-vous sur [Github](https://github.com/LBF38/obsidian-syncthing-integration) pour voir le code source.

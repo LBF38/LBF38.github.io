@@ -1,7 +1,7 @@
 ---
 title: Fabrik Ta Pépite competition
-from: 2022-02
-to: 2021-10
+from: 2021-10
+to: 2022-02
 where: Brest, France
 what: Entrepreneurship
 img: /assets/logo_fabrik_ta_pepite.png

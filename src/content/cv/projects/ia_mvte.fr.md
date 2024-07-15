@@ -8,6 +8,5 @@ what: Projet annuel
 
 **{title}**
 
-Reprise d’une application mobile React Native en Flutter/Dart.
-Conversion d’un serveur Javascript (JS) en TypeScript (TS) et conteneurisation avec automatisation pour le déploiement.
-Projet d’aide à la prise de décision pour les médecins.
+Au sein d'une équipe constituée de 4 étudiants, nous avons réalisé la reprise d'une application mobile React Native en Flutter/Dart, la conversion d'un serveur Javascript (JS) en Typescript (TS), sa conteneurisation (Docker) et l'automatisation du déploiement.
+Le but était de fournir un outil d'aide à la prise de décision pour les médecins.

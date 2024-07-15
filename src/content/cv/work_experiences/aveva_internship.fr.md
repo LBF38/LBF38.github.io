@@ -12,6 +12,6 @@ img: /assets/logo_aveva.png
 Développement web sur les produits [AVEVA MES](https://www.aveva.com/fr-fr/products/manufacturing-execution-system/) tels que [AVEVA Work Tasks](https://www.aveva.com/fr-fr/products/work-tasks/).
 
 Ce fut pour moi l'occasion d'approfondir mes compétences en HTML/CSS/JS pur et d'apprendre les procédures stockées SQL.
-Ce travail d'intégration avait pour objectif de modifier les interfaces du logiciel AVEVA pour intégrer les besoins clients. De plus, il était important de récupérer les données pertinentes relatives à leurs besoins pour améliorer la visualisation.
+Cette mission avait pour objectif d'intégrer au sein du logiciel AVEVA les besoins clients. De même, afin d'améliorer l'expérience utilisateur, la récupération des données pertinentes est une étape essentielle.
 
 Aussi, ce stage en Espagne fut l'opportunité de parler anglais et espagnol au quotidien.

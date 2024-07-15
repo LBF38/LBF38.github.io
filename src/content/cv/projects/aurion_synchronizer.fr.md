@@ -8,7 +8,7 @@ what: Projet parallèle
 
 **{title}**
 
-Ce premier projet web fut pour automatiser la récupération du planning AURION, géré par l'ENSTA Bretagne.
+Ce premier projet web avait pour objectif l"automatisation et la récupération du planning AURION, géré par l'ENSTA Bretagne.
 
 Cela permet de synchroniser les cours avec un calendrier personnel à l'aide du format ICS.
 

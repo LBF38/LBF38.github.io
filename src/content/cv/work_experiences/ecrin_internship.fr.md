@@ -9,7 +9,11 @@ img: /assets/logo_ecrin.png
 
 **{title} chez [ECRIN SYSTEMS](https://ecrin.com)**
 
-Réalisation de systèmes embarqués et ordinateurs utilisés dans les sous-marins, bateaux et hélicoptères.
+Cette entreprise réalise des systèmes embarqués et des ordinateurs, qui sont utilisés dans les sous-marins, bateaux et hélicoptères.
+
+J'ai participé aux :
 
 - Montage et câblages de composants électroniques
 - Installation de cartes mères et d'écrans intégrés
+
+Ce fut instructif et enrichissant.

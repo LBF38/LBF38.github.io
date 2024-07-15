@@ -1,7 +1,7 @@
 ---
-title: Concours Fabrik Ta Pépite
-from: 2022-02
-to: 2021-10
+title: "Fabrik Ta Pépite : le concours"
+from: 2021-10
+to: 2022-02
 where: Brest, France
 what: Entrepreneuriat
 img: /assets/logo_fabrik_ta_pepite.png
@@ -9,6 +9,8 @@ img: /assets/logo_fabrik_ta_pepite.png
 
 **{title}**
 
-J'ai participé au concours Fabrik Ta Pépite à Brest en portant mon projet d'application innovante avec 2 coéquipiers. Nous avons pu affiner l'idée afin d'en faire ressortir l'aspect innovant.
+Pour notre participation au concours, nous avons présenté, avec deux coéquipiers, un projet d'application de gestion alimentaire.
+Le défi était de faire ressortir son aspect innovant.
 
-L'objectif du concours fut de rédiger un dossier convaincant sur le projet innovant que nous soutenons. Nous avons acquis beaucoup de connaissances liés à l'entrepreneuriat au travers de divers ateliers dispensés par le PEPITE Bretagne et les collaborateurs du concours.
+Pour y parvenir, nous avons rédigé un dossier qui puisse convaincre le jury de son potentiel.
+Au travers des divers ateliers du [PEPITE Bretagne](https://www.pepitebretagne.fr/) et les collaborateurs du concours, nous avons acquis bon nombre de connaissances entrepreneuriales.

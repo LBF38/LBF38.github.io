@@ -8,11 +8,9 @@ what: Projet entrepreneurial
 
 **{title}**
 
-Projet entrepreneurial visant à améliorer l'expérience de l'utilisateur lors de la gestion quotidienne des aliments.
+Ce projet vise à améliorer l'expérience utilisateur lors de la gestion quotidienne des denrées alimentaires. C'est pour moi l'opportunité d'explorer le domaine de l'entrepreneuriat et mettre en pratique mes connaissances informatiques.
 
-Le projet est un moyen pour moi d'explorer l'entrepreneuriat et d'appliquer les connaissances acquises dans les cours d'informatique à un projet réel.
-
-Les technologies utilisées sont les suivantes :
+Les technologies utilisées sont :
 
 - Backend :
   - NodeJS avec TypeScript
@@ -24,4 +22,4 @@ Les technologies utilisées sont les suivantes :
 - Frontend :
   - Svelte/SvelteKit pour le web
   - Flutter/Dart pour l'application mobile
-  - Et d'autres librairies importantes pour des détails particuliers de l'application tels que l'internationalisation, les composants d'interface utilisateur, ...
+  - Et d'autres librairies pour apporter d'autres fonctionnalités telles que l'internationalisation, les composants d'UI, ...

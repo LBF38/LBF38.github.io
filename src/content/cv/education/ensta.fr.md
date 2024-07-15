@@ -11,10 +11,14 @@ img: /assets/logo_ensta_bretagne.png
 
 Durant ces 3 années à l'[ENSTA Bretagne](https://ensta-bretagne.fr), j'ai pu m'investir dans divers projets en plus des cours.
 
-Après une première année généraliste, principalement axée sur la mécanique, l'informatique et les maths appliquées, j'ai choisi de me spécialiser dans l'informatique afin de découvrir ce domaine plus amplement.
+Après une première année généraliste, axée sur la mécanique, l'informatique et les maths appliquées, j'ai choisi l'informatique comme spécialité.
 
-En 2 ans de spécialité, j'ai pu appréhender le domaine informatique et réaliser différents projets, qui ont permis de mettre en application les connaissances acquises en cours.
+Au cours des deux années de spécialité, j'ai pu réaliser différents projets, qui m'ont permis la mise en application des connaissances acquises, ainsi que divers facettes du développement :
 
-De plus, je me suis pris de passion pour le développement cloud et les pratiques Dev/Ops.
+- bas niveau en C/C++,
+- cloud avec les pratiques Dev/Ops,
+- mobile,
+- web,
+- fullstack (backend/frontend).
 
-Ces 2 années m'ont aussi permis de découvrir toutes les facettes de l'informatique, du développement bas niveau en C/C++, au développement Cloud avec les pratiques Dev/Ops, en passant par les différents types de développement comme le développement Mobile, Web ou encore le développement fullstack.
+De plus, je me suis découvert une passion pour le développement cloud et les pratiques Dev/Ops.

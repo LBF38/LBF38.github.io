@@ -9,4 +9,4 @@ img: /assets/logo_la_martiniere_monplaisir_nobg.png
 
 **CPGE (Classe Préparatoire aux Grandes Ecoles) Scientifique PTSI/PT\***
 
-J'ai fait une prépa scientifique PTSI/PT* à [La Martinière Monplaisir](https://martiniere-monplaisir.ent.auvergnerhonealpes.fr/). Cette filière a pour dominante les mathématiques, la physique-chimie et les sciences de l'ingénieur parmi d'autres matières afin de préparer les concours nationaux pour les grandes écoles d'ingénieur.
+J'ai choisi une prépa scientifique PTSI/PT* à [La Martinière Monplaisir](https://martiniere-monplaisir.ent.auvergnerhonealpes.fr/). Cette filière a pour dominante les mathématiques, la physique-chimie et les sciences de l'ingénieur parmi d'autres matières afin de préparer les concours nationaux pour les grandes écoles d'ingénieur.
