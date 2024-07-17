@@ -18,6 +18,12 @@
 			keywords: m.muddy_few_reindeer_treat()
 		},
 		{
+			pathname: route('/tech'),
+			name: m.jumpy_few_marten_win(),
+			description: m.patient_caring_barbel_renew(),
+			keywords: 'svelte, sveltekit, tailwindcss, typescript, vite, graphql, postgresql, ...'
+		},
+		{
 			pathname: route('/about'),
 			name: m.game_bad_robin_aid(),
 			description: m.mushy_few_vulture_treasure(),
