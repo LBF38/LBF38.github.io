@@ -11,7 +11,7 @@ img: /assets/logo_aveva.png
 
 Développement web sur les produits [AVEVA MES](https://www.aveva.com/fr-fr/products/manufacturing-execution-system/) tels que [AVEVA Work Tasks](https://www.aveva.com/fr-fr/products/work-tasks/).
 
-Ce fut pour moi l'occasion d'approfondir mes compétences en HTML/CSS/JS pur et d'apprendre les procédures stockées SQL.
+Ce fut pour moi l'occasion d'approfondir mes compétences en [HTML](https://developer.mozilla.org/docs/Web/HTML)/[CSS](https://developer.mozilla.org/docs/Web/CSS)/[JS](https://developer.mozilla.org/fr/docs/Web/JavaScript) pur et d'apprendre les procédures stockées [SQL](https://fr.wikipedia.org/wiki/Structured_Query_Language).
 Cette mission avait pour objectif d'intégrer au sein du logiciel AVEVA les besoins clients. De même, afin d'améliorer l'expérience utilisateur, la récupération des données pertinentes est une étape essentielle.
 
 Aussi, ce stage en Espagne fut l'opportunité de parler anglais et espagnol au quotidien.
