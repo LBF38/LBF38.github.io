@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { H1, H3 } from '$lib/components/markdown';
 	import { A, Li } from '$lib/components/markdown/meltui';
+	import * as m from '$paraglide/messages';
 	import Icon from '@iconify/svelte';
 	import { mode } from 'mode-watcher';
 
@@ -9,7 +10,7 @@
 		(value) =>
 			(content = [
 				{
-					title: 'Code & Languages',
+					title: m.novel_moving_bear_commend(),
 					links: [
 						{
 							name: 'Svelte',
@@ -49,7 +50,42 @@
 					]
 				},
 				{
-					title: 'Developer Experience',
+					title: 'Dev/Ops',
+					links: [
+						{
+							name: 'Docker',
+							url: 'https://www.docker.com',
+							icon: `docker`
+						},
+						{
+							name: 'Kubernetes',
+							url: 'https://kubernetes.io',
+							icon: `kubernetes`
+						},
+						{
+							name: 'Red Hat OpenShift',
+							url: 'https://www.openshift.com',
+							icon: `openshift`
+						},
+						{
+							name: 'GitHub',
+							url: 'https://github.com',
+							icon: `github-${value}`
+						},
+						{
+							name: 'GitHub Actions',
+							url: 'https://github.com/actions',
+							icon: `githubactions-${value}`
+						},
+						{
+							name: 'GitLab',
+							url: 'https://gitlab.com',
+							icon: `gitlab-${value}`
+						}
+					]
+				},
+				{
+					title: m.few_last_chicken_urge(),
 					links: [
 						{
 							name: 'Vite',
@@ -60,6 +96,31 @@
 							name: 'VS Code',
 							url: 'https://code.visualstudio.com',
 							icon: `vscode-${value}`
+						},
+						{
+							name: 'Linux',
+							url: 'https://www.linux.org',
+							icon: `linux-${value}`
+						},
+						{
+							name: 'Bash',
+							url: 'https://www.gnu.org/software/bash/',
+							icon: `bash-${value}`
+						},
+						{
+							name: 'Git',
+							url: 'https://git-scm.com',
+							icon: `git`
+						}
+					]
+				},
+				{
+					title: 'Design',
+					links: [
+						{
+							name: 'Figma',
+							url: 'https://www.figma.com',
+							icon: `figma-${value}`
 						}
 					]
 				}
@@ -67,9 +128,9 @@
 	);
 </script>
 
-<H1 class="mb-4">Tools and Technologies</H1>
+<H1 class="mb-8">{m.nice_drab_quail_swim()}</H1>
 
-<article class="grid md:grid-cols-3">
+<article class="mb-4 grid gap-8 md:grid-cols-3">
 	{#each content as item}
 		<section>
 			<H3>{item.title}</H3>
