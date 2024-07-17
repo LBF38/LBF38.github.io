@@ -1,5 +1,5 @@
 ---
-title: Fabrik Ta Pépite competition
+title: Fabrik Ta Pépite challenge
 from: 2021-10
 to: 2022-02
 where: Brest, France
@@ -9,6 +9,6 @@ img: /assets/logo_fabrik_ta_pepite.png
 
 **{title}**
 
-I took part in the Fabrik Ta Pépite competition in Brest with my innovative mobile app project along with two teammates. We were able to refine the idea in order to bring out its innovative aspect.
+To enter the contest, we present, together with two teammates, a food management application project. The challenge was to highlight its innovative aspect.
 
-The objective of the competition was to write a convincing presentation of the innovative project we were supporting. We acquired a lot of knowledge related to entrepreneurship through various workshops given by PEPITE Bretagne and the competition's collaborators.
+To achieve this, we drafted a dossier that would convince the jury of its potential. Through the various [PEPITE Bretagne](https://www.pepitebretagne.fr/) workshops and the competition contributors, we developed entrepreneurial skills.

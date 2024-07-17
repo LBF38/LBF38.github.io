@@ -9,17 +9,19 @@ img: /assets/logo_impact_je_enstab.png
 
 **{title} at [IMPACT, the ENSTA Bretagne Junior Enterprise](https://www.linkedin.com/company/impactenstab/)**
 
-I spent a year working for IMPACT, the Junior Enterprise of ENSTA Bretagne.
+My role within the ENSTA Bretagne Junior-Enterprise, IMPACT, as a sales representative, was a valuable experience.
 
-> A [Junior Entreprise](https://junior-entreprises.com/) is an 1901 association managed by students for students, with an organization similar to real companies.
-> It aims to provide real life projects for students in their field of expertise.
+> A [Junior-Entreprise](https://junior-entreprises.com/) is an association with the french law of 1901 managed by students for students, in a setup similar to a firm organization.
+> It aims to provide students with practical projects in their field of expertise.
 
-As a sales representative, my aim was to diversify the J.E.'s customers by prospecting new companies in the specialist areas in which the school's students have skills. This corresponds to ENSTA Bretagne's 9 areas of specialisation.
+My goal was to diversify the J.E.'s clients while prospecting for new companies in the school's various areas of speciality. ENSTA Bretagne has 9 fields of competence in which students can contribute with their know-how.
 
-In a few words, being a sales representative at IMPACT means :
+In a few words, being a sales representative at IMPACT is :
 
-- A unique and professionalising experience, both human and rewarding;
+- A human, enriching and professionalising experience;
 - Meetings throughout the year and contact with customers;
-- Moments of cohesion with the members of the team.
+- Moments of cohesion with the members of the mandate;
 
-The job also gave me the opportunity to see a number of projects, discover areas with which I was less familiar and learn more about them. It was a very stimulating job.
+what makes this adventure unique.
+
+The job gave me the opportunity to take part in number of projects and discover areas in which I was less familiar, through a fun and stimulating experience.

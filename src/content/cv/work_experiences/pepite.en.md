@@ -8,4 +8,6 @@ what: Entrepreneurship
 
 **{title}**
 
-After my experience in the Fabrik Ta Pépite competition, I decided to pursue the development of my project with the [Statut National Etudiant Entrepreneur (SNEE)](https://www.pepitebretagne.fr/le-snee). It enabled me to meet other project leaders, attend workshops to develop new skills and learn more about the world of entrepreneurship. So, thanks to this opportunity, I had access to support for my project, which enabled me to mature it while developing my skills.
+Based on my experience during the "Fabrik Ta Pépite" challenge, I decided to go on with the development of my project with the [Statut National Etudiant Entrepreneur (SNEE)](https://www.pepitebretagne.fr/le-snee).
+This status enabled me to meet other project leaders, attend workshops to develop new skills and learn more about the entrepreneurship world.
+This opportunity allowed me to access a specific support on my project to make it grow, while developing my skills.

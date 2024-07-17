@@ -9,4 +9,4 @@ img: /assets/logo_la_martiniere_monplaisir_nobg.png
 
 **{title}**
 
-I did a PTSI/PT* scientific preparatory course at [La Martinière Monplaisir](https://martiniere-monplaisir.ent.auvergnerhonealpes.fr/). This course focuses on mathematics, physics-chemistry and engineering sciences, among other subjects, in preparation for the national competitive entrance exams for the Grandes Ecoles d'Ingénieurs in France.
+I chose a PTSI/PT* scientific preparatory course at [La Martinière Monplaisir](https://martiniere-monplaisir.ent.auvergnerhonealpes.fr/). This specific one focuses on mathematics, physics-chemistry and engineering sciences, along with other subjects, in preparatory class for major french engineering schools competitive examinations.

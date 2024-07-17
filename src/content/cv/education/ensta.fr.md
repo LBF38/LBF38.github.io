@@ -1,5 +1,5 @@
 ---
-title: Ecole d'ingénieur généraliste, spécialité informatique
+title: Formation ingénieur sous statut étudiant, spécialité Conception de Systèmes Numériques.
 from: 2021-08
 to: 2024-08
 where: Brest, France
@@ -7,7 +7,7 @@ what:  ENSTA Bretagne
 img: /assets/logo_ensta_bretagne.png
 ---
 
-**Formation ingénieur sous statut étudiant, spécialité Conception de Systèmes Numériques.**
+**{title}**
 
 Durant ces 3 années à l'[ENSTA Bretagne](https://ensta-bretagne.fr), j'ai pu m'investir dans divers projets en plus des cours.
 

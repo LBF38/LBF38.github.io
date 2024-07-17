@@ -8,6 +8,8 @@ what: Side Project
 
 **{title}**
 
-This was my first web project to automatize the synchronisation between the ENSTA Bretagne's courses planning and a personal calendar such as Google Calendar or Outlook Calendar using ICS format.
+The aim of this first web project was to automate and retrieve the AURION timetable, managed by ENSTA Bretagne.
+
+This enables lessons to be synchronised with a personal calendar app using the ICS format.
 
 See [GitHub](https://github.com/LBF38/planningAurion)
