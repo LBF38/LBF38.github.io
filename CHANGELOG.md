@@ -1,5 +1,45 @@
 # lbf38.github.io
 
+## 1.0.0
+
+### Major Changes
+
+- First major release of the website !
+  _[`#38`](https://github.com/LBF38/LBF38.github.io/pull/38) [`2739e4f`](https://github.com/LBF38/LBF38.github.io/commit/2739e4fe29d8d788d42686ae9511273a7b0d135b) [@LBF38](https://github.com/LBF38)_
+
+  It has support of the following features :
+
+  - internationalization w/ @inlang/paraglideJS
+  - dark/white mode
+  - UI components using shadcn/ui
+  - MDSveX and ContentLayer for content management and markdown support
+  - SvelteKit framework
+  - and other details.
+
+### Minor Changes
+
+- Add tech page
+  _[`#38`](https://github.com/LBF38/LBF38.github.io/pull/38) [`2739e4f`](https://github.com/LBF38/LBF38.github.io/commit/2739e4fe29d8d788d42686ae9511273a7b0d135b) [@LBF38](https://github.com/LBF38)_
+
+  new page w/ some of the main technologies and tools I know and use.
+
+- Update all website content
+  _[`#38`](https://github.com/LBF38/LBF38.github.io/pull/38) [`2739e4f`](https://github.com/LBF38/LBF38.github.io/commit/2739e4fe29d8d788d42686ae9511273a7b0d135b) [@LBF38](https://github.com/LBF38)_
+
+  to make the about page.
+  each content is available in french and english
+
+### Patch Changes
+
+- Add minor UI fixes
+  _[`93cf44d`](https://github.com/LBF38/LBF38.github.io/commit/93cf44d1ea3a3e226cf4387de73449dc42fbff93) [@LBF38](https://github.com/LBF38)_
+
+  - make dark mode as default when navigating to the website in first place.
+  - update footer to contain the copyright and website's version from `package.json`
+  - update layout transition to make website navigation feels faster.
+
+- Fix the mobile nav to autoclose on click _[`#36`](https://github.com/LBF38/LBF38.github.io/pull/36) [`8d0b73a`](https://github.com/LBF38/LBF38.github.io/commit/8d0b73aa4711c5cb0b690e63df93e87edd79c840) [@LBF38](https://github.com/LBF38)_
+
 ## 0.1.0
 
 ### Minor Changes
