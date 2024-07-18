@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import type { NavigationRoute } from '$lib';
 	import { route } from '$lib/ROUTES';
@@ -10,9 +11,33 @@
 	import Logo from './Logo.svelte';
 	import LanguageSelector from './language_selector';
 	import { Button } from './ui/button';
-	import { browser } from '$app/environment';
 
-	export let routes: NavigationRoute[] = [];
+	export let routes: NavigationRoute[] = [
+		{
+			pathname: route('/projects'),
+			name: m.safe_level_eel_dine(),
+			description: m.caring_fuzzy_fish_rush(),
+			keywords: m.muddy_few_reindeer_treat()
+		},
+		{
+			pathname: route('/tech'),
+			name: m.jumpy_few_marten_win(),
+			description: m.patient_caring_barbel_renew(),
+			keywords: 'svelte, sveltekit, tailwindcss, typescript, vite, graphql, postgresql, ...'
+		},
+		{
+			pathname: route('/about'),
+			name: m.game_bad_robin_aid(),
+			description: m.mushy_few_vulture_treasure(),
+			keywords: m.silly_lazy_leopard_type()
+		},
+		{
+			pathname: route('/contact'),
+			name: m.factual_tangy_bat_strive(),
+			description: m.bald_best_puma_cook(),
+			keywords: m.factual_upper_dragonfly_renew()
+		}
+	];
 
 	let open = false;
 

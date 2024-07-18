@@ -1,12 +1,10 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
-	import type { NavigationRoute } from '$lib';
 	import { route } from '$lib/ROUTES';
 	import Footer from '$lib/components/Footer.svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
 	import { i18n } from '$lib/i18n';
-	import * as m from '$paraglide/messages';
 	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
 	import { debounce } from 'lodash-es';
 	import { ModeWatcher } from 'mode-watcher';
@@ -37,33 +35,6 @@
 	}
 	const debouncedAdjustScrollbarVisibility = debounce(adjustScrollbarVisibility, 100);
 
-	const routes: NavigationRoute[] = [
-		{
-			pathname: route('/projects'),
-			name: m.safe_level_eel_dine(),
-			description: m.caring_fuzzy_fish_rush(),
-			keywords: m.muddy_few_reindeer_treat()
-		},
-		{
-			pathname: route('/tech'),
-			name: m.jumpy_few_marten_win(),
-			description: m.patient_caring_barbel_renew(),
-			keywords: 'svelte, sveltekit, tailwindcss, typescript, vite, graphql, postgresql, ...'
-		},
-		{
-			pathname: route('/about'),
-			name: m.game_bad_robin_aid(),
-			description: m.mushy_few_vulture_treasure(),
-			keywords: m.silly_lazy_leopard_type()
-		},
-		{
-			pathname: route('/contact'),
-			name: m.factual_tangy_bat_strive(),
-			description: m.bald_best_puma_cook(),
-			keywords: m.factual_upper_dragonfly_renew()
-		}
-	];
-
 	$: $page,
 		afterUpdate(() => {
 			debouncedAdjustScrollbarVisibility();
@@ -73,7 +44,7 @@
 <ParaglideJS {i18n}>
 	<Toaster richColors />
 	<ModeWatcher defaultMode="dark" />
-	<Navigation {routes} />
+	<Navigation />
 	{#if $page.route.id !== route('/')}
 		{#key data.pathname}
 			<main
