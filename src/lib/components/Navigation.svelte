@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import type { NavigationRoute } from '$lib';
 	import { route } from '$lib/ROUTES';
 	import * as Sheet from '$lib/components/ui/sheet';
 	import * as m from '$paraglide/messages';
@@ -10,34 +11,42 @@
 	import LanguageSelector from './language_selector';
 	import { Button } from './ui/button';
 
-	let routes: { pathname: string; name: string; description: string; keywords: string }[] = [
-		{
-			pathname: route('/projects'),
-			name: m.safe_level_eel_dine(),
-			description: m.caring_fuzzy_fish_rush(),
-			keywords: m.muddy_few_reindeer_treat()
-		},
-		{
-			pathname: route('/tech'),
-			name: m.jumpy_few_marten_win(),
-			description: m.patient_caring_barbel_renew(),
-			keywords: 'svelte, sveltekit, tailwindcss, typescript, vite, graphql, postgresql, ...'
-		},
-		{
-			pathname: route('/about'),
-			name: m.game_bad_robin_aid(),
-			description: m.mushy_few_vulture_treasure(),
-			keywords: m.silly_lazy_leopard_type()
-		},
-		{
-			pathname: route('/contact'),
-			name: m.factual_tangy_bat_strive(),
-			description: m.bald_best_puma_cook(),
-			keywords: m.factual_upper_dragonfly_renew()
-		}
-	];
+	export let routes: NavigationRoute[] = [];
+
 	let open = false;
+
+	$: currentRoute = routes.find((route) => route.pathname === $page.route.id) ?? {
+		pathname: '/',
+		description: m.direct_weird_stork_adore(),
+		keywords: m.honest_strong_manatee_express(),
+		name: m.alert_novel_midge_treat()
+	};
+	$: if (currentRoute) {
+		document.title = `${currentRoute.name} | LBF38.dev`;
+	}
 </script>
+
+<SvelteSeo
+	title="{currentRoute.name} | LBF38.dev"
+	description={currentRoute.description}
+	canonical={$page.url.href}
+	keywords={currentRoute.keywords}
+	openGraph={{
+		title: `${currentRoute.name} | LBF38.dev`,
+		description: currentRoute.description,
+		site_name: m.alert_novel_midge_treat(),
+		url: $page.url.origin,
+		type: 'website',
+		images: [
+			{
+				url: `${$page.url.origin}/social_image.png`,
+				width: 1600,
+				height: 900,
+				alt: `${currentRoute.name} | LBF38.dev`
+			}
+		]
+	}}
+/>
 
 <nav
 	class="sticky top-0 z-50 flex flex-shrink-0 flex-row content-center items-center justify-center space-x-10 bg-opacity-70 p-4 backdrop-blur-md"
@@ -48,35 +57,6 @@
 
 	<ul class="mx-auto hidden grow flex-row justify-evenly p-2 md:visible md:flex">
 		{#each routes as route}
-			{#if route.pathname === $page.route.id}
-				<SvelteSeo
-					title="{route.name} | {$page.url.hostname}"
-					description={route.description}
-					keywords={route.keywords}
-					canonical={$page.url.origin}
-					openGraph={{
-						title: `${route.name} | ${$page.url.hostname}`,
-						description: route.description,
-						site_name: $page.url.hostname,
-						url: $page.url.origin,
-						type: 'website'
-					}}
-				/>
-			{:else}
-				<SvelteSeo
-					title={m.alert_novel_midge_treat()}
-					description={m.direct_weird_stork_adore()}
-					canonical={$page.url.origin}
-					keywords={m.honest_strong_manatee_express()}
-					openGraph={{
-						title: m.alert_novel_midge_treat(),
-						description: m.direct_weird_stork_adore(),
-						site_name: m.alert_novel_midge_treat(),
-						url: $page.url.origin,
-						type: 'website'
-					}}
-				/>
-			{/if}
 			<li>
 				<Button
 					href={route.pathname}

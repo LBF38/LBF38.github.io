@@ -7,3 +7,10 @@ export type Content<T extends DocumentTypes> = {
 	content: Component;
 	metadata: T;
 };
+
+export type NavigationRoute = {
+	pathname: string;
+	name: string;
+	description: string;
+	keywords: string;
+};
