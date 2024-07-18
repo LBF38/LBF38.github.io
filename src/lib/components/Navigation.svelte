@@ -10,6 +10,7 @@
 	import Logo from './Logo.svelte';
 	import LanguageSelector from './language_selector';
 	import { Button } from './ui/button';
+	import { browser } from '$app/environment';
 
 	export let routes: NavigationRoute[] = [];
 
@@ -21,7 +22,7 @@
 		keywords: m.honest_strong_manatee_express(),
 		name: m.alert_novel_midge_treat()
 	};
-	$: if (currentRoute) {
+	$: if (currentRoute && browser) {
 		document.title = `${currentRoute.name} | LBF38.dev`;
 	}
 </script>
