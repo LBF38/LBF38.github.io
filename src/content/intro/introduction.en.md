@@ -4,6 +4,10 @@ location: France
 hobbies: sports, music, traveling, ...
 ---
 
-*Veniam qui laborum occaecat qui enim deserunt. Nulla laboris aliquip elit incididunt esse amet nostrud aliquip consequat velit duis amet elit. Mollit pariatur non enim excepteur elit incididunt reprehenderit tempor esse. Velit proident commodo duis sit pariatur magna id exercitation mollit dolor ad.*
+*I'm Mathis, a passionnate software engineer ! I enjoy creating robust and well-designed softwares using modern technologies.*
 
-Ut id id consequat aliquip officia ea sunt laborum nostrud voluptate est tempor in irure. Consectetur veniam ea labore irure. Nulla nulla cupidatat cillum est pariatur laboris fugiat magna do cupidatat. Cillum incididunt non sint minim veniam quis fugiat. Ipsum exercitation enim dolor ad consequat sint excepteur cupidatat proident officia consequat ad magna esse. Occaecat adipisicing nostrud pariatur exercitation cillum.
+*I currently work in Dev/Ops and cloud architectures environments while also making full-stack applications and other projects. From mobile to web development and other related topics, I'm curious and enjoy improving my skills through side projects.*
+
+*I'm experienced in [Svelte](https://svelte.dev)/[SvelteKit](https://kit.svelte.dev) for Web Development, [Flutter](https://flutter.dev) for Mobile Development and Dev/Ops practices on cloud architectures.*
+
+*Learn more about the [technologies and tools](/tech) I currently use.*

@@ -49,11 +49,11 @@
 	{#if $page.route.id !== route('/')}
 		{#key data.pathname}
 			<main
-				class="container mx-auto my-auto flex-grow p-6"
+				class="container mx-auto my-auto flex-grow"
 				in:fade={{ delay: 300, duration: 300 }}
 				out:blur={{ duration: 300 }}
 			>
-				<WarningAlert />
+				<!-- <WarningAlert /> -->
 				<slot />
 			</main>
 			<Footer />

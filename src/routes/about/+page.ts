@@ -6,6 +6,22 @@ import { error } from '@sveltejs/kit';
 import type { Component } from 'svelte';
 import type { PageLoad } from './$types';
 
+function sortByDate(a: Content<CV>, b: Content<CV>) {
+	const dateA = new Date(a.metadata.from);
+	const dateB = new Date(b.metadata.from);
+
+	if (!dateA.getTime()) {
+		console.warn(`Invalid date for CV: ${a.metadata.title}`);
+		return -1;
+	}
+	if (!dateB.getTime()) {
+		console.warn(`Invalid date for CV: ${b.metadata.title}`);
+		return 1;
+	}
+
+	return dateB.getTime() - dateA.getTime();
+}
+
 export const load: PageLoad = async ({ url }) => {
 	try {
 		const lang = i18n.getLanguageFromUrl(url);
@@ -24,6 +40,7 @@ export const load: PageLoad = async ({ url }) => {
 		if (!CVs) {
 			throw 'Some content not found (in this language or at all)';
 		}
+		CVs.sort(sortByDate);
 
 		const filteredIntro = allIntros.find((doc) => doc.language === lang);
 		let intro: Content<Intro> | undefined = undefined;
