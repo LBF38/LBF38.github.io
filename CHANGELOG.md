@@ -1,5 +1,20 @@
 # lbf38.github.io
 
+## 1.0.1
+
+### Patch Changes
+
+- Update SEO related code
+  _[`#39`](https://github.com/LBF38/LBF38.github.io/pull/39) [`2a23d8a`](https://github.com/LBF38/LBF38.github.io/commit/2a23d8ad8af8c67a1b1a20558521d0b13839abcd) [@LBF38](https://github.com/LBF38)_
+
+  also add a social media image for OpenGraph
+  and fix some related bugs
+
+- Hotfix on i18n for messages defined in main layout
+  _[`1bc5554`](https://github.com/LBF38/LBF38.github.io/commit/1bc55548508a1a4df1db6d5d6b45b37fe70ba177) [@LBF38](https://github.com/LBF38)_
+
+  limitation of the lib. Messages defined in main layout aren't well handled
+
 ## 1.0.0
 
 ### Major Changes
