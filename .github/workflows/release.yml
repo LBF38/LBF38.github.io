@@ -58,4 +58,5 @@ jobs:
           publish: pnpm release
         env:
           PUBLIC_GH_TOKEN: ${{ secrets.GH_API_TOKEN }} # For the web app to make API requests
+          PUBLIC_URL_ORIGIN: ${{ vars.URL_ORIGIN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
