@@ -1,5 +1,14 @@
 # lbf38.github.io
 
+## 1.0.2
+
+### Patch Changes
+
+- Chore(deps-dev): bump vite from 5.3.6 to 5.4.6 _[`#48`](https://github.com/LBF38/LBF38.github.io/pull/48) [`b4a0b0f`](https://github.com/LBF38/LBF38.github.io/commit/b4a0b0fbdba59c5616ead25816dc56daf8832f83) [@dependabot](https://github.com/apps/dependabot)_
+- Chore(deps): bump rollup from 3.29.4 to 3.29.5 _[`#43`](https://github.com/LBF38/LBF38.github.io/pull/43) [`1461a66`](https://github.com/LBF38/LBF38.github.io/commit/1461a66925601f4716a3d043bbc7d09fda723f90) [@dependabot](https://github.com/apps/dependabot)_
+- Chore(deps-dev): bump vite from 5.3.1 to 5.3.6 _[`#44`](https://github.com/LBF38/LBF38.github.io/pull/44) [`6d5ec4c`](https://github.com/LBF38/LBF38.github.io/commit/6d5ec4c923c0c82975aafc7d464ebdd8f116a8ba) [@dependabot](https://github.com/apps/dependabot)_
+- Chore(deps-dev): bump svelte from 4.2.18 to 4.2.19 _[`#41`](https://github.com/LBF38/LBF38.github.io/pull/41) [`40afae1`](https://github.com/LBF38/LBF38.github.io/commit/40afae1223c0802edfe689daa1a894abaff09a46) [@dependabot](https://github.com/apps/dependabot)_
+
 ## 1.0.1
 
 ### Patch Changes
