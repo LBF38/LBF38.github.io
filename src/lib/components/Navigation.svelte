@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
+	import { PUBLIC_URL_ORIGIN } from '$env/static/public';
 	import type { NavigationRoute } from '$lib';
 	import { route } from '$lib/ROUTES';
 	import * as Sheet from '$lib/components/ui/sheet';
@@ -65,7 +66,7 @@
 		type: 'website',
 		images: [
 			{
-				url: `${$page.url.origin}/social_image.png`,
+				url: `${PUBLIC_URL_ORIGIN}/social_image.png`,
 				width: 1600,
 				height: 900,
 				alt: `${currentRoute.name} | LBF38.dev`

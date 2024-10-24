@@ -30,6 +30,7 @@ jobs:
       - name: build
         env:
           PUBLIC_GH_TOKEN: ${{ secrets.GH_API_TOKEN }}
+          PUBLIC_URL_ORIGIN: ${{ vars.URL_ORIGIN }}
           # BASE_PATH: '/your-repo-name'
         run: |
           pnpm run build
