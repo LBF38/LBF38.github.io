@@ -41,6 +41,8 @@
 		<Input type="hidden" name="accessKey" value="eaa67da9-05d5-4686-bd7b-e4c205e90687" />
 		<!-- If we receive data in this field submission will be ignored -->
 		<Input type="text" name="honeypot" style="display: none;" />
+		<!-- Include reCAPTCHA JavaScript -->
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<!-- Optional -->
 		<!-- Required -->
 		<Label for="name">
@@ -85,6 +87,10 @@
 			name="redirectTo"
 			value={$page.url.origin + route('/contact/success')}
 		/>
+
+		<!-- reCAPTCHA widget -->
+		<div class="g-recaptcha mt-4" data-sitekey="6LftRigrAAAAALhRCshhUEMX_Icqt9ntSmTHsBya"></div>
+
 		<!-- Optional -->
 		<Button class="float-right my-4 max-w-xs" variant="outline" type="submit" value="Submit">
 			{m.gray_spare_kudu_stop()}
