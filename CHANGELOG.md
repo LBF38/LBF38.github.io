@@ -1,5 +1,15 @@
 # lbf38.github.io
 
+## 1.0.3
+
+### Patch Changes
+
+- Add reCaptcha for contact form
+  _[`beff4da`](https://github.com/LBF38/LBF38.github.io/commit/beff4da119a8c66e6366ba9bdc8a5ca1d9d9df9a) [@LBF38](https://github.com/LBF38)_
+
+  Following StaticForms instructions, added a Google reCaptcha to secure the form submission.
+  This should avoid a lot of spamming and unwanted bot submissions.
+
 ## 1.0.2
 
 ### Patch Changes
