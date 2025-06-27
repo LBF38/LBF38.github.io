@@ -94,8 +94,23 @@ export const CV = defineDocumentType(() => ({
 	}
 }));
 
+export const ProjectDetail = defineDocumentType(() => ({
+	name: 'ProjectDetail',
+	description: 'A small description for a project',
+	filePathPattern: 'projects/**/*.md',
+	contentType: 'markdown',
+	fields: {
+		url: {
+			type: 'string',
+			description: 'The link of the project',
+			required: true
+		}
+	},
+	computedFields
+}));
+
 export default makeSource({
 	contentDirPath: './src/content',
-	documentTypes: [CV, Intro],
+	documentTypes: [CV, Intro, ProjectDetail],
 	disableImportAliasWarning: true
 });

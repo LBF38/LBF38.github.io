@@ -7,8 +7,12 @@
 	import { Octokit } from '@octokit/rest';
 	import GH_language_colors from '../assets/gh_language_colors.json';
 	import { Skeleton } from './ui/skeleton';
+	import type { ProjectDetail } from '$contentlayer/generated';
+	import type { Content } from '$lib';
 
 	export let gh_url: string = 'https://github.com/LBF38/obsidian-syncthing-integration';
+	export let project: Content<ProjectDetail>;
+
 	// Create a new Octokit instance
 	const octokit = new Octokit({
 		auth: PUBLIC_GH_TOKEN
@@ -19,7 +23,7 @@
 	}
 
 	async function getRepoInformation(repository: string) {
-		const match = repository.match(/^https:\/\/github\.com\/([\w-]+)\/([\w-]+)$/);
+		const match = repository.match(/^https:\/\/github\.com\/([\w-]+)\/([\w-]+)/);
 		if (!match) throw new Error('Invalid repo URL');
 		const [, owner, repo] = match;
 
@@ -101,7 +105,10 @@
 			</Card.Header>
 		</a>
 		<!-- TODO: make a link to an article related to the project and display a short description in the card content. -->
-		<!-- <Card.Content></Card.Content> -->
+		<Card.Content>
+			<!-- TODO: when clicked, the card brings the user to the details page of this project. With a more detailed explanation of the project and what I learnt from, ... (maybe links to blog posts and others.) -->
+			<svelte:component this={project.content} />
+		</Card.Content>
 		<Card.Footer class="my-auto flex flex-row items-center justify-evenly">
 			<Icon icon="octicon:star-24" class="mx-2 w-fit" />
 			{data.stars}
