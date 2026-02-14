@@ -1,4 +1,4 @@
-import { paraglide } from '@inlang/paraglide-sveltekit/vite';
+import { paraglideVitePlugin } from '@inlang/paraglide-js';
 import type { KIT_ROUTES } from '$lib/ROUTES';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { kitRoutes } from 'vite-plugin-kit-routes';
@@ -7,7 +7,7 @@ import { URL, fileURLToPath } from 'node:url';
 
 export default defineConfig({
 	plugins: [
-		paraglide({ project: './project.inlang', outdir: './src/lib/paraglide' }),
+		paraglideVitePlugin({ project: './project.inlang', outdir: './src/lib/paraglide' }),
 		sveltekit(),
 		kitRoutes<KIT_ROUTES>({
 			LINKS: {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { route } from '$lib/ROUTES';
 	import Booking from '$lib/components/booking.svelte';
 	import { typographyVariants } from '$lib/components/typography';
@@ -9,7 +9,7 @@
 	import { Label } from '$lib/components/ui/label';
 	import { Textarea } from '$lib/components/ui/textarea';
 	import { cn } from '$lib/utils';
-	import * as m from '$paraglide/messages';
+	import { m } from '$paraglide/messages';
 	import { blur } from 'svelte/transition';
 </script>
 
@@ -85,7 +85,7 @@
 		<Input
 			type="hidden"
 			name="redirectTo"
-			value={$page.url.origin + route('/contact/success')}
+			value={page.url.origin + route('/contact/success')}
 		/>
 
 		<!-- reCAPTCHA widget -->

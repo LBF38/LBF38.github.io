@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { H1, H3 } from '$lib/components/markdown';
 	import { A, Li } from '$lib/components/markdown/meltui';
-	import * as m from '$paraglide/messages';
+	import { m } from '$paraglide/messages';
 	import Icon from '@iconify/svelte';
 	import { mode } from 'mode-watcher';
 

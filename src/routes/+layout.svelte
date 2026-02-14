@@ -1,20 +1,16 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { route } from '$lib/ROUTES';
 	import Footer from '$lib/components/Footer.svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
-	import { i18n } from '$lib/i18n';
-	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
 	import { debounce } from 'lodash-es';
 	import { ModeWatcher } from 'mode-watcher';
-	import { afterUpdate } from 'svelte';
 	import { Toaster } from 'svelte-sonner';
 	import { blur, fade } from 'svelte/transition';
 	import '../app.pcss';
-	import type { LayoutData } from './$types';
 
-	export let data: LayoutData;
+	let { data, children } = $props();
 
 	function adjustScrollbarVisibility() {
 		if (!browser) return;
@@ -35,29 +31,27 @@
 	}
 	const debouncedAdjustScrollbarVisibility = debounce(adjustScrollbarVisibility, 100);
 
-	$: $page,
-		afterUpdate(() => {
-			debouncedAdjustScrollbarVisibility();
-		});
+	$effect(() => {
+		page;
+		debouncedAdjustScrollbarVisibility();
+	});
 </script>
 
-<ParaglideJS {i18n}>
-	<Toaster richColors />
-	<ModeWatcher defaultMode="dark" />
-	<Navigation />
-	{#if $page.route.id !== route('/')}
-		{#key data.pathname}
-			<main
-				class="container mx-auto my-auto flex-grow"
-				in:fade={{ delay: 300, duration: 300 }}
-				out:blur={{ duration: 300 }}
-			>
-				<!-- <WarningAlert /> -->
-				<slot />
-			</main>
-			<Footer />
-		{/key}
-	{:else}
-		<slot />
-	{/if}
-</ParaglideJS>
+<Toaster richColors />
+<ModeWatcher defaultMode="dark" />
+<Navigation />
+{#if page.route.id !== route('/')}
+	{#key data.pathname}
+		<main
+			class="container mx-auto my-auto flex-grow"
+			in:fade={{ delay: 300, duration: 300 }}
+			out:blur={{ duration: 300 }}
+		>
+			<!-- <WarningAlert /> -->
+			{@render children()}
+		</main>
+		<Footer />
+	{/key}
+{:else}
+	{@render children()}
+{/if}

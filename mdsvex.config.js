@@ -52,10 +52,10 @@ const prettyCodeOptions = {
 				import('shiki/langs/css.mjs'),
 				import('shiki/langs/javascript.mjs'),
 				import('shiki/langs/json.mjs'),
-				import('shiki/langs/shellscript.mjs'),
+				import('shiki/langs/shellscript.mjs')
 			],
-			themes: [import('shiki/themes/github-dark.mjs')],
-		}),
+			themes: [import('shiki/themes/github-dark.mjs')]
+		})
 };
 
 export const mdsvexOptions = {
@@ -65,7 +65,7 @@ export const mdsvexOptions = {
 		quotes: false,
 		ellipses: false,
 		backticks: false,
-		dashes: false,
+		dashes: false
 	},
 	remarkPlugins: [remarkGfm, remarkEscapeSvelte, codeImport],
 	rehypePlugins: [
@@ -74,8 +74,8 @@ export const mdsvexOptions = {
 		[rehypePrettyCode, prettyCodeOptions],
 		rehypeHandleMetadata,
 		rehypeRenderCode,
-		rehypePreToComponentPre,
-	],
+		rehypePreToComponentPre
+	]
 };
 
 /**
@@ -100,7 +100,7 @@ const entities = [
 	[/</g, '&lt;'],
 	[/>/g, '&gt;'],
 	[/{/g, '&#123;'],
-	[/}/g, '&#125;'],
+	[/}/g, '&#125;']
 ];
 
 /**
@@ -182,7 +182,7 @@ function rehypeRenderCode() {
 				if (isNonPP) {
 					node.properties = {
 						...node.properties,
-						'data-non-pp': '',
+						'data-non-pp': ''
 					};
 				}
 
@@ -195,7 +195,7 @@ function rehypeRenderCode() {
 					const meltString = tabsToSpaces(
 						toHtml(codeEl, {
 							allowDangerousCharacters: true,
-							allowDangerousHtml: true,
+							allowDangerousHtml: true
 						})
 					);
 

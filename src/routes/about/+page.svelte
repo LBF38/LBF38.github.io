@@ -4,11 +4,11 @@
 	import * as Avatar from '$lib/components/ui/avatar';
 	import WarningAlert from '$lib/components/WarningAlert.svelte';
 	import { route } from '$lib/ROUTES';
-	import * as m from '$paraglide/messages';
+	import { m } from '$paraglide/messages';
 	import type { PageData } from './$types';
 
-	export let data: PageData;
-	const cv = [
+	let { data }: { data: PageData } = $props();
+	const cv = $derived([
 		{
 			title: m.inclusive_slow_angelfish_skip(),
 			content: data.work
@@ -21,7 +21,7 @@
 			title: m.front_aloof_shark_borrow(),
 			content: data.education
 		}
-	];
+	]);
 </script>
 
 <H1 class="my-2 w-full">
@@ -37,7 +37,7 @@
 {:else}
 	<div class="mb-20 grid lg:grid-cols-4">
 		<div class="lg:col-span-3">
-			<svelte:component this={data.intro.content} />
+			<data.intro.content/>
 			<ul>
 				<li>
 					<strong>{m.quiet_funny_ant_laugh()}</strong>

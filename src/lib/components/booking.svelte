@@ -1,10 +1,9 @@
 <!--Cal floating - popup embed code begins -->
-<script type="text/javascript" lang="ts">
+<script lang="ts">
 	// @ts-nocheck
 	import { browser } from '$app/environment';
+	import { m } from '$paraglide/messages';
 	import { onDestroy, onMount } from 'svelte';
-	import * as m from '$paraglide/messages';
-	import { mode } from 'mode-watcher';
 
 	onMount(() => {
 		if (!browser) return;

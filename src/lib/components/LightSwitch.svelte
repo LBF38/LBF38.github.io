@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { toggleMode } from 'mode-watcher';
 	import { Button } from '$lib/components/ui/button';
+	import { m } from '$paraglide/messages';
 	import Icon from '@iconify/svelte';
-	import * as m from '$paraglide/messages';
+	import { toggleMode } from 'mode-watcher';
 </script>
 
 <Button on:click={toggleMode} variant="outline" size="icon">

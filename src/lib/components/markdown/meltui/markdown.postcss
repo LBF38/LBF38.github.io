@@ -1,5 +1,5 @@
 .mdsvex code:not(pre > code) {
-	@apply bg-magnum-900/50 text-magnum-300 relative rounded-md px-[0.25rem] py-[0.15rem] font-mono text-[0.75rem] text-xs font-semibold leading-7;
+	@apply relative rounded-md bg-magnum-900/50 px-[0.25rem] py-[0.15rem] font-mono text-[0.75rem] text-xs font-semibold leading-7 text-magnum-300;
 }
 
 .mdsvex code.neutral {
@@ -42,7 +42,7 @@
 	}
 
 	& [data-highlighted-line] {
-		@apply border-l-magnum-300 bg-magnum-500/[0.1] z-10 w-full;
+		@apply z-10 w-full border-l-magnum-300 bg-magnum-500/[0.1];
 	}
 
 	& [data-chars-id] {
@@ -61,11 +61,11 @@
 }
 
 [data-chars-id='ul'] {
-	@apply border-b-magnum-500 border-b font-bold !important;
+	@apply border-b border-b-magnum-500 font-bold !important;
 }
 
 [data-chars-id='hi'] {
-	@apply bg-magnum-500/[0.1] rounded p-1 font-bold !important;
+	@apply rounded bg-magnum-500/[0.1] p-1 font-bold !important;
 }
 
 [data-chars-id='r'] {

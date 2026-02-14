@@ -2,7 +2,7 @@
 	import { route } from '$lib/ROUTES';
 	import { H1, P } from '$lib/components/typography/individual';
 	import { Button } from '$lib/components/ui/button';
-	import * as m from '$paraglide/messages';
+	import { m } from '$paraglide/messages';
 </script>
 
 <H1>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { route } from '$lib/ROUTES';
 	import { Button } from '$lib/components/ui/button';
-	import * as m from '$paraglide/messages';
+	import { m } from '$paraglide/messages';
 	import Icon from '@iconify/svelte';
 	import pkg from '../../../package.json';
 

@@ -2,13 +2,14 @@
 	import { PUBLIC_GH_TOKEN } from '$env/static/public';
 	import { Badge } from '$lib/components/ui/badge';
 	import * as Card from '$lib/components/ui/card';
-	import * as m from '$paraglide/messages';
+	import { m } from '$paraglide/messages';
 	import Icon from '@iconify/svelte';
 	import { Octokit } from '@octokit/rest';
 	import GH_language_colors from '../assets/gh_language_colors.json';
 	import { Skeleton } from './ui/skeleton';
 
-	export let gh_url: string = 'https://github.com/LBF38/obsidian-syncthing-integration';
+	let { gh_url = 'https://github.com/LBF38/obsidian-syncthing-integration' } = $props();
+
 	// Create a new Octokit instance
 	const octokit = new Octokit({
 		auth: PUBLIC_GH_TOKEN
@@ -118,7 +119,7 @@
 		</Card.Footer>
 		<div
 			class="z-5 absolute -inset-full top-0 hidden h-full w-1/4 -skew-x-12 transform bg-gradient-to-r from-transparent to-gray-400 opacity-15 backdrop-blur-lg group-hover:block group-hover:animate-shine dark:to-white"
-		/>
+		></div>
 	</Card.Root>
 {:catch error}
 	<Card.Root>
