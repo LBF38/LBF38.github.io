@@ -1,31 +1,26 @@
 <script lang="ts">
 	import * as Select from '$lib/components/ui/select';
-	import { i18n } from '$lib/i18n';
-	import {
-		availableLanguageTags,
-		languageTag,
-		type AvailableLanguageTag
-	} from '$paraglide/runtime';
+	import { getLocale, locales, localizeHref, type Locale } from '$paraglide/runtime';
 	import { Globe } from 'lucide-svelte';
 
-	const languageNames: Record<AvailableLanguageTag, string> = {
+	const languageNames: Record<Locale, string> = {
 		en: 'EN',
 		fr: 'FR'
 	};
 
-	export let pageURL: URL;
+	let { pageURL }: { pageURL: URL } = $props();
 </script>
 
 <Select.Root preventScroll={false}>
-	<Select.Trigger class="w-fit">
+	<Select.Trigger class="w-fit" aria-label="Languages">
 		<Globe class="mr-2 h-[1.2rem] w-[1.2rem]" />
-		<span class="mr-2">{languageNames[languageTag()]}</span>
+		<span class="mr-2">{languageNames[getLocale()]}</span>
 	</Select.Trigger>
 	<Select.Content>
-		{#each availableLanguageTags.filter((lang) => lang !== languageTag()) as language}
-			<a href={i18n.route(pageURL.pathname)} hreflang={language}>
-				<Select.Item value={language}>
-					{languageNames[language]}
+		{#each locales.filter((lang) => lang !== getLocale()) as locale}
+			<a href={localizeHref(pageURL.pathname, { locale })} hreflang={locale} data-sveltekit-reload>
+				<Select.Item value={locale}>
+					{languageNames[locale]}
 				</Select.Item>
 			</a>
 		{/each}

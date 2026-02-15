@@ -1,14 +1,18 @@
 <script lang="ts">
 	import type { CV } from '$contentlayer/generated';
 	import type { Content } from '$lib';
-	import { languageTag } from '$paraglide/runtime';
+	import { getLocale } from '$paraglide/runtime';
 	import { DateFormatter } from '@internationalized/date';
 	import { onMount } from 'svelte';
 	import { P } from './markdown/meltui';
 	import { H2 } from './typography/individual';
 
-	export let cv_content: Content<CV>[];
-	export let title: string;
+	interface Props {
+		cv_content: Content<CV>[];
+		title: string;
+	}
+
+	let { cv_content, title }: Props = $props();
 	let dateFormatter: DateFormatter | null = null;
 	const formatterOptions: Intl.DateTimeFormatOptions = {
 		localeMatcher: 'best fit',
@@ -17,12 +21,12 @@
 	};
 
 	onMount(() => {
-		dateFormatter = new DateFormatter(languageTag(), formatterOptions);
+		dateFormatter = new DateFormatter(getLocale(), formatterOptions);
 	});
 
 	function format(date: Date): string {
 		if (!dateFormatter) {
-			return date.toLocaleDateString(languageTag(), formatterOptions);
+			return date.toLocaleDateString(getLocale(), formatterOptions);
 		}
 		return dateFormatter.format(date);
 	}
@@ -47,7 +51,7 @@
 				{/if}
 			</P>
 			<div class="md:col-span-2 lg:col-span-3">
-				<svelte:component this={item.content} />
+				<item.content/>
 			</div>
 		</article>
 	{/each}

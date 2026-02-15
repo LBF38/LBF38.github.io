@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { resolve } from '$app/paths';
 	import { route } from '$lib/ROUTES';
 	import Booking from '$lib/components/booking.svelte';
 	import { typographyVariants } from '$lib/components/typography';
@@ -9,7 +9,8 @@
 	import { Label } from '$lib/components/ui/label';
 	import { Textarea } from '$lib/components/ui/textarea';
 	import { cn } from '$lib/utils';
-	import * as m from '$paraglide/messages';
+	import { m } from '$paraglide/messages';
+	import { localizeHref } from '$paraglide/runtime';
 	import { blur } from 'svelte/transition';
 </script>
 
@@ -67,11 +68,7 @@
 		<!-- Optional -->
 		<Label for="message">
 			<span>{m.weary_drab_ape_flow()}</span>
-			<Textarea
-				class="textarea h-52"
-				name="message"
-				placeholder={m.just_clear_hound_borrow()}
-			/>
+			<Textarea class="textarea h-52" name="message" placeholder={m.just_clear_hound_borrow()} />
 		</Label>
 		<!-- Optional -->
 		<!-- If you want replyTo to be set to specific email -->
@@ -82,11 +79,7 @@
 		<!-- Optional -->
 		<!-- If you want form to redirect to a specific url after submission -->
 		<!-- TODO: change it to use the typesafe router for sveltekit -->
-		<Input
-			type="hidden"
-			name="redirectTo"
-			value={$page.url.origin + route('/contact/success')}
-		/>
+		<Input type="hidden" name="redirectTo" value={localizeHref(resolve('/contact/success'))} />
 
 		<!-- reCAPTCHA widget -->
 		<div class="g-recaptcha mt-4" data-sitekey="6LftRigrAAAAALhRCshhUEMX_Icqt9ntSmTHsBya"></div>

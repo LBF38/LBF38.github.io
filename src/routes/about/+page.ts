@@ -1,7 +1,7 @@
 import { allCVs, allIntros, type CV, type Intro } from '$contentlayer/generated';
 import type { Content } from '$lib';
 import { events } from '$lib/config';
-import { i18n } from '$lib/i18n';
+import { extractLocaleFromUrl } from '$paraglide/runtime';
 import { error } from '@sveltejs/kit';
 import type { Component } from 'svelte';
 import type { PageLoad } from './$types';
@@ -24,7 +24,7 @@ function sortByDate(a: Content<CV>, b: Content<CV>) {
 
 export const load: PageLoad = async ({ url }) => {
 	try {
-		const lang = i18n.getLanguageFromUrl(url);
+		const lang = extractLocaleFromUrl(url);
 		const CVs = await Promise.all(
 			allCVs
 				.filter((doc) => doc.language === lang)

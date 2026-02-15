@@ -51,5 +51,5 @@ export {
 	Ol as ol,
 	P as p,
 	Pre as pre,
-	Ul as ul,
+	Ul as ul
 };

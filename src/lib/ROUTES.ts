@@ -46,7 +46,7 @@ const LINKS = {
     return `https://github.com/${params.username}`
   },
   "linkedin": `https://www.linkedin.com/in/mathis-urien`,
-  "instagram": `https://www.instagram.com/mathis.u38/`,
+  "gitlab": `https://www.gitlab.com/LBF38/`,
   "shadcn_svelte": `https://shadcn-svelte.com`,
   "staticforms": `https://staticforms.xyz/`
 }
@@ -151,6 +151,6 @@ export type KIT_ROUTES = {
   PAGES: { '/': never, '/404.html': never, '/about': never, '/contact': never, '/contact/success': never, '/content': never, '/content/[...slug]': 'slug', '/projects': never, '/tech': never }
   SERVERS: Record<string, never>
   ACTIONS: Record<string, never>
-  LINKS: { 'gh_profile': 'username', 'linkedin': never, 'instagram': never, 'shadcn_svelte': never, 'staticforms': never }
+  LINKS: { 'gh_profile': 'username', 'linkedin': never, 'gitlab': never, 'shadcn_svelte': never, 'staticforms': never }
   Params: { slug: never, username: never }
 }

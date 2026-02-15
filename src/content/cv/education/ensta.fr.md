@@ -3,7 +3,7 @@ title: Formation ingénieur sous statut étudiant, spécialité Conception de Sy
 from: 2021-08
 to: 2024-08
 where: Brest, France
-what:  ENSTA Bretagne
+what: ENSTA Bretagne
 img: /assets/logo_ensta_bretagne.png
 ---
 

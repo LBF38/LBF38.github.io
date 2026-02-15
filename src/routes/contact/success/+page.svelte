@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { route } from '$lib/ROUTES';
+	import { resolve } from '$app/paths';
 	import { H1, P } from '$lib/components/typography/individual';
 	import { Button } from '$lib/components/ui/button';
-	import * as m from '$paraglide/messages';
+	import { m } from '$paraglide/messages';
+	import { localizeHref } from '$paraglide/runtime';
 </script>
 
 <H1>
@@ -14,6 +15,6 @@
 </H1>
 
 <P>{m.quaint_spare_puma_dust()}</P>
-<Button variant="secondary" class="my-4" href={route('/projects')}>
+<Button variant="secondary" class="my-4" href={localizeHref(resolve('/projects'))}>
 	{m.stale_mild_dolphin_reside()}
 </Button>

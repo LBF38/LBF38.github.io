@@ -2,7 +2,7 @@ import { mdsvex } from 'mdsvex';
 // TODO: ^ maybe change to @huntabyte/mdsvex ?
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import { mdsvexOptions } from "./mdsvex.config.js";
+import { mdsvexOptions } from './mdsvex.config.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -24,12 +24,12 @@ const config = {
 			fallback: '404.html'
 		}),
 		alias: {
-			"$paraglide/*": "./src/lib/paraglide/*",
-			"$contentlayer/generated": ".contentlayer/generated",
-			"$content": "./src/content",
+			'$paraglide/*': './src/lib/paraglide/*',
+			'$contentlayer/generated': '.contentlayer/generated',
+			$content: './src/content'
 		}
 	},
-	extensions: ['.svelte', ...mdsvexOptions.extensions, ".md"]
+	extensions: ['.svelte', ...mdsvexOptions.extensions, '.md']
 };
 
 export default config;

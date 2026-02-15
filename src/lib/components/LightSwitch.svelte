@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { toggleMode } from 'mode-watcher';
 	import { Button } from '$lib/components/ui/button';
+	import { m } from '$paraglide/messages';
 	import Icon from '@iconify/svelte';
-	import * as m from '$paraglide/messages';
+	import { toggleMode } from 'mode-watcher';
 </script>
 
-<Button on:click={toggleMode} variant="outline" size="icon">
+<Button onclick={toggleMode} variant="outline" size="icon">
 	<Icon
 		icon="fluent:weather-sunny-24-filled"
 		class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"

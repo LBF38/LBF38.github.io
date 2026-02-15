@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { route } from '$lib/ROUTES';
+	import { resolve } from '$app/paths';
 	import { H1, H2 } from '$lib/components/typography/individual';
 	import { Button } from '$lib/components/ui/button';
-	import * as m from '$paraglide/messages';
+	import { m } from '$paraglide/messages';
+	import { localizeHref } from '$paraglide/runtime';
 	import { mode } from 'mode-watcher';
 </script>
 
@@ -13,9 +14,9 @@
 	<!-- <div class="radial-bg absolute left-0 top-0 z-0 h-96 w-96 rounded-full opacity-25 blur-3xl" /> -->
 	<div
 		class="absolute -bottom-40 -right-20 -z-20 h-5/6 w-5/6 rounded-full opacity-25 blur-3xl sm:-bottom-40 md:-right-96"
-		class:radial-bg-dark={$mode === 'dark'}
-		class:radial-bg={$mode === 'light'}
-	/>
+		class:radial-bg-dark={mode.current === 'dark'}
+		class:radial-bg={mode.current === 'light'}
+	></div>
 	<!-- <div
 		class="absolute right-1/4 top-1/3 z-0 h-80 w-80 rounded-full bg-purple-500 opacity-50 blur-3xl"
 	/>  -->
@@ -36,7 +37,7 @@
 	</H2>
 	<Button
 		variant="outline"
-		href={route('/projects')}
+		href={localizeHref(resolve('/projects'))}
 		class="fixed inset-x-0 bottom-0 m-6 mx-auto w-fit"
 	>
 		{m.livid_new_osprey_zap()}

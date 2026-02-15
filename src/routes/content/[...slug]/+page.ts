@@ -2,6 +2,7 @@ import { slugFromPath } from '$lib/utils.js';
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types.js';
 import type { MdsvexResolver } from '../../../app.js';
+import type { Component } from 'svelte';
 
 // export const entries: EntryGenerator = () => {
 // 	return navConfig.sidebarNav[0].items.map((item) => {
@@ -31,7 +32,7 @@ export const load: PageLoad = async ({ params }) => {
 
 	return {
 		// paths: (await parent()).paths,
-		component: post.default,
+		component: post.default as Component,
 		frontmatter: post.metadata
 	};
 };

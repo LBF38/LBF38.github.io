@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ProjectCard from '$lib/components/Project_card.svelte';
 	import { H1, P } from '$lib/components/typography/individual';
-	import * as m from '$paraglide/messages';
+	import { m } from '$paraglide/messages';
 
 	const GH_projects = [
 		'https://github.com/LBF38/obsidian-syncthing-integration',

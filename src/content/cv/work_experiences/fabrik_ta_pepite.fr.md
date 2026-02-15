@@ -1,5 +1,5 @@
 ---
-title: "Fabrik Ta Pépite : le concours"
+title: 'Fabrik Ta Pépite : le concours'
 from: 2021-10
 to: 2022-02
 where: Brest, France

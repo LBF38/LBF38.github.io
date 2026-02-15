@@ -1,13 +1,17 @@
-import { paraglide } from '@inlang/paraglide-sveltekit/vite';
 import type { KIT_ROUTES } from '$lib/ROUTES';
+import { paraglideVitePlugin } from '@inlang/paraglide-js';
 import { sveltekit } from '@sveltejs/kit/vite';
-import { kitRoutes } from 'vite-plugin-kit-routes';
-import { defineConfig } from 'vite';
 import { URL, fileURLToPath } from 'node:url';
+import { defineConfig } from 'vite';
+import { kitRoutes } from 'vite-plugin-kit-routes';
 
 export default defineConfig({
 	plugins: [
-		paraglide({ project: './project.inlang', outdir: './src/lib/paraglide' }),
+		paraglideVitePlugin({
+			project: './project.inlang',
+			outdir: './src/lib/paraglide',
+			strategy: ['url', 'cookie', 'baseLocale']
+		}),
 		sveltekit(),
 		kitRoutes<KIT_ROUTES>({
 			LINKS: {
@@ -23,8 +27,8 @@ export default defineConfig({
 				linkedin: {
 					href: 'https://www.linkedin.com/in/mathis-urien'
 				},
-				instagram: {
-					href: 'https://www.instagram.com/mathis.u38/'
+				gitlab: {
+					href: 'https://www.gitlab.com/LBF38/'
 				},
 				shadcn_svelte: {
 					href: 'https://shadcn-svelte.com'
