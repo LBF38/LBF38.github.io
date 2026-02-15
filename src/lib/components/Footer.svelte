@@ -8,7 +8,7 @@
 	const social_media: { icon: string; href: string }[] = [
 		{ icon: 'octicon:mark-github-24', href: route('gh_profile') },
 		{ icon: 'fa:linkedin-square', href: route('linkedin') },
-		{ icon: 'fa:instagram', href: route('instagram') }
+		{ icon: 'fa:gitlab', href: route('gitlab') }
 	];
 </script>
 

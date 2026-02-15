@@ -7,7 +7,11 @@ import { URL, fileURLToPath } from 'node:url';
 
 export default defineConfig({
 	plugins: [
-		paraglideVitePlugin({ project: './project.inlang', outdir: './src/lib/paraglide' }),
+		paraglideVitePlugin({
+			project: './project.inlang',
+			outdir: './src/lib/paraglide',
+			strategy: ['url', 'cookie', 'baseLocale']
+		}),
 		sveltekit(),
 		kitRoutes<KIT_ROUTES>({
 			LINKS: {
@@ -23,8 +27,8 @@ export default defineConfig({
 				linkedin: {
 					href: 'https://www.linkedin.com/in/mathis-urien'
 				},
-				instagram: {
-					href: 'https://www.instagram.com/mathis.u38/'
+				gitlab: {
+					href: 'https://www.gitlab.com/LBF38/'
 				},
 				shadcn_svelte: {
 					href: 'https://shadcn-svelte.com'

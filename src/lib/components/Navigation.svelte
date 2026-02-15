@@ -12,8 +12,9 @@
 	import Logo from './Logo.svelte';
 	import LanguageSelector from './language_selector';
 	import { Button } from './ui/button';
+
 	interface Props {
-		routes: NavigationRoute[];
+		routes?: NavigationRoute[];
 	}
 
 	let {
@@ -28,8 +29,7 @@
 				pathname: route('/tech'),
 				name: m.jumpy_few_marten_win(),
 				description: m.patient_caring_barbel_renew(),
-				keywords:
-					'svelte, sveltekit, tailwindcss, typescript, vite, graphql, postgresql, ...'
+				keywords: 'svelte, sveltekit, tailwindcss, typescript, vite, graphql, postgresql, ...'
 			},
 			{
 				pathname: route('/about'),
