@@ -21,7 +21,7 @@
     <slot />
 </pre>
 
-<button class="absolute right-4 top-4 z-10" aria-label="copy" on:click={copyCode} data-code-copy>
+<button class="absolute right-4 top-4 z-10" aria-label="copy" onclick={copyCode} data-code-copy>
 	{#if $copied}
 		<div in:fly={{ y: -4 }}>
 			<Check class="size-4 text-magnum-500" />

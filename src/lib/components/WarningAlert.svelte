@@ -10,7 +10,7 @@
 {#if visible}
 	<Alert.Root class="relative mx-auto mb-2 w-fit">
 		<Icon icon="emojione-v1:construction" class="text-xl" />
-		<Alert.Title level="h1">{m.big_clear_opossum_pray()}</Alert.Title>
+		<Alert.Title level={1}>{m.big_clear_opossum_pray()}</Alert.Title>
 		<Alert.Description>
 			<p>{@html m.ornate_zippy_shrike_treat()}</p>
 		</Alert.Description>
@@ -18,7 +18,7 @@
 			variant="ghost"
 			size="sm"
 			class="absolute right-0 top-0 m-2"
-			on:click={() => (visible = !visible)}
+			onclick={() => (visible = !visible)}
 		>
 			<Icon icon="charm:cross" class="text-2xl" />
 		</Button>
