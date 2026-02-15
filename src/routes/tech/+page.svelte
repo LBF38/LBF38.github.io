@@ -12,6 +12,11 @@
 			title: m.novel_moving_bear_commend(),
 			links: [
 				{
+					name: 'Go',
+					url: 'https://go.dev',
+					icon: 'golang'
+				},
+				{
 					name: 'Svelte',
 					url: 'https://svelte.dev',
 					icon: 'svelte'
@@ -67,6 +72,16 @@
 					icon: `openshift`
 				},
 				{
+					name: 'Grafana',
+					url: 'https://grafana.dev',
+					icon: `grafana-${mode.current}`
+				},
+				{
+					name: 'Prometheus',
+					url: 'https://prometheus.io',
+					icon: `prometheus`
+				},
+				{
 					name: 'GitHub',
 					url: 'https://github.com',
 					icon: `github-${mode.current}`
@@ -110,6 +125,11 @@
 					name: 'Git',
 					url: 'https://git-scm.com',
 					icon: `git`
+				},
+				{
+					name: 'Zed',
+					url: 'https://zed.dev',
+					icon: `zed`
 				}
 			]
 		},
