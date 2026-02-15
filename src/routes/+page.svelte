@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { route } from '$lib/ROUTES';
+	import { resolve } from '$app/paths';
 	import { H1, H2 } from '$lib/components/typography/individual';
 	import { Button } from '$lib/components/ui/button';
 	import { m } from '$paraglide/messages';
+	import { localizeHref } from '$paraglide/runtime';
 	import { mode } from 'mode-watcher';
 </script>
 
@@ -36,7 +37,7 @@
 	</H2>
 	<Button
 		variant="outline"
-		href={route('/projects')}
+		href={localizeHref(resolve('/projects'))}
 		class="fixed inset-x-0 bottom-0 m-6 mx-auto w-fit"
 	>
 		{m.livid_new_osprey_zap()}

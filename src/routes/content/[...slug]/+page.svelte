@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import Button from '$lib/components/ui/button/button.svelte';
-	import { route } from '$lib/ROUTES';
+	import { localizeHref } from '$paraglide/runtime';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -17,4 +18,6 @@
 
 <component></component>
 
-<Button href={route('/content/[...slug]', { slug: next_slug })}>Next</Button>
+<Button href={localizeHref(resolve('/content/[...slug]', { slug: next_slug.join('/') }))}>
+	Next
+</Button>

@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { PUBLIC_URL_ORIGIN } from '$env/static/public';
 	import type { NavigationRoute } from '$lib';
-	import { route } from '$lib/ROUTES';
 	import * as Sheet from '$lib/components/ui/sheet';
 	import * as m from '$paraglide/messages';
+	import { localizeHref } from '$paraglide/runtime';
 	import { Menu } from 'lucide-svelte';
 	import SvelteSeo from 'svelte-seo';
 	import LightSwitch from './LightSwitch.svelte';
@@ -20,25 +21,25 @@
 	let {
 		routes = [
 			{
-				pathname: route('/projects'),
+				pathname: localizeHref(resolve('/projects')),
 				name: m.safe_level_eel_dine(),
 				description: m.caring_fuzzy_fish_rush(),
 				keywords: m.muddy_few_reindeer_treat()
 			},
 			{
-				pathname: route('/tech'),
+				pathname: localizeHref(resolve('/tech')),
 				name: m.jumpy_few_marten_win(),
 				description: m.patient_caring_barbel_renew(),
 				keywords: 'svelte, sveltekit, tailwindcss, typescript, vite, graphql, postgresql, ...'
 			},
 			{
-				pathname: route('/about'),
+				pathname: localizeHref(resolve('/about')),
 				name: m.game_bad_robin_aid(),
 				description: m.mushy_few_vulture_treasure(),
 				keywords: m.silly_lazy_leopard_type()
 			},
 			{
-				pathname: route('/contact'),
+				pathname: localizeHref(resolve('/contact')),
 				name: m.factual_tangy_bat_strive(),
 				description: m.bald_best_puma_cook(),
 				keywords: m.factual_upper_dragonfly_renew()
@@ -89,7 +90,7 @@
 <nav
 	class="sticky top-0 z-50 flex flex-shrink-0 flex-row content-center items-center justify-center space-x-10 bg-opacity-70 p-4 backdrop-blur-md"
 >
-	<a href={route('/')} class="mr-auto">
+	<a href={localizeHref(resolve('/'))} class="mr-auto">
 		<Logo />
 	</a>
 
@@ -115,7 +116,7 @@
 			<Sheet.Content class="flex flex-col gap-4">
 				<Sheet.Header>
 					<Sheet.Title>
-						<a href={route('/')}>
+						<a href={localizeHref(resolve('/'))}>
 							<Logo />
 						</a>
 					</Sheet.Title>
@@ -126,7 +127,7 @@
 						variant={page.route.id === route.pathname ? 'secondary' : 'link'}
 						data-sveltekit-preload-data="hover"
 						class="justify-start"
-						on:click={() => (open = false)}
+						onclick={() => (open = false)}
 					>
 						{route.name}
 					</Button>

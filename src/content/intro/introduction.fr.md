@@ -10,4 +10,4 @@ _Je travaille actuellement dans le Dev/Ops et les architectures cloud tout en cr
 
 _J'ai acquis de l'expérience sur [Svelte](https://svelte.dev)/[SvelteKit](https://kit.svelte.dev) pour le développement web, sur [Flutter](https://flutter.dev) pour le développement mobile, ainsi que la maîtrise des pratiques Dev/Ops relatives aux architectures cloud._
 
-_Pour en savoir plus sur les [technologies et outils](/tech) utilisés._
+_Pour en savoir plus sur les [technologies et outils](/fr/tech) utilisés._

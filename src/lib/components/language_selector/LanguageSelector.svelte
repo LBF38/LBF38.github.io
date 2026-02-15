@@ -12,13 +12,13 @@
 </script>
 
 <Select.Root preventScroll={false}>
-	<Select.Trigger class="w-fit">
+	<Select.Trigger class="w-fit" aria-label="Languages">
 		<Globe class="mr-2 h-[1.2rem] w-[1.2rem]" />
 		<span class="mr-2">{languageNames[getLocale()]}</span>
 	</Select.Trigger>
 	<Select.Content>
 		{#each locales.filter((lang) => lang !== getLocale()) as locale}
-			<a href={localizeHref(pageURL.pathname, { locale })} hreflang={locale}>
+			<a href={localizeHref(pageURL.pathname, { locale })} hreflang={locale} data-sveltekit-reload>
 				<Select.Item value={locale}>
 					{languageNames[locale]}
 				</Select.Item>

@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
-	import { route } from '$lib/ROUTES';
 	import Footer from '$lib/components/Footer.svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
+	import { locales, localizeHref } from '$paraglide/runtime';
 	import { debounce } from 'lodash-es';
 	import { ModeWatcher } from 'mode-watcher';
 	import { Toaster } from 'svelte-sonner';
@@ -37,10 +38,20 @@
 	});
 </script>
 
+<!-- For localization of pages -->
+
+<nav class="hidden" aria-label="Languages" aria-hidden="true">
+	{#each locales as locale}
+		<a href={localizeHref(page.url.pathname, { locale })} data-sveltekit-reload>
+			{locale}
+		</a>
+	{/each}
+</nav>
+
 <Toaster richColors />
 <ModeWatcher defaultMode="dark" />
 <Navigation />
-{#if page.route.id !== route('/')}
+{#if page.route.id !== resolve('/')}
 	{#key data.pathname}
 		<main
 			class="container mx-auto my-auto flex-grow"
