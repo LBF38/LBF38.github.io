@@ -51,7 +51,7 @@
 		"@sinclair/typebox": "^0.34.48",
 		"@sveltejs/adapter-auto": "^3.3.1",
 		"@sveltejs/adapter-static": "^3.0.10",
-		"@sveltejs/kit": "^2.51.0",
+		"@sveltejs/kit": "^2.52.2",
 		"@sveltejs/vite-plugin-svelte": "^4.0.4",
 		"@sveltejs/vite-plugin-svelte-inspector": "^2.1.0",
 		"@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
